@@ -1,5 +1,5 @@
 <RCC>
-  <qresource prefix="icons">
+  <qresource prefix="demo">
     <file>icons/cil-3d.png</file>
     <file>icons/cil-4k.png</file>
     <file>icons/cil-airplay.png</file>
@@ -166,9 +166,5 @@
     <file>icons/cil-x-circle.png</file>
     <file>icons/cil-zoom-in.png</file>
     <file>icons/cil-zoom-out.png</file>
-    <file>icons/close.png</file>
-    <file>icons/cancel.png</file>
-    <file>icons/maximize.png</file>
-    <file>icons/minimize.png</file>
   </qresource>
 </RCC>

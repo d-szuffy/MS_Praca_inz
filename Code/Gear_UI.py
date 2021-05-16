@@ -148,7 +148,7 @@ class Ui_MainWindow(object):
 "\n"
 "QPushButton:checked{\n"
 "background-color: rgb(24, 112, 189);\n"
-"border-bottom: 1px solid rgb(255, 255, 255);\n"
+"border-bottom: 3px solid rgb(255, 255, 255);\n"
 "}")
         self.frame_4.setFrameShape(QFrame.NoFrame)
         self.frame_4.setFrameShadow(QFrame.Plain)

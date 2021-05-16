@@ -5,6 +5,7 @@ from PyQt5.QtCore import Qt, QPropertyAnimation
 
 WINDOW_SIZE = 0
 
+
 class MyForm(QMainWindow):
 
     def __init__(self):
@@ -14,7 +15,7 @@ class MyForm(QMainWindow):
         self.setWindowFlag(Qt.FramelessWindowHint)
 
 
- # Button click events to our top bar buttons
+        # Button click events to our top bar buttons
         #
         #Minimize window
         self.ui.minimize_btn.clicked.connect(lambda: self.showMinimized())
@@ -22,7 +23,7 @@ class MyForm(QMainWindow):
         self.ui.close_btn.clicked.connect(lambda: self.close())
         #Restore/Maximize window
         self.ui.restore_btn.clicked.connect(lambda: self.restore_or_maximize_window())
-
+        self.ui.pushButton.clicked.connect(lambda: self.check_btn())
 # Restore or maximize your window
 
 
@@ -72,6 +73,12 @@ class MyForm(QMainWindow):
             self.showNormal()
 # Update button icon
 # self.ui.restoreButton.setIcon(QtGui.QIcon(u":/icons/icons/cil-window-restore.png"))#Show minized icon
+
+    def check_btn(self):
+        for button in BTNS:
+            if button.isChecked():
+                button.setDefault()
+
 if __name__ == "__main__":
     App = QApplication(sys.argv)
     window = MyForm()

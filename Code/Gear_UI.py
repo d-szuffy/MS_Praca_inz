@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'Gear_v2 (1)zWwSNX.ui'
+## Form generated from reading UI file 'Gear_v2 (1)xNHQDq.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -12,6 +12,7 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 
+import demo_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -55,14 +56,14 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_2.addWidget(self.frame_7)
 
-        self.frame_5 = QFrame(self.frame)
-        self.frame_5.setObjectName(u"frame_5")
-        self.frame_5.setMinimumSize(QSize(0, 35))
-        self.frame_5.setMaximumSize(QSize(16777215, 35))
-        self.frame_5.setFrameShape(QFrame.NoFrame)
-        self.frame_5.setFrameShadow(QFrame.Plain)
+        self.main_header = QFrame(self.frame)
+        self.main_header.setObjectName(u"main_header")
+        self.main_header.setMinimumSize(QSize(0, 35))
+        self.main_header.setMaximumSize(QSize(16777215, 35))
+        self.main_header.setFrameShape(QFrame.NoFrame)
+        self.main_header.setFrameShadow(QFrame.Plain)
 
-        self.horizontalLayout_2.addWidget(self.frame_5)
+        self.horizontalLayout_2.addWidget(self.main_header)
 
         self.frame_6 = QFrame(self.frame)
         self.frame_6.setObjectName(u"frame_6")
@@ -82,36 +83,36 @@ class Ui_MainWindow(object):
         self.horizontalLayout_3.setSpacing(0)
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
         self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
-        self.pushButton_9 = QPushButton(self.frame_6)
-        self.pushButton_9.setObjectName(u"pushButton_9")
-        self.pushButton_9.setMinimumSize(QSize(35, 35))
+        self.minimize_btn = QPushButton(self.frame_6)
+        self.minimize_btn.setObjectName(u"minimize_btn")
+        self.minimize_btn.setMinimumSize(QSize(35, 35))
         icon = QIcon()
-        icon.addFile(u"icons/cil-window-minimize.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.pushButton_9.setIcon(icon)
-        self.pushButton_9.setIconSize(QSize(24, 24))
-        self.pushButton_9.setFlat(False)
+        icon.addFile(u":/demo/icons/cil-window-minimize.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.minimize_btn.setIcon(icon)
+        self.minimize_btn.setIconSize(QSize(24, 24))
+        self.minimize_btn.setFlat(False)
 
-        self.horizontalLayout_3.addWidget(self.pushButton_9)
+        self.horizontalLayout_3.addWidget(self.minimize_btn)
 
-        self.pushButton_10 = QPushButton(self.frame_6)
-        self.pushButton_10.setObjectName(u"pushButton_10")
-        self.pushButton_10.setMinimumSize(QSize(35, 35))
+        self.restore_btn = QPushButton(self.frame_6)
+        self.restore_btn.setObjectName(u"restore_btn")
+        self.restore_btn.setMinimumSize(QSize(35, 35))
         icon1 = QIcon()
-        icon1.addFile(u"icons/cil-window-maximize.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.pushButton_10.setIcon(icon1)
-        self.pushButton_10.setIconSize(QSize(24, 24))
+        icon1.addFile(u":/demo/icons/cil-window-maximize.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.restore_btn.setIcon(icon1)
+        self.restore_btn.setIconSize(QSize(24, 24))
 
-        self.horizontalLayout_3.addWidget(self.pushButton_10)
+        self.horizontalLayout_3.addWidget(self.restore_btn)
 
-        self.pushButton_11 = QPushButton(self.frame_6)
-        self.pushButton_11.setObjectName(u"pushButton_11")
-        self.pushButton_11.setMinimumSize(QSize(35, 35))
+        self.close_btn = QPushButton(self.frame_6)
+        self.close_btn.setObjectName(u"close_btn")
+        self.close_btn.setMinimumSize(QSize(35, 35))
         icon2 = QIcon()
-        icon2.addFile(u"icons/cil-x.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.pushButton_11.setIcon(icon2)
-        self.pushButton_11.setIconSize(QSize(24, 24))
+        icon2.addFile(u":/demo/icons/cil-x.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.close_btn.setIcon(icon2)
+        self.close_btn.setIconSize(QSize(24, 24))
 
-        self.horizontalLayout_3.addWidget(self.pushButton_11)
+        self.horizontalLayout_3.addWidget(self.close_btn)
 
 
         self.horizontalLayout_2.addWidget(self.frame_6)
@@ -280,9 +281,9 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"Gear.py", None))
-        self.pushButton_9.setText("")
-        self.pushButton_10.setText("")
-        self.pushButton_11.setText("")
+        self.minimize_btn.setText("")
+        self.restore_btn.setText("")
+        self.close_btn.setText("")
         self.pushButton.setText(QCoreApplication.translate("MainWindow", u"MATERIA\u0141", None))
         self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"ZA\u0141O\u017bENIA", None))
         self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"WYNIKI WST\u0118PNE", None))

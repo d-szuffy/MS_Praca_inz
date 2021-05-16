@@ -124,7 +124,7 @@ padding-left: 10px;</string>
         </widget>
        </item>
        <item>
-        <widget class="QFrame" name="frame_5">
+        <widget class="QFrame" name="main_header">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -192,7 +192,7 @@ QPushButton:hover{
            <number>0</number>
           </property>
           <item>
-           <widget class="QPushButton" name="pushButton_9">
+           <widget class="QPushButton" name="minimize_btn">
             <property name="minimumSize">
              <size>
               <width>35</width>
@@ -203,8 +203,8 @@ QPushButton:hover{
              <string/>
             </property>
             <property name="icon">
-             <iconset>
-              <normaloff>icons/cil-window-minimize.png</normaloff>icons/cil-window-minimize.png</iconset>
+             <iconset resource="demo.qrc">
+              <normaloff>:/demo/icons/cil-window-minimize.png</normaloff>:/demo/icons/cil-window-minimize.png</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -218,7 +218,7 @@ QPushButton:hover{
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButton_10">
+           <widget class="QPushButton" name="restore_btn">
             <property name="minimumSize">
              <size>
               <width>35</width>
@@ -230,7 +230,7 @@ QPushButton:hover{
             </property>
             <property name="icon">
              <iconset resource="demo.qrc">
-              <normaloff>:/icons/icons/cil-window-restore.png</normaloff>:/icons/icons/cil-window-restore.png</iconset>
+              <normaloff>:/demo/icons/cil-window-maximize.png</normaloff>:/demo/icons/cil-window-maximize.png</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -241,7 +241,7 @@ QPushButton:hover{
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButton_11">
+           <widget class="QPushButton" name="close_btn">
             <property name="minimumSize">
              <size>
               <width>35</width>
@@ -253,7 +253,7 @@ QPushButton:hover{
             </property>
             <property name="icon">
              <iconset resource="demo.qrc">
-              <normaloff>:/icons/icons/cil-x.png</normaloff>:/icons/icons/cil-x.png</iconset>
+              <normaloff>:/demo/icons/cil-x.png</normaloff>:/demo/icons/cil-x.png</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -546,7 +546,6 @@ border-bottom: 1px solid rgb(255, 255, 255);
  </widget>
  <resources>
   <include location="demo.qrc"/>
-  <include location="../Python/Engineering/icons.qrc"/>
  </resources>
  <connections/>
 </ui>

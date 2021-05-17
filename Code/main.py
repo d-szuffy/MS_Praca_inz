@@ -23,7 +23,18 @@ class MyForm(QMainWindow):
         self.ui.close_btn.clicked.connect(lambda: self.close())
         #Restore/Maximize window
         self.ui.restore_btn.clicked.connect(lambda: self.restore_or_maximize_window())
-        self.ui.pushButton.clicked.connect(lambda: self.check_btn())
+        self.ui.stackedWidget.setCurrentWidget(self.ui.materialy_page)
+
+        self.ui.materials_btn.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.materialy_page))
+        self.ui.input_btn.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.zalozenia_page))
+        self.ui.base_outcome_btn.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.wyniki_wstepne_page))
+        self.ui.forces_btn.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.naprezenia_page))
+        self.ui.diameters_btn.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.srednice_page))
+        self.ui.excel_btn.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.excel_page))
+        self.ui.scheme_btn.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.schemat_page))
+
+
+
 # Restore or maximize your window
 
 
@@ -74,10 +85,7 @@ class MyForm(QMainWindow):
 # Update button icon
 # self.ui.restoreButton.setIcon(QtGui.QIcon(u":/icons/icons/cil-window-restore.png"))#Show minized icon
 
-    def check_btn(self):
-        for button in BTNS:
-            if button.isChecked():
-                button.setDefault()
+
 
 if __name__ == "__main__":
     App = QApplication(sys.argv)

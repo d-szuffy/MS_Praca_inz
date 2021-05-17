@@ -34,21 +34,21 @@
      <number>0</number>
     </property>
     <item>
-     <widget class="QFrame" name="frame">
+     <widget class="QFrame" name="top_header">
       <property name="minimumSize">
        <size>
         <width>0</width>
-        <height>35</height>
+        <height>50</height>
        </size>
       </property>
       <property name="maximumSize">
        <size>
         <width>16777215</width>
-        <height>35</height>
+        <height>50</height>
        </size>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(33, 33, 33);</string>
+       <string notr="true">background-color: rgb(33, 38, 55);</string>
       </property>
       <property name="frameShape">
        <enum>QFrame::NoFrame</enum>
@@ -73,7 +73,7 @@
         <number>0</number>
        </property>
        <item>
-        <widget class="QFrame" name="frame_7">
+        <widget class="QFrame" name="label_frame">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -92,7 +92,7 @@
          <property name="frameShadow">
           <enum>QFrame::Raised</enum>
          </property>
-         <widget class="QLabel" name="label">
+         <widget class="QLabel" name="label_name">
           <property name="geometry">
            <rect>
             <x>1</x>
@@ -118,7 +118,7 @@
 padding-left: 10px;</string>
           </property>
           <property name="text">
-           <string>Gear.py</string>
+           <string>GEAR.py</string>
           </property>
          </widget>
         </widget>
@@ -134,7 +134,7 @@ padding-left: 10px;</string>
          <property name="maximumSize">
           <size>
            <width>16777215</width>
-           <height>35</height>
+           <height>50</height>
           </size>
          </property>
          <property name="frameShape">
@@ -146,7 +146,7 @@ padding-left: 10px;</string>
         </widget>
        </item>
        <item>
-        <widget class="QFrame" name="frame_6">
+        <widget class="QFrame" name="top_right_btns">
          <property name="minimumSize">
           <size>
            <width>100</width>
@@ -161,12 +161,12 @@ padding-left: 10px;</string>
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
-background-color: rgb(33, 33, 33);
+	background-color: rgb(33, 38, 55);
 border: none;
 }
 
 QPushButton:hover{
-	background-color: rgb(30, 136, 229);
+	background-color: rgb(51, 82, 148);
 }</string>
          </property>
          <property name="frameShape">
@@ -270,9 +270,9 @@ QPushButton:hover{
      </widget>
     </item>
     <item>
-     <widget class="QFrame" name="frame_2">
+     <widget class="QFrame" name="main_body">
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(33, 33, 33);</string>
+       <string notr="true">background-color: rgb(242, 242, 246);</string>
       </property>
       <property name="frameShape">
        <enum>QFrame::NoFrame</enum>
@@ -282,22 +282,22 @@ QPushButton:hover{
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <property name="spacing">
-        <number>0</number>
+        <number>10</number>
        </property>
        <property name="leftMargin">
-        <number>0</number>
+        <number>50</number>
        </property>
        <property name="topMargin">
-        <number>0</number>
+        <number>50</number>
        </property>
        <property name="rightMargin">
-        <number>0</number>
+        <number>50</number>
        </property>
        <property name="bottomMargin">
-        <number>0</number>
+        <number>50</number>
        </property>
        <item>
-        <widget class="QFrame" name="frame_4">
+        <widget class="QFrame" name="buttons_frame">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -312,21 +312,21 @@ QPushButton:hover{
          </property>
          <property name="styleSheet">
           <string notr="true">QFrame{
-background-color: rgb(30, 136, 229);
+background-color: rgb(242, 242, 246);
 }
 QPushButton{
-color: rgb(255, 255, 255);
-background-color: rgb(30, 136, 229);
+color: rgb(242, 242, 246);
+background-color: rgb(76, 118, 232);
 border: none;
 height: 40;
 }
 QPushButton:hover{
-	background-color: rgb(24, 112, 189);
+background-color: rgb(51, 82, 148);
 }
 
 QPushButton:checked{
-background-color: rgb(24, 112, 189);
-border-bottom: 1px solid rgb(255, 255, 255);
+background-color: rgb(51, 82, 148);
+border-bottom: 3px solid rgb(33, 38, 55);
 }</string>
          </property>
          <property name="frameShape">
@@ -337,7 +337,7 @@ border-bottom: 1px solid rgb(255, 255, 255);
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout">
           <property name="spacing">
-           <number>0</number>
+           <number>8</number>
           </property>
           <property name="leftMargin">
            <number>0</number>
@@ -352,7 +352,7 @@ border-bottom: 1px solid rgb(255, 255, 255);
            <number>0</number>
           </property>
           <item>
-           <widget class="QPushButton" name="pushButton">
+           <widget class="QPushButton" name="materials_btn">
             <property name="font">
              <font>
               <family>Segoe UI</family>
@@ -373,7 +373,7 @@ border-bottom: 1px solid rgb(255, 255, 255);
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButton_2">
+           <widget class="QPushButton" name="input_btn">
             <property name="font">
              <font>
               <family>Segoe UI</family>
@@ -391,7 +391,7 @@ border-bottom: 1px solid rgb(255, 255, 255);
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButton_3">
+           <widget class="QPushButton" name="base_outcome_btn">
             <property name="text">
              <string>WYNIKI WSTĘPNE</string>
             </property>
@@ -404,7 +404,7 @@ border-bottom: 1px solid rgb(255, 255, 255);
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButton_4">
+           <widget class="QPushButton" name="forces_btn">
             <property name="text">
              <string>NAPRĘŻENIA</string>
             </property>
@@ -417,7 +417,7 @@ border-bottom: 1px solid rgb(255, 255, 255);
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButton_5">
+           <widget class="QPushButton" name="diameters_btn">
             <property name="text">
              <string>ŚREDNICE</string>
             </property>
@@ -430,7 +430,7 @@ border-bottom: 1px solid rgb(255, 255, 255);
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButton_6">
+           <widget class="QPushButton" name="final_result_btn">
             <property name="text">
              <string>WYNIKI</string>
             </property>
@@ -443,7 +443,7 @@ border-bottom: 1px solid rgb(255, 255, 255);
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButton_7">
+           <widget class="QPushButton" name="excel_btn">
             <property name="text">
              <string>EXCEL</string>
             </property>
@@ -456,7 +456,7 @@ border-bottom: 1px solid rgb(255, 255, 255);
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButton_8">
+           <widget class="QPushButton" name="scheme_btn">
             <property name="text">
              <string>SCHEMAT</string>
             </property>
@@ -480,28 +480,452 @@ border-bottom: 1px solid rgb(255, 255, 255);
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(33, 33, 33);</string>
+          <string notr="true">background-color: rgb(255, 255, 255);</string>
          </property>
          <property name="currentIndex">
-          <number>7</number>
+          <number>0</number>
          </property>
          <widget class="QWidget" name="materialy_page">
           <layout class="QVBoxLayout" name="verticalLayout_3">
            <property name="spacing">
-            <number>0</number>
+            <number>10</number>
            </property>
            <property name="leftMargin">
-            <number>0</number>
+            <number>20</number>
            </property>
            <property name="topMargin">
-            <number>0</number>
+            <number>20</number>
            </property>
            <property name="rightMargin">
-            <number>0</number>
+            <number>20</number>
            </property>
            <property name="bottomMargin">
             <number>0</number>
            </property>
+           <item>
+            <widget class="QFrame" name="row_frame_1">
+             <property name="styleSheet">
+              <string notr="true">QLabel{
+color: rgb(33, 38, 55);
+}
+QLineEdit{
+background-color: rgb(242, 242, 246);
+border: none;
+padding-left: 50px;
+color: rgb(33, 38, 55);
+}</string>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::NoFrame</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_4">
+              <property name="spacing">
+               <number>0</number>
+              </property>
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item alignment="Qt::AlignLeft">
+               <widget class="QLabel" name="label">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Segoe UI Symbol</family>
+                  <pointsize>10</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>WIERSZ PIERWSZY</string>
+                </property>
+                <property name="textFormat">
+                 <enum>Qt::PlainText</enum>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QFrame" name="frame_4">
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_5">
+                 <property name="spacing">
+                  <number>2</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>70</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="QLineEdit" name="lineEdit_3">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>300</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="dragEnabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="placeholderText">
+                    <string>TRZECIA DANA</string>
+                   </property>
+                   <property name="clearButtonEnabled">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="lineEdit_2">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>300</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="placeholderText">
+                    <string>DRUGA DANA</string>
+                   </property>
+                   <property name="clearButtonEnabled">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="lineEdit">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>300</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="placeholderText">
+                    <string>PIERWSZA DANA</string>
+                   </property>
+                   <property name="clearButtonEnabled">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QFrame" name="row_frame_2">
+             <property name="styleSheet">
+              <string notr="true">QLabel{
+color: rgb(33, 38, 55);
+}
+QLineEdit{
+background-color: rgb(242, 242, 246);
+border: none;
+padding-left: 50px;
+color: rgb(33, 38, 55);
+}</string>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::NoFrame</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_7">
+              <property name="spacing">
+               <number>0</number>
+              </property>
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item alignment="Qt::AlignLeft">
+               <widget class="QLabel" name="label_2">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>250</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Segoe UI Symbol</family>
+                  <pointsize>10</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>WIERSZ DRUGI</string>
+                </property>
+                <property name="textFormat">
+                 <enum>Qt::PlainText</enum>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QFrame" name="frame_5">
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_6">
+                 <property name="spacing">
+                  <number>2</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>70</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="QLineEdit" name="lineEdit_4">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>300</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="dragEnabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="placeholderText">
+                    <string>TRZECIA DANA</string>
+                   </property>
+                   <property name="clearButtonEnabled">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="lineEdit_5">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>300</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="placeholderText">
+                    <string>DRUGA DANA</string>
+                   </property>
+                   <property name="clearButtonEnabled">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="lineEdit_6">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>300</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="placeholderText">
+                    <string>PIERWSZA DANA</string>
+                   </property>
+                   <property name="clearButtonEnabled">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QFrame" name="frame_3">
+             <property name="frameShape">
+              <enum>QFrame::NoFrame</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_4">
+              <property name="spacing">
+               <number>0</number>
+              </property>
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QFrame" name="frame">
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QFrame" name="frame_2">
+                <property name="styleSheet">
+                 <string notr="true">QPushButton{
+color: rgb(242, 242, 246);
+background-color: rgb(76, 118, 232);
+border: none;
+height: 40;
+}
+QPushButton:hover{
+background-color: rgb(51, 82, 148);
+}
+</string>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_5">
+                 <property name="spacing">
+                  <number>5</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="QPushButton" name="pushButton">
+                   <property name="text">
+                    <string>AKCEPTUJ</string>
+                   </property>
+                   <property name="checkable">
+                    <bool>false</bool>
+                   </property>
+                   <property name="flat">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="pushButton_2">
+                   <property name="text">
+                    <string>WYCZYŚĆ</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
           </layout>
          </widget>
          <widget class="QWidget" name="zalozenia_page"/>
@@ -511,31 +935,6 @@ border-bottom: 1px solid rgb(255, 255, 255);
          <widget class="QWidget" name="wyniki_page"/>
          <widget class="QWidget" name="excel_page"/>
          <widget class="QWidget" name="schemat_page"/>
-        </widget>
-       </item>
-       <item>
-        <widget class="QFrame" name="frame_3">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>25</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>25</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(33, 33, 33);</string>
-         </property>
-         <property name="frameShape">
-          <enum>QFrame::StyledPanel</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
-         </property>
         </widget>
        </item>
       </layout>

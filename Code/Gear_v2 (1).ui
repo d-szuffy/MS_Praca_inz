@@ -321,7 +321,7 @@ border: none;
 height: 40;
 }
 QPushButton:hover{
-background-color: rgb(51, 82, 148);
+	background-color: rgb(61, 101, 206);
 }
 
 QPushButton:checked{
@@ -537,43 +537,306 @@ color: rgb(33, 38, 55);
               <property name="bottomMargin">
                <number>0</number>
               </property>
-              <item alignment="Qt::AlignLeft">
-               <widget class="QLabel" name="label">
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>30</height>
-                 </size>
+              <item>
+               <widget class="QFrame" name="frame_6">
+                <property name="frameShape">
+                 <enum>QFrame::NoFrame</enum>
                 </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>16777215</width>
-                  <height>30</height>
-                 </size>
+                <property name="frameShadow">
+                 <enum>QFrame::Plain</enum>
                 </property>
-                <property name="font">
-                 <font>
-                  <family>Segoe UI Symbol</family>
-                  <pointsize>10</pointsize>
-                  <weight>75</weight>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>WIERSZ PIERWSZY</string>
-                </property>
-                <property name="textFormat">
-                 <enum>Qt::PlainText</enum>
-                </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_6">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="QFrame" name="frame_7">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>25</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background-color: rgb(255, 255, 255);</string>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::NoFrame</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Plain</enum>
+                   </property>
+                   <widget class="QLabel" name="label_3">
+                    <property name="geometry">
+                     <rect>
+                      <x>0</x>
+                      <y>0</y>
+                      <width>98</width>
+                      <height>30</height>
+                     </rect>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>250</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Segoe UI Symbol</family>
+                      <pointsize>10</pointsize>
+                      <weight>75</weight>
+                      <bold>true</bold>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>WIERSZ DRUGI</string>
+                    </property>
+                    <property name="textFormat">
+                     <enum>Qt::PlainText</enum>
+                    </property>
+                   </widget>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QFrame" name="frame_8">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>25</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QComboBox{
+background-color: rgb(255, 255, 255);
+color: rgb(33, 38, 55);
+border: 1px solid rgb(242, 242, 246);
+padding: 1px 1px 1px 1px;
+}
+QComboBox::drop-down{
+background-color: rgb(76, 118, 232);
+border-left: 1px solid rgb(242, 242, 246);
+width:50px
+}
+QComboBox::down-arrow{
+image: url(:/demo/icons/cil-arrow-circle-bottom.png);
+width: 40px;
+height: 40px;
+}
+QComboBox::drop-down::hover{
+	background-color: rgb(61, 101, 206);
+}
+QListView::item {
+   background: qradialgradient(
+   cx: 0.5, cy: -1.6, fx: 0.5, fy: 0,
+   radius: 2,
+   stop: 0 #C4C4C4,
+   stop: 1 #DBDBDB );
+   border-style: solid;
+   border-width: 1px;
+   border-color: rgb(0, 93, 168);
+   border-radius: 20px;
+}</string>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::NoFrame</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Plain</enum>
+                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_8">
+                    <property name="spacing">
+                     <number>0</number>
+                    </property>
+                    <property name="leftMargin">
+                     <number>60</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <item>
+                     <widget class="QComboBox" name="comboBox">
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>40</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <pointsize>14</pointsize>
+                        <weight>50</weight>
+                        <bold>false</bold>
+                        <strikeout>false</strikeout>
+                        <kerning>true</kerning>
+                       </font>
+                      </property>
+                      <property name="cursor">
+                       <cursorShape>PointingHandCursor</cursorShape>
+                      </property>
+                      <property name="contextMenuPolicy">
+                       <enum>Qt::DefaultContextMenu</enum>
+                      </property>
+                      <property name="autoFillBackground">
+                       <bool>false</bool>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true"/>
+                      </property>
+                      <property name="locale">
+                       <locale language="Polish" country="Poland"/>
+                      </property>
+                      <property name="inputMethodHints">
+                       <set>Qt::ImhNone</set>
+                      </property>
+                      <property name="editable">
+                       <bool>false</bool>
+                      </property>
+                      <property name="currentText">
+                       <string notr="true"/>
+                      </property>
+                      <property name="currentIndex">
+                       <number>-1</number>
+                      </property>
+                      <property name="sizeAdjustPolicy">
+                       <enum>QComboBox::AdjustToContents</enum>
+                      </property>
+                      <property name="iconSize">
+                       <size>
+                        <width>24</width>
+                        <height>24</height>
+                       </size>
+                      </property>
+                      <property name="placeholderText">
+                       <string notr="true">CHOOSE MATERIAL</string>
+                      </property>
+                      <property name="frame">
+                       <bool>false</bool>
+                      </property>
+                      <item>
+                       <property name="text">
+                        <string>a</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>asdf</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>xzxcv</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>asbabfba</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>Nowy element</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>a</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>ba</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>b</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>ab</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>a</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>bab</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>Nowy element</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>f</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>av</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>f</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>av</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>f</string>
+                       </property>
+                      </item>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                </layout>
                </widget>
               </item>
               <item>
                <widget class="QFrame" name="frame_4">
                 <property name="frameShape">
-                 <enum>QFrame::StyledPanel</enum>
+                 <enum>QFrame::NoFrame</enum>
                 </property>
                 <property name="frameShadow">
-                 <enum>QFrame::Raised</enum>
+                 <enum>QFrame::Plain</enum>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_5">
                  <property name="spacing">
@@ -669,7 +932,10 @@ color: rgb(33, 38, 55);
            <item>
             <widget class="QFrame" name="row_frame_2">
              <property name="styleSheet">
-              <string notr="true">QLabel{
+              <string notr="true">QFrame{
+	background-color: rgb(255, 255, 255);
+}
+QLabel{
 color: rgb(33, 38, 55);
 }
 QLineEdit{
@@ -683,7 +949,7 @@ color: rgb(33, 38, 55);
               <enum>QFrame::NoFrame</enum>
              </property>
              <property name="frameShadow">
-              <enum>QFrame::Raised</enum>
+              <enum>QFrame::Plain</enum>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_7">
               <property name="spacing">
@@ -734,10 +1000,10 @@ color: rgb(33, 38, 55);
               <item>
                <widget class="QFrame" name="frame_5">
                 <property name="frameShape">
-                 <enum>QFrame::StyledPanel</enum>
+                 <enum>QFrame::NoFrame</enum>
                 </property>
                 <property name="frameShadow">
-                 <enum>QFrame::Raised</enum>
+                 <enum>QFrame::Plain</enum>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_6">
                  <property name="spacing">

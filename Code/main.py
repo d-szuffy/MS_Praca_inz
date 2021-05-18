@@ -32,9 +32,8 @@ class MyForm(QMainWindow):
         self.ui.diameters_btn.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.srednice_page))
         self.ui.excel_btn.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.excel_page))
         self.ui.scheme_btn.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.schemat_page))
-
-
-
+        self.ui.comboBox.setEditable(True)
+        print(self.ui.stackedWidget.currentIndex())
 # Restore or maximize your window
 
 

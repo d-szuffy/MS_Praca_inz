@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'Gear_v2 (1)cYpWJC.ui'
+## Form generated from reading UI file 'Gear_v2 (1)KcFmwM.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -143,7 +143,7 @@ class Ui_MainWindow(object):
 "height: 40;\n"
 "}\n"
 "QPushButton:hover{\n"
-"background-color: rgb(51, 82, 148);\n"
+"	background-color: rgb(61, 101, 206);\n"
 "}\n"
 "\n"
 "QPushButton:checked{\n"
@@ -247,24 +247,115 @@ class Ui_MainWindow(object):
         self.verticalLayout_4.setSpacing(0)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
-        self.label = QLabel(self.row_frame_1)
-        self.label.setObjectName(u"label")
-        self.label.setMinimumSize(QSize(0, 30))
-        self.label.setMaximumSize(QSize(16777215, 30))
+        self.frame_6 = QFrame(self.row_frame_1)
+        self.frame_6.setObjectName(u"frame_6")
+        self.frame_6.setFrameShape(QFrame.NoFrame)
+        self.frame_6.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_6 = QHBoxLayout(self.frame_6)
+        self.horizontalLayout_6.setSpacing(0)
+        self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
+        self.horizontalLayout_6.setContentsMargins(0, 0, 0, 0)
+        self.frame_7 = QFrame(self.frame_6)
+        self.frame_7.setObjectName(u"frame_7")
+        self.frame_7.setMinimumSize(QSize(0, 25))
+        self.frame_7.setStyleSheet(u"background-color: rgb(255, 255, 255);")
+        self.frame_7.setFrameShape(QFrame.NoFrame)
+        self.frame_7.setFrameShadow(QFrame.Raised)
+        self.label_3 = QLabel(self.frame_7)
+        self.label_3.setObjectName(u"label_3")
+        self.label_3.setGeometry(QRect(0, 0, 98, 30))
+        self.label_3.setMinimumSize(QSize(0, 30))
+        self.label_3.setMaximumSize(QSize(250, 30))
         font2 = QFont()
         font2.setFamily(u"Segoe UI Symbol")
         font2.setPointSize(10)
         font2.setBold(True)
         font2.setWeight(75)
-        self.label.setFont(font2)
-        self.label.setTextFormat(Qt.PlainText)
+        self.label_3.setFont(font2)
+        self.label_3.setTextFormat(Qt.PlainText)
 
-        self.verticalLayout_4.addWidget(self.label, 0, Qt.AlignLeft)
+        self.horizontalLayout_6.addWidget(self.frame_7)
+
+        self.frame_8 = QFrame(self.frame_6)
+        self.frame_8.setObjectName(u"frame_8")
+        self.frame_8.setMinimumSize(QSize(0, 25))
+        self.frame_8.setFrameShape(QFrame.NoFrame)
+        self.frame_8.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_8 = QVBoxLayout(self.frame_8)
+        self.verticalLayout_8.setObjectName(u"verticalLayout_8")
+        self.verticalLayout_8.setContentsMargins(60, -1, -1, -1)
+        self.comboBox = QComboBox(self.frame_8)
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.setObjectName(u"comboBox")
+        self.comboBox.setMinimumSize(QSize(0, 40))
+        font3 = QFont()
+        font3.setPointSize(14)
+        font3.setBold(False)
+        font3.setWeight(50)
+        font3.setStrikeOut(False)
+        font3.setKerning(True)
+        self.comboBox.setFont(font3)
+        self.comboBox.setCursor(QCursor(Qt.PointingHandCursor))
+        self.comboBox.setStyleSheet(u"QComboBox{\n"
+"background-color: rgb(255, 255, 255);\n"
+"color: rgb(33, 38, 55);\n"
+"border: 1px solid rgb(242, 242, 246);\n"
+"}\n"
+"QComboBox::drop-down{\n"
+"background-color: rgb(76, 118, 232);\n"
+"border-left: 1px solid rgb(242, 242, 246);\n"
+"width:50px\n"
+"}\n"
+"QComboBox::down-arrow{\n"
+"image: url(:/demo/icons/cil-arrow-circle-bottom.png);\n"
+"width: 40px;\n"
+"height: 40px;\n"
+"}\n"
+"QComboBox::drop-down::hover{\n"
+"	background-color: rgb(61, 101, 206);\n"
+"}\n"
+"QComboBox QListView::item {\n"
+"   background: qradialgradient(\n"
+"   cx: 0.5, cy: -1.6, fx: 0.5, fy: 0,\n"
+"   radius: 2,\n"
+"   stop: 0 #C4C4C4,\n"
+"   stop: 1 #DBDBDB );\n"
+"   border-style: solid;\n"
+"   border-width: 1px;\n"
+"   border-color: rgb(0, 93, 168);\n"
+"   border-radius: 20px;\n"
+"}")
+        self.comboBox.setPlaceholderText(u"WYBIERZ MATERIA\u0141")
+        self.comboBox.setFrame(True)
+
+        self.verticalLayout_8.addWidget(self.comboBox)
+
+
+        self.horizontalLayout_6.addWidget(self.frame_8)
+
+
+        self.verticalLayout_4.addWidget(self.frame_6)
 
         self.frame_4 = QFrame(self.row_frame_1)
         self.frame_4.setObjectName(u"frame_4")
-        self.frame_4.setFrameShape(QFrame.StyledPanel)
-        self.frame_4.setFrameShadow(QFrame.Raised)
+        self.frame_4.setFrameShape(QFrame.NoFrame)
+        self.frame_4.setFrameShadow(QFrame.Plain)
         self.verticalLayout_5 = QVBoxLayout(self.frame_4)
         self.verticalLayout_5.setSpacing(2)
         self.verticalLayout_5.setObjectName(u"verticalLayout_5")
@@ -328,7 +419,7 @@ class Ui_MainWindow(object):
 
         self.frame_5 = QFrame(self.row_frame_2)
         self.frame_5.setObjectName(u"frame_5")
-        self.frame_5.setFrameShape(QFrame.StyledPanel)
+        self.frame_5.setFrameShape(QFrame.NoFrame)
         self.frame_5.setFrameShadow(QFrame.Raised)
         self.verticalLayout_6 = QVBoxLayout(self.frame_5)
         self.verticalLayout_6.setSpacing(2)
@@ -468,7 +559,25 @@ class Ui_MainWindow(object):
         self.final_result_btn.setText(QCoreApplication.translate("MainWindow", u"WYNIKI", None))
         self.excel_btn.setText(QCoreApplication.translate("MainWindow", u"EXCEL", None))
         self.scheme_btn.setText(QCoreApplication.translate("MainWindow", u"SCHEMAT", None))
-        self.label.setText(QCoreApplication.translate("MainWindow", u"WIERSZ PIERWSZY", None))
+        self.label_3.setText(QCoreApplication.translate("MainWindow", u"WIERSZ DRUGI", None))
+        self.comboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"a", None))
+        self.comboBox.setItemText(1, QCoreApplication.translate("MainWindow", u"asdf", None))
+        self.comboBox.setItemText(2, QCoreApplication.translate("MainWindow", u"xzxcv", None))
+        self.comboBox.setItemText(3, QCoreApplication.translate("MainWindow", u"asbabfba", None))
+        self.comboBox.setItemText(4, QCoreApplication.translate("MainWindow", u"Nowy element", None))
+        self.comboBox.setItemText(5, QCoreApplication.translate("MainWindow", u"a", None))
+        self.comboBox.setItemText(6, QCoreApplication.translate("MainWindow", u"ba", None))
+        self.comboBox.setItemText(7, QCoreApplication.translate("MainWindow", u"b", None))
+        self.comboBox.setItemText(8, QCoreApplication.translate("MainWindow", u"ab", None))
+        self.comboBox.setItemText(9, QCoreApplication.translate("MainWindow", u"a", None))
+        self.comboBox.setItemText(10, QCoreApplication.translate("MainWindow", u"bab", None))
+        self.comboBox.setItemText(11, QCoreApplication.translate("MainWindow", u"Nowy element", None))
+        self.comboBox.setItemText(12, QCoreApplication.translate("MainWindow", u"f", None))
+        self.comboBox.setItemText(13, QCoreApplication.translate("MainWindow", u"av", None))
+        self.comboBox.setItemText(14, QCoreApplication.translate("MainWindow", u"f", None))
+        self.comboBox.setItemText(15, QCoreApplication.translate("MainWindow", u"av", None))
+        self.comboBox.setItemText(16, QCoreApplication.translate("MainWindow", u"f", None))
+
         self.lineEdit_3.setPlaceholderText(QCoreApplication.translate("MainWindow", u"TRZECIA DANA", None))
         self.lineEdit_2.setPlaceholderText(QCoreApplication.translate("MainWindow", u"DRUGA DANA", None))
         self.lineEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"PIERWSZA DANA", None))

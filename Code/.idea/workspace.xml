@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="85f41b2f-634b-4c83-b9b0-5b8c684c203d" name="Default Changelist" comment="" />
+    <list default="true" id="85f41b2f-634b-4c83-b9b0-5b8c684c203d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/data/results.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/units.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Code.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Code.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gear_UI.py" beforeDir="false" afterPath="$PROJECT_DIR$/Gear_UI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gear_v3.ui" beforeDir="false" afterPath="$PROJECT_DIR$/Gear_v3.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/input_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/input_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,6 +35,9 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -65,71 +78,15 @@
     </task>
     <servers />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="2654" y="355" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1634235868450">
-      <screen x="1920" y="0" width="2560" height="1400" />
-    </state>
-    <state x="2654" y="355" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1634235868450" />
-    <state width="1899" height="334" key="GridCell.Tab.0.bottom" timestamp="1634295239039">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="2539" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-3840.-415.3072.1688@-3840.-415.3072.1688" timestamp="1634243347814" />
-    <state width="3819" height="350" key="GridCell.Tab.0.bottom/0.0.1920.1040/-3840.-415.3840.2120@-3840.-415.3840.2120" timestamp="1634249900021" />
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1631826307129" />
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.2560.1400@0.0.1920.1040" timestamp="1634230687484" />
-    <state width="2539" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1634240991000" />
-    <state width="1899" height="334" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1634295239039" />
-    <state width="1899" height="334" key="GridCell.Tab.0.center" timestamp="1634295239039">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="2539" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-3840.-415.3072.1688@-3840.-415.3072.1688" timestamp="1634243347814" />
-    <state width="3819" height="350" key="GridCell.Tab.0.center/0.0.1920.1040/-3840.-415.3840.2120@-3840.-415.3840.2120" timestamp="1634249900021" />
-    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1631826307129" />
-    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.2560.1400@0.0.1920.1040" timestamp="1634230687484" />
-    <state width="2539" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1634240991000" />
-    <state width="1899" height="334" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1634295239039" />
-    <state width="1899" height="334" key="GridCell.Tab.0.left" timestamp="1634295239039">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="2539" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-3840.-415.3072.1688@-3840.-415.3072.1688" timestamp="1634243347814" />
-    <state width="3819" height="350" key="GridCell.Tab.0.left/0.0.1920.1040/-3840.-415.3840.2120@-3840.-415.3840.2120" timestamp="1634249900021" />
-    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1631826307129" />
-    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.2560.1400@0.0.1920.1040" timestamp="1634230687484" />
-    <state width="2539" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1634240991000" />
-    <state width="1899" height="334" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1634295239039" />
-    <state width="1899" height="334" key="GridCell.Tab.0.right" timestamp="1634295239039">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="2539" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-3840.-415.3072.1688@-3840.-415.3072.1688" timestamp="1634243347814" />
-    <state width="3819" height="350" key="GridCell.Tab.0.right/0.0.1920.1040/-3840.-415.3840.2120@-3840.-415.3840.2120" timestamp="1634249900021" />
-    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1631826307129" />
-    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.2560.1400@0.0.1920.1040" timestamp="1634230687484" />
-    <state width="2539" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1634240991000" />
-    <state width="1899" height="334" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1634295239039" />
-    <state width="2539" height="492" key="GridCell.Tab.1.bottom" timestamp="1634235910277">
-      <screen x="1920" y="0" width="2560" height="1400" />
-    </state>
-    <state width="2539" height="492" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1634235910277" />
-    <state width="2539" height="492" key="GridCell.Tab.1.center" timestamp="1634235910277">
-      <screen x="1920" y="0" width="2560" height="1400" />
-    </state>
-    <state width="2539" height="492" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1634235910277" />
-    <state width="2539" height="492" key="GridCell.Tab.1.left" timestamp="1634235910277">
-      <screen x="1920" y="0" width="2560" height="1400" />
-    </state>
-    <state width="2539" height="492" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1634235910277" />
-    <state width="2539" height="492" key="GridCell.Tab.1.right" timestamp="1634235910277">
-      <screen x="1920" y="0" width="2560" height="1400" />
-    </state>
-    <state width="2539" height="492" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1634235910277" />
-    <state x="6" y="108" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1634250802169">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="6" y="108" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1634250802169" />
-    <state x="-2425" y="62" width="1008" height="1027" key="search.everywhere.popup" timestamp="1634249276741">
-      <screen x="-3840" y="-415" width="3840" height="2120" />
-    </state>
-    <state x="-2425" y="62" width="1008" height="1027" key="search.everywhere.popup/0.0.1920.1040/-3840.-415.3840.2120@-3840.-415.3840.2120" timestamp="1634249276741" />
-    <state x="2863" y="315" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1634240169436" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

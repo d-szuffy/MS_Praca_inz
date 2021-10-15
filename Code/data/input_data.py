@@ -12,3 +12,6 @@ class InputData:
     durability_unit = None
     wheelbase = None
     wheelbase_unit = None
+    pressure_angle = None
+    pinion_tooth_number = None
+

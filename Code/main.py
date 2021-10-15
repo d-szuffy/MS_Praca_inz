@@ -3,9 +3,11 @@ from PyQt5.QtGui import QDoubleValidator, QValidator
 from decimal import Decimal
 import Gear_UI
 import sys
+import math
 
 from data.input_data import *
 from data.preconditions import *
+from data.results import *
 from PyQt5.QtWidgets import QMainWindow, QApplication, QMessageBox, QPushButton
 from PyQt5.QtCore import Qt, QPropertyAnimation
 
@@ -71,10 +73,12 @@ class MyForm(QMainWindow):
             lambda: self.set_current_page(self.ui.srednice_page, self.ui.diameters_btn))
         self.ui.excel_btn.clicked.connect(lambda: self.set_current_page(self.ui.excel_page, self.ui.excel_btn))
         self.ui.scheme_btn.clicked.connect(lambda: self.set_current_page(self.ui.schemat_page, self.ui.scheme_btn))
-        self.ui.clear_btn.clicked.connect(lambda: self.clear_input_data())
+        self.ui.clear_btn.clicked.connect(lambda: self.clear_input_data(True))
+        self.ui.preconditions_clear_btn.clicked.connect(lambda: self.clear_input_data(False))
         self.ui.calculate_btn.clicked.connect(lambda: self.get_and_validate_input_date())
         self.ui.radio_btn_soft_wheels.clicked.connect(lambda: self.toggle_material_combo_box(True))
         self.ui.radio_btn_hard_wheels.clicked.connect(lambda: self.toggle_material_combo_box(False))
+        self.ui.normal_module_confirm_btn.clicked.connect(lambda: self.enable_next_geometric_parameters_after_confirming_variables())
         self.power_validator = RangeDoubleValidator()
         self.power_validator.setRange(0.0, 1000, 6)
         self.ui.lineEdit_power.setValidator(self.power_validator)
@@ -93,6 +97,11 @@ class MyForm(QMainWindow):
         self.wheelbase_validator = RangeDoubleValidator()
         self.wheelbase_validator.setRange(-100, 100, 3)
         self.ui.lineEdit_wheelbase.setValidator(self.wheelbase_validator)
+        self.pressure_angle_validator = RangeDoubleValidator()
+        self.pressure_angle_validator.setRange(0, 90, 3)
+        self.ui.lineEdit_pressure_angle.setValidator(self.pressure_angle_validator)
+
+
 
         # self.ui.comboBox.setEditable(True)
         print(self.ui.stackedWidget.currentIndex())
@@ -168,23 +177,31 @@ class MyForm(QMainWindow):
         self.currentButton = nextButton
         self.ui.stackedWidget.setCurrentWidget(page)
 
-    def clear_input_data(self):
-        self.ui.lineEdit_power.clear()
-        self.ui.lineEdit_ratio.clear()
-        self.ui.lineEdit_velocity_in.clear()
-        self.ui.lineEdit_velocity_out.clear()
-        self.ui.lineEdit_durability.clear()
-        self.ui.comboBox_power.setCurrentIndex(0)
-        self.ui.comboBox_velocity_in.setCurrentIndex(0)
-        self.ui.comboBox_velocity_out.setCurrentIndex(0)
-        self.ui.comboBox_driven_machine.setCurrentIndex(0)
-        self.ui.comboBox_driving_machine.setCurrentIndex(0)
-        self.ui.comboBox_durability.setCurrentIndex(0)
-        self.ui.lineEdit_wheelbase.clear()
-        self.ui.comboBox_wheelbase.setCurrentIndex(0)
+    def clear_input_data(self, which_page):
+        if which_page:
+            self.ui.lineEdit_power.clear()
+            self.ui.lineEdit_ratio.clear()
+            self.ui.lineEdit_velocity_in.clear()
+            self.ui.lineEdit_velocity_out.clear()
+            self.ui.lineEdit_durability.clear()
+            self.ui.comboBox_power.setCurrentIndex(0)
+            self.ui.comboBox_velocity_in.setCurrentIndex(0)
+            self.ui.comboBox_velocity_out.setCurrentIndex(0)
+            self.ui.comboBox_driven_machine.setCurrentIndex(0)
+            self.ui.comboBox_driving_machine.setCurrentIndex(0)
+            self.ui.comboBox_durability.setCurrentIndex(0)
+            self.ui.lineEdit_wheelbase.clear()
+            self.ui.comboBox_wheelbase.setCurrentIndex(0)
+        else:
+            self.ui.comboBox_pinion_material.setCurrentIndex(0)
+            self.ui.comboBox_wheel_material.setCurrentIndex(0)
+            self.ui.comboBox_accuracy_class.setCurrentIndex(0)
+            self.ui.lineEdit_pressure_angle.clear()
+            self.ui.comboBox_helix_angle.setCurrentIndex(0)
+            self.ui.comboBox_teeth_number.setCurrentIndex(0)
 
     def get_and_validate_input_date(self):
-        power, ratio, velocity_in, velocity_out, machine_driving, machine_driven, durability, wheelbase = \
+        power, ratio, velocity_in, velocity_out, machine_driving, machine_driven, durability, wheelbase, pressure_angle = \
             self.ui.lineEdit_power.text(), \
             self.ui.lineEdit_ratio.text(), \
             self.ui.lineEdit_velocity_in.text(), \
@@ -192,9 +209,10 @@ class MyForm(QMainWindow):
             self.ui.comboBox_driving_machine.currentText(), \
             self.ui.comboBox_driven_machine.currentText(), \
             self.ui.lineEdit_durability.text(), \
-            self.ui.lineEdit_wheelbase.text()
+            self.ui.lineEdit_wheelbase.text(), \
+            self.ui.lineEdit_pressure_angle.text()
         is_data_filled = not (
-                    power == "" or ratio == "" or velocity_in == "" or velocity_out == "" or durability == "" or wheelbase == "")
+                    power == "" or ratio == "" or velocity_in == "" or velocity_out == "" or durability == "" or pressure_angle == "" or wheelbase == "")
         if not is_data_filled:
             msgBox = QMessageBox()
             msgBox.setIcon(QMessageBox.Warning)
@@ -204,6 +222,7 @@ class MyForm(QMainWindow):
             msgBox.exec()
         if is_data_filled:
             self.enable_output_buttons()
+        self.rewriting_input_data_to_variables()
 
     def enable_output_buttons(self):
 
@@ -250,6 +269,54 @@ class MyForm(QMainWindow):
                  WheelMaterial._15HN.value,
                  WheelMaterial._45.value, WheelMaterial._18H2N2.value, WheelMaterial._17HNM.value,
                  WheelMaterial._40HM.value])
+
+
+    def rewriting_input_data_to_variables(self):
+        print("rewriting_input_data_działa")
+
+        InputData.power = float(self.ui.lineEdit_power.text())
+        InputData.ratio = float(self.ui.lineEdit_ratio.text())
+        InputData.rad_velocity_in = float(self.ui.lineEdit_velocity_in.text())
+        InputData.rad_velocity_out = float(self.ui.lineEdit_velocity_out.text())
+        InputData.driving_machine = self.ui.comboBox_driving_machine.currentText()
+        InputData.driven_machine = self.ui.comboBox_driven_machine.currentText()
+        InputData.wheelbase = float(self.ui.lineEdit_wheelbase.text())
+        InputData.pressure_angle = float(self.ui.lineEdit_pressure_angle.text())
+        InputData.pinion_tooth_number = float(self.ui.comboBox_teeth_number.currentText())
+        print("rewriting_input_data_działa")
+        self.first_calculation_on_input_data()
+
+
+    def rewriting_results_data_to_line_edits(self):
+        self.ui.lineEdit_pinion_torque.setText(str(Result.pinion_torque))
+        self.ui.lineEdit_calculated_normal_module.setText(str(Result.calculated_normal_module))
+
+    def first_calculation_on_input_data(self):
+        print("first_calculations_nie_działa")
+        print(InputData.pressure_angle)
+        Result.pinion_torque = InputData.power / InputData.rad_velocity_in
+        print(Result.pinion_torque)
+        Result.calculated_normal_module = (InputData.wheelbase * 2 * math.cos(InputData.pressure_angle)) / (InputData.pinion_tooth_number * (1 + InputData.ratio))
+        print(Result.calculated_normal_module)
+        print("first_calculations_działa")
+
+        self.rewriting_results_data_to_line_edits()
+
+    def enable_next_geometric_parameters_after_confirming_variables(self):
+        if Result.normal_module == "":
+            msgBox = QMessageBox()
+            msgBox.setIcon(QMessageBox.Error)
+            msgBox.setText("Nie została podana wartość modułu normalnego")
+            msgBox.setWindowTitle("Moduł normalny")
+            msgBox.setStandardButtons(QMessageBox.Ok)
+            msgBox.exec()
+        else:
+            self.ui.lineEdit_bottom_ratio_border.setEnabled(True)
+            self.ui.lineEdit_upper_ratio_border.setEnabled(True)
+            self.ui.lineEdit_calculated_tooth_number.setEnabled(True)
+            self.ui.lineEdit_2nd_wheel_tooth_number.setEnabled(True)
+            self.ui.lineEdit_real_ratio.setEnabled(True)
+
 
     # input_data = InputData(power, ratio, velocity_in, velocity_out, machine_driving, machine_driven, durability)
     #

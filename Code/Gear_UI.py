@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'Gear_v3VQKABw.ui'
+## Form generated from reading UI file 'Gear_v3TACiXE.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -18,7 +18,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(922, 667)
+        MainWindow.resize(920, 665)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.centralwidget.setStyleSheet(u"background-color: rgb(33, 33, 33);")
@@ -1371,6 +1371,451 @@ class Ui_MainWindow(object):
         self.stackedWidget.addWidget(self.zalozenia_page)
         self.wyniki_wstepne_page = QWidget()
         self.wyniki_wstepne_page.setObjectName(u"wyniki_wstepne_page")
+        self.verticalLayout_11 = QVBoxLayout(self.wyniki_wstepne_page)
+        self.verticalLayout_11.setSpacing(0)
+        self.verticalLayout_11.setObjectName(u"verticalLayout_11")
+        self.verticalLayout_11.setContentsMargins(0, 0, 0, 0)
+        self.row_frame_3 = QFrame(self.wyniki_wstepne_page)
+        self.row_frame_3.setObjectName(u"row_frame_3")
+        sizePolicy.setHeightForWidth(self.row_frame_3.sizePolicy().hasHeightForWidth())
+        self.row_frame_3.setSizePolicy(sizePolicy)
+        self.row_frame_3.setFont(font)
+        self.row_frame_3.setStyleSheet(u"QLabel{\n"
+"color: rgb(33, 38, 55);\n"
+"}\n"
+"QLineEdit{\n"
+"background-color: rgb(242, 242, 246);\n"
+"border: none;\n"
+"padding-left: 3px;\n"
+"color: rgb(33, 38, 55);\n"
+"}\n"
+"\n"
+"QComboBox{\n"
+"padding-left: 3px;\n"
+"margin-left: 10px;\n"
+"}\n"
+"QComboBox{\n"
+"background-color: rgb(255, 255, 255);\n"
+"color: rgb(33, 38, 55);\n"
+"border: 1px solid rgb(242, 242, 246);\n"
+"padding: 1px 1px 1px 1px;\n"
+"}\n"
+"QComboBox::drop-down{\n"
+"background-color: rgb(76, 118, 232);\n"
+"border-left: 1px solid rgb(242, 242, 246);\n"
+"width:20px;\n"
+"}\n"
+"QComboBox::down-arrow{\n"
+"image: url(:/demo/icons/cil-arrow-circle-bottom.png);\n"
+"width: 20px;\n"
+"height: 20px;\n"
+"}\n"
+"QComboBox::drop-down::hover{\n"
+"	background-color: rgb(61, 101, 206);\n"
+"}\n"
+"QListView::item {\n"
+"   background: qradialgradient(\n"
+"   cx: 0.5, cy: -1.6, fx: 0.5, fy: 0,\n"
+"   radius: 2,\n"
+"   stop: 0 #C4C4C4,\n"
+"   stop: 1 #DBDBDB );\n"
+"   border-style: solid;\n"
+"   border-width: 1px;\n"
+"   border-color: rgb(0, 93, 168);\n"
+"   border"
+                        "-radius: 20px;\n"
+"}")
+        self.row_frame_3.setFrameShape(QFrame.NoFrame)
+        self.row_frame_3.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_9 = QVBoxLayout(self.row_frame_3)
+        self.verticalLayout_9.setSpacing(0)
+        self.verticalLayout_9.setObjectName(u"verticalLayout_9")
+        self.verticalLayout_9.setContentsMargins(0, 0, 0, 0)
+        self.frame_preconditions_2 = QFrame(self.row_frame_3)
+        self.frame_preconditions_2.setObjectName(u"frame_preconditions_2")
+        sizePolicy.setHeightForWidth(self.frame_preconditions_2.sizePolicy().hasHeightForWidth())
+        self.frame_preconditions_2.setSizePolicy(sizePolicy)
+        self.frame_preconditions_2.setMaximumSize(QSize(16777215, 50))
+        self.frame_preconditions_2.setFont(font)
+        self.frame_preconditions_2.setFrameShape(QFrame.NoFrame)
+        self.frame_preconditions_2.setFrameShadow(QFrame.Plain)
+        self.horizontalLayout_11 = QHBoxLayout(self.frame_preconditions_2)
+        self.horizontalLayout_11.setSpacing(0)
+        self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
+        self.horizontalLayout_11.setContentsMargins(0, 0, 0, 0)
+        self.label_preconditions_2 = QLabel(self.frame_preconditions_2)
+        self.label_preconditions_2.setObjectName(u"label_preconditions_2")
+        sizePolicy2.setHeightForWidth(self.label_preconditions_2.sizePolicy().hasHeightForWidth())
+        self.label_preconditions_2.setSizePolicy(sizePolicy2)
+        self.label_preconditions_2.setMinimumSize(QSize(260, 30))
+        self.label_preconditions_2.setMaximumSize(QSize(260, 30))
+        self.label_preconditions_2.setFont(font1)
+        self.label_preconditions_2.setTextFormat(Qt.PlainText)
+
+        self.horizontalLayout_11.addWidget(self.label_preconditions_2, 0, Qt.AlignHCenter|Qt.AlignVCenter)
+
+
+        self.verticalLayout_9.addWidget(self.frame_preconditions_2)
+
+        self.frame_input_data_3 = QFrame(self.row_frame_3)
+        self.frame_input_data_3.setObjectName(u"frame_input_data_3")
+        sizePolicy.setHeightForWidth(self.frame_input_data_3.sizePolicy().hasHeightForWidth())
+        self.frame_input_data_3.setSizePolicy(sizePolicy)
+        self.frame_input_data_3.setFont(font)
+        self.frame_input_data_3.setFrameShape(QFrame.NoFrame)
+        self.frame_input_data_3.setFrameShadow(QFrame.Plain)
+        self.verticalLayout_10 = QVBoxLayout(self.frame_input_data_3)
+        self.verticalLayout_10.setSpacing(2)
+        self.verticalLayout_10.setObjectName(u"verticalLayout_10")
+        self.verticalLayout_10.setSizeConstraint(QLayout.SetDefaultConstraint)
+        self.verticalLayout_10.setContentsMargins(10, 0, 0, 0)
+        self.frame_pinion_torque = QFrame(self.frame_input_data_3)
+        self.frame_pinion_torque.setObjectName(u"frame_pinion_torque")
+        sizePolicy3.setHeightForWidth(self.frame_pinion_torque.sizePolicy().hasHeightForWidth())
+        self.frame_pinion_torque.setSizePolicy(sizePolicy3)
+        self.frame_pinion_torque.setMinimumSize(QSize(0, 42))
+        self.frame_pinion_torque.setMaximumSize(QSize(16777215, 42))
+        self.frame_pinion_torque.setStyleSheet(u"")
+        self.frame_pinion_torque.setFrameShape(QFrame.StyledPanel)
+        self.frame_pinion_torque.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_36 = QHBoxLayout(self.frame_pinion_torque)
+        self.horizontalLayout_36.setSpacing(0)
+        self.horizontalLayout_36.setObjectName(u"horizontalLayout_36")
+        self.horizontalLayout_36.setContentsMargins(0, 0, 0, 0)
+        self.label_pinion_toqrue = QLabel(self.frame_pinion_torque)
+        self.label_pinion_toqrue.setObjectName(u"label_pinion_toqrue")
+        sizePolicy2.setHeightForWidth(self.label_pinion_toqrue.sizePolicy().hasHeightForWidth())
+        self.label_pinion_toqrue.setSizePolicy(sizePolicy2)
+        self.label_pinion_toqrue.setMinimumSize(QSize(400, 0))
+        self.label_pinion_toqrue.setMaximumSize(QSize(400, 16777215))
+        self.label_pinion_toqrue.setFont(font)
+
+        self.horizontalLayout_36.addWidget(self.label_pinion_toqrue)
+
+        self.lineEdit_pinion_torque = QLineEdit(self.frame_pinion_torque)
+        self.lineEdit_pinion_torque.setObjectName(u"lineEdit_pinion_torque")
+        sizePolicy1.setHeightForWidth(self.lineEdit_pinion_torque.sizePolicy().hasHeightForWidth())
+        self.lineEdit_pinion_torque.setSizePolicy(sizePolicy1)
+        self.lineEdit_pinion_torque.setMinimumSize(QSize(0, 40))
+        self.lineEdit_pinion_torque.setMaximumSize(QSize(16777215, 16777215))
+        self.lineEdit_pinion_torque.setFont(font)
+        self.lineEdit_pinion_torque.setStyleSheet(u"margin: 10px;")
+        self.lineEdit_pinion_torque.setDragEnabled(False)
+        self.lineEdit_pinion_torque.setClearButtonEnabled(True)
+
+        self.horizontalLayout_36.addWidget(self.lineEdit_pinion_torque)
+
+
+        self.verticalLayout_10.addWidget(self.frame_pinion_torque)
+
+        self.frame_calculated_normal_module = QFrame(self.frame_input_data_3)
+        self.frame_calculated_normal_module.setObjectName(u"frame_calculated_normal_module")
+        sizePolicy3.setHeightForWidth(self.frame_calculated_normal_module.sizePolicy().hasHeightForWidth())
+        self.frame_calculated_normal_module.setSizePolicy(sizePolicy3)
+        self.frame_calculated_normal_module.setMinimumSize(QSize(0, 42))
+        self.frame_calculated_normal_module.setMaximumSize(QSize(16777215, 42))
+        self.frame_calculated_normal_module.setStyleSheet(u"")
+        self.frame_calculated_normal_module.setFrameShape(QFrame.StyledPanel)
+        self.frame_calculated_normal_module.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_32 = QHBoxLayout(self.frame_calculated_normal_module)
+        self.horizontalLayout_32.setSpacing(0)
+        self.horizontalLayout_32.setObjectName(u"horizontalLayout_32")
+        self.horizontalLayout_32.setContentsMargins(0, 0, 0, 0)
+        self.label_calculated_normal_module = QLabel(self.frame_calculated_normal_module)
+        self.label_calculated_normal_module.setObjectName(u"label_calculated_normal_module")
+        sizePolicy2.setHeightForWidth(self.label_calculated_normal_module.sizePolicy().hasHeightForWidth())
+        self.label_calculated_normal_module.setSizePolicy(sizePolicy2)
+        self.label_calculated_normal_module.setMinimumSize(QSize(400, 0))
+        self.label_calculated_normal_module.setMaximumSize(QSize(400, 16777215))
+        self.label_calculated_normal_module.setFont(font)
+
+        self.horizontalLayout_32.addWidget(self.label_calculated_normal_module)
+
+        self.lineEdit_calculated_normal_module = QLineEdit(self.frame_calculated_normal_module)
+        self.lineEdit_calculated_normal_module.setObjectName(u"lineEdit_calculated_normal_module")
+        sizePolicy1.setHeightForWidth(self.lineEdit_calculated_normal_module.sizePolicy().hasHeightForWidth())
+        self.lineEdit_calculated_normal_module.setSizePolicy(sizePolicy1)
+        self.lineEdit_calculated_normal_module.setMinimumSize(QSize(0, 40))
+        self.lineEdit_calculated_normal_module.setMaximumSize(QSize(16777215, 16777215))
+        self.lineEdit_calculated_normal_module.setFont(font)
+        self.lineEdit_calculated_normal_module.setStyleSheet(u"margin: 10px;")
+        self.lineEdit_calculated_normal_module.setDragEnabled(False)
+        self.lineEdit_calculated_normal_module.setClearButtonEnabled(True)
+
+        self.horizontalLayout_32.addWidget(self.lineEdit_calculated_normal_module)
+
+
+        self.verticalLayout_10.addWidget(self.frame_calculated_normal_module)
+
+        self.frame_normal_module = QFrame(self.frame_input_data_3)
+        self.frame_normal_module.setObjectName(u"frame_normal_module")
+        sizePolicy3.setHeightForWidth(self.frame_normal_module.sizePolicy().hasHeightForWidth())
+        self.frame_normal_module.setSizePolicy(sizePolicy3)
+        self.frame_normal_module.setMaximumSize(QSize(16777215, 42))
+        self.frame_normal_module.setStyleSheet(u"")
+        self.frame_normal_module.setFrameShape(QFrame.StyledPanel)
+        self.frame_normal_module.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_26 = QHBoxLayout(self.frame_normal_module)
+        self.horizontalLayout_26.setSpacing(0)
+        self.horizontalLayout_26.setObjectName(u"horizontalLayout_26")
+        self.horizontalLayout_26.setContentsMargins(0, 0, 0, 0)
+        self.label_normal_module = QLabel(self.frame_normal_module)
+        self.label_normal_module.setObjectName(u"label_normal_module")
+        sizePolicy2.setHeightForWidth(self.label_normal_module.sizePolicy().hasHeightForWidth())
+        self.label_normal_module.setSizePolicy(sizePolicy2)
+        self.label_normal_module.setMinimumSize(QSize(400, 40))
+        self.label_normal_module.setMaximumSize(QSize(400, 16777215))
+        self.label_normal_module.setFont(font)
+
+        self.horizontalLayout_26.addWidget(self.label_normal_module)
+
+        self.lineEdit_normal_module = QLineEdit(self.frame_normal_module)
+        self.lineEdit_normal_module.setObjectName(u"lineEdit_normal_module")
+        self.lineEdit_normal_module.setEnabled(True)
+        sizePolicy1.setHeightForWidth(self.lineEdit_normal_module.sizePolicy().hasHeightForWidth())
+        self.lineEdit_normal_module.setSizePolicy(sizePolicy1)
+        self.lineEdit_normal_module.setMinimumSize(QSize(0, 40))
+        self.lineEdit_normal_module.setMaximumSize(QSize(16777215, 16777215))
+        self.lineEdit_normal_module.setFont(font)
+        self.lineEdit_normal_module.setStyleSheet(u"margin: 10px;")
+        self.lineEdit_normal_module.setDragEnabled(False)
+        self.lineEdit_normal_module.setClearButtonEnabled(True)
+
+        self.horizontalLayout_26.addWidget(self.lineEdit_normal_module)
+
+        self.normal_module_confirm_btn = QPushButton(self.frame_normal_module)
+        self.normal_module_confirm_btn.setObjectName(u"normal_module_confirm_btn")
+        self.normal_module_confirm_btn.setStyleSheet(u"QPushButton{\n"
+"color: rgb(242, 242, 246);\n"
+"background-color: rgb(76, 118, 232);\n"
+"border: none;\n"
+"height: 20;\n"
+"margin-right: 10px;\n"
+"padding: 0 5 0 5;\n"
+"}\n"
+"QPushButton:hover{\n"
+"background-color: rgb(51, 82, 148);\n"
+"}\n"
+"")
+
+        self.horizontalLayout_26.addWidget(self.normal_module_confirm_btn)
+
+
+        self.verticalLayout_10.addWidget(self.frame_normal_module)
+
+        self.frame_bottom_ratio_border = QFrame(self.frame_input_data_3)
+        self.frame_bottom_ratio_border.setObjectName(u"frame_bottom_ratio_border")
+        sizePolicy3.setHeightForWidth(self.frame_bottom_ratio_border.sizePolicy().hasHeightForWidth())
+        self.frame_bottom_ratio_border.setSizePolicy(sizePolicy3)
+        self.frame_bottom_ratio_border.setStyleSheet(u"")
+        self.frame_bottom_ratio_border.setFrameShape(QFrame.StyledPanel)
+        self.frame_bottom_ratio_border.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_34 = QHBoxLayout(self.frame_bottom_ratio_border)
+        self.horizontalLayout_34.setSpacing(0)
+        self.horizontalLayout_34.setObjectName(u"horizontalLayout_34")
+        self.horizontalLayout_34.setContentsMargins(0, 0, 0, 0)
+        self.label_bottome_ratio_border = QLabel(self.frame_bottom_ratio_border)
+        self.label_bottome_ratio_border.setObjectName(u"label_bottome_ratio_border")
+        sizePolicy2.setHeightForWidth(self.label_bottome_ratio_border.sizePolicy().hasHeightForWidth())
+        self.label_bottome_ratio_border.setSizePolicy(sizePolicy2)
+        self.label_bottome_ratio_border.setMinimumSize(QSize(400, 40))
+        self.label_bottome_ratio_border.setMaximumSize(QSize(400, 16777215))
+        self.label_bottome_ratio_border.setFont(font)
+
+        self.horizontalLayout_34.addWidget(self.label_bottome_ratio_border)
+
+        self.lineEdit_bottom_ratio_border = QLineEdit(self.frame_bottom_ratio_border)
+        self.lineEdit_bottom_ratio_border.setObjectName(u"lineEdit_bottom_ratio_border")
+        self.lineEdit_bottom_ratio_border.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.lineEdit_bottom_ratio_border.sizePolicy().hasHeightForWidth())
+        self.lineEdit_bottom_ratio_border.setSizePolicy(sizePolicy1)
+        self.lineEdit_bottom_ratio_border.setMinimumSize(QSize(0, 40))
+        self.lineEdit_bottom_ratio_border.setMaximumSize(QSize(16777215, 16777215))
+        self.lineEdit_bottom_ratio_border.setFont(font)
+        self.lineEdit_bottom_ratio_border.setStyleSheet(u"margin: 10px;")
+        self.lineEdit_bottom_ratio_border.setDragEnabled(False)
+        self.lineEdit_bottom_ratio_border.setClearButtonEnabled(True)
+
+        self.horizontalLayout_34.addWidget(self.lineEdit_bottom_ratio_border)
+
+
+        self.verticalLayout_10.addWidget(self.frame_bottom_ratio_border)
+
+        self.frame_upper_ratio_border = QFrame(self.frame_input_data_3)
+        self.frame_upper_ratio_border.setObjectName(u"frame_upper_ratio_border")
+        sizePolicy3.setHeightForWidth(self.frame_upper_ratio_border.sizePolicy().hasHeightForWidth())
+        self.frame_upper_ratio_border.setSizePolicy(sizePolicy3)
+        self.frame_upper_ratio_border.setStyleSheet(u"")
+        self.frame_upper_ratio_border.setFrameShape(QFrame.StyledPanel)
+        self.frame_upper_ratio_border.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_37 = QHBoxLayout(self.frame_upper_ratio_border)
+        self.horizontalLayout_37.setSpacing(0)
+        self.horizontalLayout_37.setObjectName(u"horizontalLayout_37")
+        self.horizontalLayout_37.setContentsMargins(0, 0, 0, 0)
+        self.label_upper_ratio_border = QLabel(self.frame_upper_ratio_border)
+        self.label_upper_ratio_border.setObjectName(u"label_upper_ratio_border")
+        sizePolicy2.setHeightForWidth(self.label_upper_ratio_border.sizePolicy().hasHeightForWidth())
+        self.label_upper_ratio_border.setSizePolicy(sizePolicy2)
+        self.label_upper_ratio_border.setMinimumSize(QSize(400, 0))
+        self.label_upper_ratio_border.setMaximumSize(QSize(400, 16777215))
+        self.label_upper_ratio_border.setFont(font)
+
+        self.horizontalLayout_37.addWidget(self.label_upper_ratio_border)
+
+        self.lineEdit_upper_ratio_border = QLineEdit(self.frame_upper_ratio_border)
+        self.lineEdit_upper_ratio_border.setObjectName(u"lineEdit_upper_ratio_border")
+        self.lineEdit_upper_ratio_border.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.lineEdit_upper_ratio_border.sizePolicy().hasHeightForWidth())
+        self.lineEdit_upper_ratio_border.setSizePolicy(sizePolicy1)
+        self.lineEdit_upper_ratio_border.setMinimumSize(QSize(0, 40))
+        self.lineEdit_upper_ratio_border.setMaximumSize(QSize(16777215, 16777215))
+        self.lineEdit_upper_ratio_border.setFont(font)
+        self.lineEdit_upper_ratio_border.setStyleSheet(u"margin: 10px;")
+        self.lineEdit_upper_ratio_border.setDragEnabled(False)
+        self.lineEdit_upper_ratio_border.setClearButtonEnabled(True)
+
+        self.horizontalLayout_37.addWidget(self.lineEdit_upper_ratio_border)
+
+
+        self.verticalLayout_10.addWidget(self.frame_upper_ratio_border)
+
+        self.frame_calculated_tooth_number = QFrame(self.frame_input_data_3)
+        self.frame_calculated_tooth_number.setObjectName(u"frame_calculated_tooth_number")
+        sizePolicy3.setHeightForWidth(self.frame_calculated_tooth_number.sizePolicy().hasHeightForWidth())
+        self.frame_calculated_tooth_number.setSizePolicy(sizePolicy3)
+        self.frame_calculated_tooth_number.setStyleSheet(u"")
+        self.frame_calculated_tooth_number.setFrameShape(QFrame.StyledPanel)
+        self.frame_calculated_tooth_number.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_38 = QHBoxLayout(self.frame_calculated_tooth_number)
+        self.horizontalLayout_38.setSpacing(0)
+        self.horizontalLayout_38.setObjectName(u"horizontalLayout_38")
+        self.horizontalLayout_38.setContentsMargins(0, 0, 0, 0)
+        self.label_calculated_tooth_number = QLabel(self.frame_calculated_tooth_number)
+        self.label_calculated_tooth_number.setObjectName(u"label_calculated_tooth_number")
+        sizePolicy2.setHeightForWidth(self.label_calculated_tooth_number.sizePolicy().hasHeightForWidth())
+        self.label_calculated_tooth_number.setSizePolicy(sizePolicy2)
+        self.label_calculated_tooth_number.setMinimumSize(QSize(400, 40))
+        self.label_calculated_tooth_number.setMaximumSize(QSize(400, 16777215))
+        self.label_calculated_tooth_number.setFont(font)
+
+        self.horizontalLayout_38.addWidget(self.label_calculated_tooth_number)
+
+        self.lineEdit_calculated_tooth_number = QLineEdit(self.frame_calculated_tooth_number)
+        self.lineEdit_calculated_tooth_number.setObjectName(u"lineEdit_calculated_tooth_number")
+        self.lineEdit_calculated_tooth_number.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.lineEdit_calculated_tooth_number.sizePolicy().hasHeightForWidth())
+        self.lineEdit_calculated_tooth_number.setSizePolicy(sizePolicy1)
+        self.lineEdit_calculated_tooth_number.setMinimumSize(QSize(0, 40))
+        self.lineEdit_calculated_tooth_number.setMaximumSize(QSize(16777215, 16777215))
+        self.lineEdit_calculated_tooth_number.setFont(font)
+        self.lineEdit_calculated_tooth_number.setStyleSheet(u"margin: 10px;")
+        self.lineEdit_calculated_tooth_number.setDragEnabled(False)
+        self.lineEdit_calculated_tooth_number.setClearButtonEnabled(True)
+
+        self.horizontalLayout_38.addWidget(self.lineEdit_calculated_tooth_number)
+
+
+        self.verticalLayout_10.addWidget(self.frame_calculated_tooth_number)
+
+        self.frame_2md_wheel_tooth_number = QFrame(self.frame_input_data_3)
+        self.frame_2md_wheel_tooth_number.setObjectName(u"frame_2md_wheel_tooth_number")
+        sizePolicy3.setHeightForWidth(self.frame_2md_wheel_tooth_number.sizePolicy().hasHeightForWidth())
+        self.frame_2md_wheel_tooth_number.setSizePolicy(sizePolicy3)
+        self.frame_2md_wheel_tooth_number.setStyleSheet(u"")
+        self.frame_2md_wheel_tooth_number.setFrameShape(QFrame.StyledPanel)
+        self.frame_2md_wheel_tooth_number.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_39 = QHBoxLayout(self.frame_2md_wheel_tooth_number)
+        self.horizontalLayout_39.setSpacing(0)
+        self.horizontalLayout_39.setObjectName(u"horizontalLayout_39")
+        self.horizontalLayout_39.setContentsMargins(0, 0, 0, 0)
+        self.label_2nd_wheel_tooth_number = QLabel(self.frame_2md_wheel_tooth_number)
+        self.label_2nd_wheel_tooth_number.setObjectName(u"label_2nd_wheel_tooth_number")
+        sizePolicy2.setHeightForWidth(self.label_2nd_wheel_tooth_number.sizePolicy().hasHeightForWidth())
+        self.label_2nd_wheel_tooth_number.setSizePolicy(sizePolicy2)
+        self.label_2nd_wheel_tooth_number.setMinimumSize(QSize(400, 40))
+        self.label_2nd_wheel_tooth_number.setMaximumSize(QSize(400, 16777215))
+        self.label_2nd_wheel_tooth_number.setFont(font)
+
+        self.horizontalLayout_39.addWidget(self.label_2nd_wheel_tooth_number)
+
+        self.lineEdit_2nd_wheel_tooth_number = QLineEdit(self.frame_2md_wheel_tooth_number)
+        self.lineEdit_2nd_wheel_tooth_number.setObjectName(u"lineEdit_2nd_wheel_tooth_number")
+        self.lineEdit_2nd_wheel_tooth_number.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.lineEdit_2nd_wheel_tooth_number.sizePolicy().hasHeightForWidth())
+        self.lineEdit_2nd_wheel_tooth_number.setSizePolicy(sizePolicy1)
+        self.lineEdit_2nd_wheel_tooth_number.setMinimumSize(QSize(0, 40))
+        self.lineEdit_2nd_wheel_tooth_number.setMaximumSize(QSize(16777215, 16777215))
+        self.lineEdit_2nd_wheel_tooth_number.setFont(font)
+        self.lineEdit_2nd_wheel_tooth_number.setStyleSheet(u"margin: 10px;")
+        self.lineEdit_2nd_wheel_tooth_number.setDragEnabled(False)
+        self.lineEdit_2nd_wheel_tooth_number.setClearButtonEnabled(True)
+
+        self.horizontalLayout_39.addWidget(self.lineEdit_2nd_wheel_tooth_number)
+
+        self.second_wheel_tooth_number_confirm_btn = QPushButton(self.frame_2md_wheel_tooth_number)
+        self.second_wheel_tooth_number_confirm_btn.setObjectName(u"second_wheel_tooth_number_confirm_btn")
+        self.second_wheel_tooth_number_confirm_btn.setStyleSheet(u"QPushButton{\n"
+"color: rgb(242, 242, 246);\n"
+"background-color: rgb(76, 118, 232);\n"
+"border: none;\n"
+"height: 20;\n"
+"margin-right: 10px;\n"
+"padding: 0 5 0 5;\n"
+"}\n"
+"QPushButton:hover{\n"
+"background-color: rgb(51, 82, 148);\n"
+"}\n"
+"")
+
+        self.horizontalLayout_39.addWidget(self.second_wheel_tooth_number_confirm_btn)
+
+
+        self.verticalLayout_10.addWidget(self.frame_2md_wheel_tooth_number)
+
+        self.frame_real_ratio = QFrame(self.frame_input_data_3)
+        self.frame_real_ratio.setObjectName(u"frame_real_ratio")
+        sizePolicy3.setHeightForWidth(self.frame_real_ratio.sizePolicy().hasHeightForWidth())
+        self.frame_real_ratio.setSizePolicy(sizePolicy3)
+        self.frame_real_ratio.setStyleSheet(u"")
+        self.frame_real_ratio.setFrameShape(QFrame.StyledPanel)
+        self.frame_real_ratio.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_40 = QHBoxLayout(self.frame_real_ratio)
+        self.horizontalLayout_40.setSpacing(0)
+        self.horizontalLayout_40.setObjectName(u"horizontalLayout_40")
+        self.horizontalLayout_40.setContentsMargins(0, 0, 0, 0)
+        self.label_real_ratio = QLabel(self.frame_real_ratio)
+        self.label_real_ratio.setObjectName(u"label_real_ratio")
+        sizePolicy2.setHeightForWidth(self.label_real_ratio.sizePolicy().hasHeightForWidth())
+        self.label_real_ratio.setSizePolicy(sizePolicy2)
+        self.label_real_ratio.setMinimumSize(QSize(400, 40))
+        self.label_real_ratio.setMaximumSize(QSize(400, 16777215))
+        self.label_real_ratio.setFont(font)
+
+        self.horizontalLayout_40.addWidget(self.label_real_ratio)
+
+        self.lineEdit_real_ratio = QLineEdit(self.frame_real_ratio)
+        self.lineEdit_real_ratio.setObjectName(u"lineEdit_real_ratio")
+        self.lineEdit_real_ratio.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.lineEdit_real_ratio.sizePolicy().hasHeightForWidth())
+        self.lineEdit_real_ratio.setSizePolicy(sizePolicy1)
+        self.lineEdit_real_ratio.setMinimumSize(QSize(0, 40))
+        self.lineEdit_real_ratio.setMaximumSize(QSize(16777215, 16777215))
+        self.lineEdit_real_ratio.setFont(font)
+        self.lineEdit_real_ratio.setStyleSheet(u"margin: 10px;")
+        self.lineEdit_real_ratio.setDragEnabled(False)
+        self.lineEdit_real_ratio.setClearButtonEnabled(True)
+
+        self.horizontalLayout_40.addWidget(self.lineEdit_real_ratio)
+
+
+        self.verticalLayout_10.addWidget(self.frame_real_ratio)
+
+
+        self.verticalLayout_9.addWidget(self.frame_input_data_3)
+
+
+        self.verticalLayout_11.addWidget(self.row_frame_3)
+
         self.stackedWidget.addWidget(self.wyniki_wstepne_page)
         self.naprezenia_page = QWidget()
         self.naprezenia_page.setObjectName(u"naprezenia_page")
@@ -1526,9 +1971,9 @@ class Ui_MainWindow(object):
         self.comboBox_accuracy_class.setItemText(10, QCoreApplication.translate("MainWindow", u"IT11", None))
         self.comboBox_accuracy_class.setItemText(11, QCoreApplication.translate("MainWindow", u"IT12", None))
 
-        self.label_pressure_angle.setText(QCoreApplication.translate("MainWindow", u"NORMALNY K\u0104T PRZYPORU", None))
+        self.label_pressure_angle.setText(QCoreApplication.translate("MainWindow", u"NORMALNY K\u0104T PRZYPORU [\u00b0]", None))
         self.lineEdit_pressure_angle.setPlaceholderText("")
-        self.label_helix_angle.setText(QCoreApplication.translate("MainWindow", u"K\u0104T POCHYLENIA LINII \u015aRUBOWEJ Z\u0118BA", None))
+        self.label_helix_angle.setText(QCoreApplication.translate("MainWindow", u"K\u0104T POCHYLENIA LINII \u015aRUBOWEJ Z\u0118BA [\u00b0]", None))
         self.comboBox_helix_angle.setItemText(0, QCoreApplication.translate("MainWindow", u"8", None))
         self.comboBox_helix_angle.setItemText(1, QCoreApplication.translate("MainWindow", u"9", None))
         self.comboBox_helix_angle.setItemText(2, QCoreApplication.translate("MainWindow", u"10", None))
@@ -1553,5 +1998,24 @@ class Ui_MainWindow(object):
 
         self.preconditions_calculate_btn.setText(QCoreApplication.translate("MainWindow", u"OBLICZ", None))
         self.preconditions_clear_btn.setText(QCoreApplication.translate("MainWindow", u"WYCZY\u015a\u0106", None))
+        self.label_preconditions_2.setText(QCoreApplication.translate("MainWindow", u"PARAMETRY GEOMETRYCZNE", None))
+        self.label_pinion_toqrue.setText(QCoreApplication.translate("MainWindow", u"MOMENT OBCI\u0104\u017bAJ\u0104CY Z\u0118BNIK", None))
+        self.lineEdit_pinion_torque.setPlaceholderText("")
+        self.label_calculated_normal_module.setText(QCoreApplication.translate("MainWindow", u"OBLICZENIOWY MODU\u0141 NORMALNY", None))
+        self.lineEdit_calculated_normal_module.setPlaceholderText("")
+        self.label_normal_module.setText(QCoreApplication.translate("MainWindow", u"MODU\u0141 NORMALNY", None))
+        self.lineEdit_normal_module.setPlaceholderText("")
+        self.normal_module_confirm_btn.setText(QCoreApplication.translate("MainWindow", u"ZATWIERD\u0179", None))
+        self.label_bottome_ratio_border.setText(QCoreApplication.translate("MainWindow", u"DOLNA GRANICA B\u0141\u0118DU PRZE\u0141O\u017bENIA", None))
+        self.lineEdit_bottom_ratio_border.setPlaceholderText("")
+        self.label_upper_ratio_border.setText(QCoreApplication.translate("MainWindow", u"G\u00d3RNA GRANICA B\u0141\u0118DU PRZE\u0141O\u017bENIA", None))
+        self.lineEdit_upper_ratio_border.setPlaceholderText("")
+        self.label_calculated_tooth_number.setText(QCoreApplication.translate("MainWindow", u"OBLICZENIOWA LICZBA Z\u0118B\u00d3W DRUGIEGO KO\u0141A", None))
+        self.lineEdit_calculated_tooth_number.setPlaceholderText("")
+        self.label_2nd_wheel_tooth_number.setText(QCoreApplication.translate("MainWindow", u"LICZBA Z\u0118B\u00d3W DRUGIEGO KO\u0141A", None))
+        self.lineEdit_2nd_wheel_tooth_number.setPlaceholderText("")
+        self.second_wheel_tooth_number_confirm_btn.setText(QCoreApplication.translate("MainWindow", u"ZATWIERD\u0179", None))
+        self.label_real_ratio.setText(QCoreApplication.translate("MainWindow", u"PRZE\u0141O\u017bENIE RZECZYWISTE", None))
+        self.lineEdit_real_ratio.setPlaceholderText("")
     # retranslateUi
 

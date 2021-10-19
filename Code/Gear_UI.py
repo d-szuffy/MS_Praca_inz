@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'Gear_v3TACiXE.ui'
+## Form generated from reading UI file 'Gear_v3KYTcLe.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -1842,7 +1842,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)

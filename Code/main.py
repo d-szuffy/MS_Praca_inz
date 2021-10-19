@@ -76,9 +76,11 @@ class MyForm(QMainWindow):
         self.ui.clear_btn.clicked.connect(lambda: self.clear_input_data(True))
         self.ui.preconditions_clear_btn.clicked.connect(lambda: self.clear_input_data(False))
         self.ui.calculate_btn.clicked.connect(lambda: self.get_and_validate_input_date())
+        self.ui.preconditions_calculate_btn.clicked.connect(lambda: self.get_and_validate_input_date())
         self.ui.radio_btn_soft_wheels.clicked.connect(lambda: self.toggle_material_combo_box(True))
         self.ui.radio_btn_hard_wheels.clicked.connect(lambda: self.toggle_material_combo_box(False))
-        self.ui.normal_module_confirm_btn.clicked.connect(lambda: self.enable_next_geometric_parameters_after_confirming_variables())
+        self.ui.normal_module_confirm_btn.clicked.connect(lambda: self.enable_next_geometric_parameters_after_confirming_normal_module())
+        self.ui.second_wheel_tooth_number_confirm_btn.clicked.connect(lambda: self.calculate_real_ratio_after_setting_2nd_wheel_tooth_number())
         self.power_validator = RangeDoubleValidator()
         self.power_validator.setRange(0.0, 1000, 6)
         self.ui.lineEdit_power.setValidator(self.power_validator)
@@ -214,15 +216,12 @@ class MyForm(QMainWindow):
         is_data_filled = not (
                     power == "" or ratio == "" or velocity_in == "" or velocity_out == "" or durability == "" or pressure_angle == "" or wheelbase == "")
         if not is_data_filled:
-            msgBox = QMessageBox()
-            msgBox.setIcon(QMessageBox.Warning)
-            msgBox.setText("Nie wszystkie dane wejściowe i założenia zostały uzupełnione")
-            msgBox.setWindowTitle("Złe dane wejściowe")
-            msgBox.setStandardButtons(QMessageBox.Ok)
-            msgBox.exec()
+            self.display_message_box(QMessageBox.Warning,
+                                     "Nie wszystkie dane wejściowe i założenia zostały uzupełnione",
+                                     "Złe dane wejściowe", QMessageBox.Ok)
         if is_data_filled:
             self.enable_output_buttons()
-        self.rewriting_input_data_to_variables()
+            self.rewriting_input_data_to_variables()
 
     def enable_output_buttons(self):
 
@@ -287,36 +286,47 @@ class MyForm(QMainWindow):
         self.first_calculation_on_input_data()
 
 
-    def rewriting_results_data_to_line_edits(self):
+    def rewrite_results_data_to_line_edits(self):
         self.ui.lineEdit_pinion_torque.setText(str(Result.pinion_torque))
         self.ui.lineEdit_calculated_normal_module.setText(str(Result.calculated_normal_module))
+        self.ui.lineEdit_bottom_ratio_border.setText(str(Result.ratio_bottom_border))
+        self.ui.lineEdit_upper_ratio_border.setText(str(Result.ratio_upper_border))
+        self.ui.lineEdit_calculated_tooth_number.setText(str(Result.calculated_2nd_wheel_tooth_number))
 
     def first_calculation_on_input_data(self):
-        print("first_calculations_nie_działa")
-        print(InputData.pressure_angle)
         Result.pinion_torque = InputData.power / InputData.rad_velocity_in
-        print(Result.pinion_torque)
         Result.calculated_normal_module = (InputData.wheelbase * 2 * math.cos(InputData.pressure_angle)) / (InputData.pinion_tooth_number * (1 + InputData.ratio))
-        print(Result.calculated_normal_module)
-        print("first_calculations_działa")
+        Result.ratio_bottom_border = 0.975 * InputData.ratio
+        Result.ratio_upper_border = 1.025 * InputData.ratio
+        Result.calculated_2nd_wheel_tooth_number = InputData.pinion_tooth_number * InputData.ratio
+        self.rewrite_results_data_to_line_edits()
 
-        self.rewriting_results_data_to_line_edits()
-
-    def enable_next_geometric_parameters_after_confirming_variables(self):
+    def enable_next_geometric_parameters_after_confirming_normal_module(self):
+        Result.normal_module = self.ui.lineEdit_normal_module.text()
         if Result.normal_module == "":
-            msgBox = QMessageBox()
-            msgBox.setIcon(QMessageBox.Error)
-            msgBox.setText("Nie została podana wartość modułu normalnego")
-            msgBox.setWindowTitle("Moduł normalny")
-            msgBox.setStandardButtons(QMessageBox.Ok)
-            msgBox.exec()
+            self.display_message_box(QMessageBox.Warning, "Nie została podana wartość modułu normalnego", "Moduł normalny", QMessageBox.Ok | QMessageBox.Cancel)
         else:
-            self.ui.lineEdit_bottom_ratio_border.setEnabled(True)
-            self.ui.lineEdit_upper_ratio_border.setEnabled(True)
-            self.ui.lineEdit_calculated_tooth_number.setEnabled(True)
             self.ui.lineEdit_2nd_wheel_tooth_number.setEnabled(True)
-            self.ui.lineEdit_real_ratio.setEnabled(True)
 
+    def calculate_real_ratio_after_setting_2nd_wheel_tooth_number(self):
+        Result.second_wheel_tooth_number = self.ui.lineEdit_2nd_wheel_tooth_number.text()
+        if Result.second_wheel_tooth_number == "":
+            self.display_message_box(QMessageBox.Warning, "Podaj liczbę zębów drugiego koła", "Błąd przełożenia", QMessageBox.Ok)
+        else:
+            Result.second_wheel_tooth_number = float(Result.second_wheel_tooth_number)
+            Result.real_ratio = Result.second_wheel_tooth_number / InputData.pinion_tooth_number
+            if Result.ratio_bottom_border <= Result.real_ratio <= Result.ratio_upper_border:
+                self.ui.lineEdit_real_ratio.setText(str(Result.real_ratio))
+            else:
+                self.display_message_box(QMessageBox.Warning, f"Wartość przełożenia musi mieścić się w przediale {Result.ratio_bottom_border} < u < {Result.ratio_upper_border}. Obecna wartość przełożenia to {Result.real_ratio}. Zmień liczbę zębów drugiego koła.", "Błąd przełożenia", QMessageBox.Ok)
+
+    def display_message_box(self, message_kind, text, title, buttons):
+        msgBox = QMessageBox()
+        msgBox.setIcon(message_kind)
+        msgBox.setText(text)
+        msgBox.setWindowTitle(title)
+        msgBox.setStandardButtons(buttons)
+        msgBox.exec()
 
     # input_data = InputData(power, ratio, velocity_in, velocity_out, machine_driving, machine_driven, durability)
     #

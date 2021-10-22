@@ -4,12 +4,13 @@ from decimal import Decimal
 import Gear_UI
 import sys
 import math
+import numpy
 
-from data.input_data import *
-from data.preconditions import *
-from data.results import *
+from Code.data.input_data import *
+from Code.data.preconditions import *
+from Code.data.results import *
 from PyQt5.QtWidgets import QMainWindow, QApplication, QMessageBox, QPushButton
-from PyQt5.QtCore import Qt, QPropertyAnimation
+from PyQt5.QtCore import Qt
 
 WINDOW_SIZE = 0
 
@@ -43,9 +44,7 @@ class MyForm(QMainWindow):
                 border: none;\n
                 height: 40;\n
                 }
-                QPushButton:hover{
-    	        background-color: rgb(61, 101, 206);
-                }"""
+                QPushButton:hover{background-color: rgb(61, 101, 206);}"""
 
     def __init__(self):
         super().__init__()
@@ -97,13 +96,11 @@ class MyForm(QMainWindow):
         self.durability_validator.setRange(0.0, 72e6, 3)
         self.ui.lineEdit_durability.setValidator(self.durability_validator)
         self.wheelbase_validator = RangeDoubleValidator()
-        self.wheelbase_validator.setRange(-100, 100, 3)
+        self.wheelbase_validator.setRange(0, 1000, 3)
         self.ui.lineEdit_wheelbase.setValidator(self.wheelbase_validator)
         self.pressure_angle_validator = RangeDoubleValidator()
         self.pressure_angle_validator.setRange(0, 90, 3)
         self.ui.lineEdit_pressure_angle.setValidator(self.pressure_angle_validator)
-
-
 
         # self.ui.comboBox.setEditable(True)
         print(self.ui.stackedWidget.currentIndex())
@@ -115,7 +112,7 @@ class MyForm(QMainWindow):
         def moveWindow(e):
             # Detect if the window is  normal size
             # ###############################################
-            if self.isMaximized() == False:  # Not maximized
+            if not self.isMaximized():  # Not maximized
                 # Move window only when window is normal size
                 # ###############################################
                 # if left mouse button is clicked (Only accept left mouse button clicks)
@@ -160,23 +157,21 @@ class MyForm(QMainWindow):
     # Update button icon
     # self.ui.restoreButton.setIcon(QtGui.QIcon(u":/icons/icons/cil-window-restore.png"))#Show minized icon
 
-    def set_current_page(self, page, nextButton: QPushButton):
+    def set_current_page(self, page, next_button: QPushButton):
         self.currentButton.setStyleSheet("""QPushButton{
             color: rgb(242, 242, 246);\n
             background-color: rgb(76, 118, 232);\n
             border: none;\n
             height: 40;\n
             }
-            QPushButton:hover{
-	        background-color: rgb(61, 101, 206);
-            }"""
+            QPushButton:hover{background-color: rgb(61, 101, 206);}"""
                                          )
-        nextButton.setStyleSheet("""QPushButton{
+        next_button.setStyleSheet("""QPushButton{
             background-color: rgb(51, 82, 148);\n
             border-bottom: 3px solid rgb(33, 38, 55);\n
             height: 40;\n}"""
-                                 )
-        self.currentButton = nextButton
+                                  )
+        self.currentButton = next_button
         self.ui.stackedWidget.setCurrentWidget(page)
 
     def clear_input_data(self, which_page):
@@ -249,11 +244,12 @@ class MyForm(QMainWindow):
                  WheelMaterial._34HNM.value])
             self.ui.comboBox_wheel_material.clear()
             self.ui.comboBox_wheel_material.addItems(
-                [WheelMaterial.ST4.value, WheelMaterial.ST5.value, WheelMaterial.ST6.value, WheelMaterial.ST7.value,
-                 WheelMaterial._20.value,
-                 WheelMaterial._45.value, WheelMaterial._55.value, WheelMaterial._30H.value, WheelMaterial._40H.value,
-                 WheelMaterial._40HM.value,
-                 WheelMaterial._34HNM.value])
+                                                    [WheelMaterial.ST4.value, WheelMaterial.ST5.value,
+                                                     WheelMaterial.ST6.value, WheelMaterial.ST7.value,
+                                                     WheelMaterial._20.value, WheelMaterial._45.value,
+                                                     WheelMaterial._55.value, WheelMaterial._30H.value,
+                                                     WheelMaterial._40H.value,WheelMaterial._40HM.value,
+                                                     WheelMaterial._34HNM.value])
         else:
             self.ui.comboBox_pinion_material.clear()
             self.ui.comboBox_pinion_material.addItems(
@@ -271,20 +267,33 @@ class MyForm(QMainWindow):
 
 
     def rewriting_input_data_to_variables(self):
-        print("rewriting_input_data_działa")
-
         InputData.power = float(self.ui.lineEdit_power.text())
+        InputData.power_unit = self.ui.comboBox_power.currentText()
         InputData.ratio = float(self.ui.lineEdit_ratio.text())
         InputData.rad_velocity_in = float(self.ui.lineEdit_velocity_in.text())
+        InputData.rad_velocity_in_unit = self.ui.comboBox_velocity_in.currentText()
         InputData.rad_velocity_out = float(self.ui.lineEdit_velocity_out.text())
+        InputData.rad_velocity_out_unit = self.ui.comboBox_velocity_out.currentText()
         InputData.driving_machine = self.ui.comboBox_driving_machine.currentText()
         InputData.driven_machine = self.ui.comboBox_driven_machine.currentText()
+        InputData.durability = float(self.ui.lineEdit_durability.text())
+        InputData.durability_unit = self.ui.comboBox_durability.currentText()
         InputData.wheelbase = float(self.ui.lineEdit_wheelbase.text())
+        InputData.wheelbase_unit = self.ui.comboBox_wheelbase.currentText()
+        InputData.pinion_material = self.ui.comboBox_pinion_material.currentText()
+        InputData.wheel_material = self.ui.comboBox_wheel_material.currentText()
+        InputData.accuracy_class = self.ui.comboBox_accuracy_class.currentText()
         InputData.pressure_angle = float(self.ui.lineEdit_pressure_angle.text())
+        InputData.helix_angle = float(self.ui.comboBox_helix_angle.currentText())
         InputData.pinion_tooth_number = float(self.ui.comboBox_teeth_number.currentText())
-        print("rewriting_input_data_działa")
-        self.first_calculation_on_input_data()
-
+        InputData.power = self.units_conversion(InputData.power, InputData.power_unit)
+        InputData.rad_velocity_in = self.units_conversion(InputData.rad_velocity_in, InputData.rad_velocity_in_unit)
+        InputData.rad_velocity_out = self.units_conversion(InputData.rad_velocity_out, InputData.rad_velocity_out_unit)
+        InputData.durability = self.units_conversion(InputData.durability, InputData.durability_unit)
+        InputData.wheelbase = self.units_conversion(InputData.wheelbase, InputData.wheelbase_unit)
+        print(f"Moc: {InputData.power}, Przełożenie: {InputData.ratio}, Prędkość wejściowa: {InputData.rad_velocity_in},"
+              f" Prędkość wyjściowa: {InputData.rad_velocity_out}, Trwałość: {InputData.durability}, Rozstaw osi: {InputData.wheelbase}")
+        self.calculate_on_input_data()
 
     def rewrite_results_data_to_line_edits(self):
         self.ui.lineEdit_pinion_torque.setText(str(Result.pinion_torque))
@@ -293,9 +302,9 @@ class MyForm(QMainWindow):
         self.ui.lineEdit_upper_ratio_border.setText(str(Result.ratio_upper_border))
         self.ui.lineEdit_calculated_tooth_number.setText(str(Result.calculated_2nd_wheel_tooth_number))
 
-    def first_calculation_on_input_data(self):
+    def calculate_on_input_data(self):
         Result.pinion_torque = InputData.power / InputData.rad_velocity_in
-        Result.calculated_normal_module = (InputData.wheelbase * 2 * math.cos(InputData.pressure_angle)) / (InputData.pinion_tooth_number * (1 + InputData.ratio))
+        Result.calculated_normal_module = (InputData.wheelbase * 2 * math.cos(numpy.deg2rad(InputData.helix_angle))) / (InputData.pinion_tooth_number * (1 + InputData.ratio))
         Result.ratio_bottom_border = 0.975 * InputData.ratio
         Result.ratio_upper_border = 1.025 * InputData.ratio
         Result.calculated_2nd_wheel_tooth_number = InputData.pinion_tooth_number * InputData.ratio
@@ -307,6 +316,7 @@ class MyForm(QMainWindow):
             self.display_message_box(QMessageBox.Warning, "Nie została podana wartość modułu normalnego", "Moduł normalny", QMessageBox.Ok | QMessageBox.Cancel)
         else:
             self.ui.lineEdit_2nd_wheel_tooth_number.setEnabled(True)
+            Result.normal_module = float(Result.normal_module)
 
     def calculate_real_ratio_after_setting_2nd_wheel_tooth_number(self):
         Result.second_wheel_tooth_number = self.ui.lineEdit_2nd_wheel_tooth_number.text()
@@ -317,16 +327,138 @@ class MyForm(QMainWindow):
             Result.real_ratio = Result.second_wheel_tooth_number / InputData.pinion_tooth_number
             if Result.ratio_bottom_border <= Result.real_ratio <= Result.ratio_upper_border:
                 self.ui.lineEdit_real_ratio.setText(str(Result.real_ratio))
+                self.prepare_values_for_further_ui_development()
             else:
                 self.display_message_box(QMessageBox.Warning, f"Wartość przełożenia musi mieścić się w przediale {Result.ratio_bottom_border} < u < {Result.ratio_upper_border}. Obecna wartość przełożenia to {Result.real_ratio}. Zmień liczbę zębów drugiego koła.", "Błąd przełożenia", QMessageBox.Ok)
 
+    def prepare_values_for_further_ui_development(self):
+        Result.wheelbase_zero = ((InputData.pinion_tooth_number + Result.second_wheel_tooth_number)
+                                 * Result.normal_module) / (2 * math.cos(numpy.deg2rad(InputData.helix_angle)))
+        # RESULT.WHEELBASE_ZERO wyświetla poprawną wartość, mozna podpinać pod UI
+        print(f"Zerowa odległośc osi: {Result.wheelbase_zero}")
+        Result.estimated_correction_factors_sum = (InputData.wheelbase - Result.wheelbase_zero) / Result.normal_module
+        print(f"Przybliżona wartość sumy wspólczynników korekcji (przesunięcia zarysu): {Result.estimated_correction_factors_sum}")
+        # POPRAWNA WARTOŚĆ PRZYBLIZONEGO WSPOLCZYNNIKA KOREKCJI ZWROCONA
+
+        Result.alfa_t = math.atan(math.tan(numpy.deg2rad(InputData.pressure_angle)) / math.cos(numpy.deg2rad(InputData.helix_angle)))
+        print(f" Kąt zarysu w przekroju czołowym: {Result.alfa_t}")
+        # POPRAWNIE OBLICZONA WARTOSC ALFA_T
+
+        Result.alfa_tw = math.acos(Result.wheelbase_zero * math.cos(Result.alfa_t) / InputData.wheelbase)
+        print(f"Kąt przyporu toczny w przekroju czołowym: {Result.alfa_tw}")
+        # POPRAWNIE OBLICZONA WARTOSC ALFA_TW
+
+        Result.inv_alfa_tw = math.tan(Result.alfa_tw) - Result.alfa_tw
+        print(f"Involuta, funkcja ewolwentowa alfa_tw: {Result.inv_alfa_tw}")
+        # POPRAWNIE OBLICZONA WARTOSC
+
+        Result.inv_alfa_t = math.tan(Result.alfa_t) - Result.alfa_t
+        print(f"Involuta, funkcja ewolwentowa alfa_t: {Result.inv_alfa_t}")
+        # POPRAWNIE OBLICZONA WARTOSC
+
+        Result.correction_factors_sum = ((Result.inv_alfa_tw - Result.inv_alfa_t) *
+                                         (InputData.pinion_tooth_number + Result.second_wheel_tooth_number)) / \
+                                        (2 * math.tan(numpy.deg2rad(InputData.pressure_angle)))
+        print(f"Suma współczynników korekcji: {Result.correction_factors_sum}")
+
+        Result.beta_b_helix_angle = math.atan(math.tan(numpy.deg2rad(InputData.helix_angle)) *
+                                              math.cos(math.atan(math.tan(numpy.deg2rad(InputData.pressure_angle)) /
+                                                                 math.cos(numpy.deg2rad(InputData.helix_angle)))))
+        print(f"Kąt pochylenia linii zęba na walcu zasadniczym: {Result.beta_b_helix_angle}")
+        # POPRAWNIE OBLICZONA WARTOSC
+
+        Result.pinion_tooth_number_placeholder = InputData.pinion_tooth_number / (math.cos(
+            numpy.deg2rad(InputData.helix_angle)) * math.cos(Result.beta_b_helix_angle) ** 2)
+        print(f"Zastępcza liczba zębów zębnika: {Result.pinion_tooth_number_placeholder}")
+        # POPRAWNIE OBLICZONA WARTOSC
+
+        Result.second_wheel_tooth_number_placeholder = Result.second_wheel_tooth_number / (math.cos(
+            numpy.deg2rad(InputData.helix_angle)) * math.cos(Result.beta_b_helix_angle) ** 2)
+        print(f"Zastępcza liczba zębów koła: {Result.second_wheel_tooth_number_placeholder}")
+        # POPRAWNIE OBLICZONA WARTOSC
+
+        Result.both_wheels_tooth_num_placeholder_avg = (Result.pinion_tooth_number_placeholder +
+                                                        Result.second_wheel_tooth_number_placeholder) / 2
+        print(f"Średnia z zastępczej liczby zębów kół: {Result.both_wheels_tooth_num_placeholder_avg}")
+
+        Result.pinion_correction_factor = 0.35
+        Result.second_wheel_correction_factor = Result.correction_factors_sum - Result.pinion_correction_factor
+        print(f"Współczynnik korekcji koła: {Result.second_wheel_correction_factor}")
+
+        Result.pinion_rolling_diameter = (2 * InputData.wheelbase) / (1 + Result.real_ratio)
+        print(f"Średnica toczna zębnika: {Result.pinion_rolling_diameter}")
+
+        Result.second_wheel_rolling_diameter = Result.real_ratio * Result.pinion_rolling_diameter
+        print(f"Średnica toczna koła: {Result.second_wheel_rolling_diameter}")
+
+        Result.wheelbase_apparent = Result.wheelbase_zero + Result.normal_module * (Result.pinion_correction_factor +
+                                                                                    Result.second_wheel_correction_factor)
+        print(f"Pozorna odległość osi: {Result.wheelbase_apparent}")
+
+        Result.slip_factor = (Result.wheelbase_apparent - InputData.wheelbase) / Result.normal_module
+        print(f"Współczynnik zsunięcia: {Result.slip_factor}")
+
+        Result.pinion_pitch_diameter = (Result.normal_module *
+                                        InputData.pinion_tooth_number) / math.cos(numpy.deg2rad(InputData.helix_angle))
+        print(f"Średnica podziałowa zębnika: {Result.pinion_pitch_diameter}")
+
+        Result.second_wheel_pitch_diameter = 2 * Result.wheelbase_zero - Result.pinion_pitch_diameter
+        print(f"Średnica podziałowa koła: {Result.second_wheel_pitch_diameter}")
+        # Wszystko dotychczas z dobrymi wartościami
+
+        Result.frontal_module = Result.pinion_pitch_diameter / InputData.pinion_tooth_number
+        print(f"Moduł czołowy: {Result.frontal_module}")
+
+        Result.pinion_tooth_line_slope_diameter = math.atan((Result.pinion_rolling_diameter *
+                                                             math.tan(numpy.deg2rad(InputData.helix_angle))) / Result.pinion_pitch_diameter)
+        print(f"Średnica pochylenia linii zęba na średnicy tocznej zębnika: {Result.pinion_tooth_line_slope_diameter}")
+
+        Result.second_wheel_tooth_line_slope_diameter = math.atan((Result.second_wheel_rolling_diameter *
+                                                                   math.tan(numpy.deg2rad(InputData.helix_angle))) / Result.second_wheel_pitch_diameter)
+        print(f"Średnica pochylenia linii zęba na średnicy tocznej koła: {Result.second_wheel_tooth_line_slope_diameter}")
+
+        print(f"Moment obrotowy obciążający zębnik: {Result.pinion_torque}")
+
+        Result.force_tangential = 2 * Result.pinion_torque / (Result.pinion_rolling_diameter / 1000)
+        print(f"Siła styczna: {Result.force_tangential}")
+
+        Result.force_longitudinal = Result.force_tangential * math.tan(Result.pinion_tooth_line_slope_diameter)
+        print(f"Siła wzdłużna: {Result.force_longitudinal}")
+
+        Result.force_radial = Result.force_tangential * math.tan(Result.alfa_tw)
+        print(f"Siła promieniowa: {Result.force_radial}")
+
+        Result.second_wheel_width = 60
+        print(f"Szerokość koła: {Result.second_wheel_width}")
+        Result.stepping_pressure_number = (Result.second_wheel_width *
+                                           math.sin(numpy.deg2rad(InputData.helix_angle))) / (Result.normal_module * math.pi)
+        print(f"Poskokowa liczba przyporu: {Result.stepping_pressure_number}")
+
     def display_message_box(self, message_kind, text, title, buttons):
-        msgBox = QMessageBox()
-        msgBox.setIcon(message_kind)
-        msgBox.setText(text)
-        msgBox.setWindowTitle(title)
-        msgBox.setStandardButtons(buttons)
-        msgBox.exec()
+        msg_box = QMessageBox()
+        msg_box.setIcon(message_kind)
+        msg_box.setText(text)
+        msg_box.setWindowTitle(title)
+        msg_box.setStandardButtons(buttons)
+        msg_box.exec()
+
+    def units_conversion(self, variable, unit):
+        if unit == "kW":
+            variable *= 10e2
+            print(f"Skonwertowane: {variable}")
+        elif unit == "MW":
+            variable *= 10e5
+        elif unit == "obr/min":
+            variable *= 2 * math.pi / 60
+        elif unit == "h":
+            variable *= 3600
+        elif unit == "min.":
+            variable *= 60
+        elif unit == "m":
+            variable *= 10e2
+        elif unit == "cm":
+            variable *= 10
+        return variable
 
     # input_data = InputData(power, ratio, velocity_in, velocity_out, machine_driving, machine_driven, durability)
     #

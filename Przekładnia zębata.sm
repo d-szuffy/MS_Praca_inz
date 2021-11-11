@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<?application progid="SMath Studio Desktop" version="0.99.7030.1435"?>
+<?application progid="SMath Studio Desktop" version="0.99.7822.147"?>
 <worksheet xmlns="http://smath.info/schemas/worksheet/1.0">
   <settings ppi="96">
     <identity>
       <id>3921621d-3386-4a79-9bab-4aa8c5e46d1e</id>
-      <revision>279</revision>
+      <revision>280</revision>
     </identity>
     <calculation>
       <precision>4</precision>
@@ -22,38 +22,41 @@
       <backgrounds />
     </pageModel>
     <dependencies>
-      <assembly name="SMath Studio Desktop" version="0.99.7030.1435" guid="a37cba83-b69c-4c71-9992-55ff666763bd" />
-      <assembly name="Math Region" version="0.99.7030.1435" guid="02f1ab51-215b-466e-a74d-5d8b1cf85e8d" />
-      <assembly name="TextRegion" version="1.11.7030.1435" guid="485d28c5-349a-48b6-93be-12a35a1c1e39" />
+      <assembly name="SMath Studio Desktop" version="0.99.7822.147" guid="a37cba83-b69c-4c71-9992-55ff666763bd" />
+      <assembly name="MathRegion" version="1.11.7822.147" guid="02f1ab51-215b-466e-a74d-5d8b1cf85e8d" />
+      <assembly name="TextRegion" version="1.11.7822.147" guid="485d28c5-349a-48b6-93be-12a35a1c1e39" />
     </dependencies>
   </settings>
   <regions type="content">
-    <region id="0" left="216" top="18" width="281" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>JANINA ŻBIKOWSKA nr albumu 274825</p>
+    <region left="36" top="27" width="254" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">OBLICZENIA PRZEKŁADNI ZĘBATEJ:</p>
+        </content>
       </text>
     </region>
-    <region id="1" left="36" top="45" width="258" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>OBLICZENIA PRZEKŁADNI ZĘBATEJ:</p>
+    <region left="315" top="45" width="326" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">Maszyna napędzająca: silnik elektryczny</p>
+        </content>
       </text>
     </region>
-    <region id="2" left="315" top="63" width="333" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>Maszyna napędzająca: silnik elektryczny</p>
+    <region left="36" top="54" width="110" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">Nr tematu 13</p>
+        </content>
       </text>
     </region>
-    <region id="3" left="36" top="72" width="109" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>Nr tematu 13</p>
+    <region left="315" top="72" width="214" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">Maszyna napędzana: nożyce</p>
+        </content>
       </text>
     </region>
-    <region id="4" left="315" top="90" width="217" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>Maszyna napędzana: nożyce</p>
-      </text>
-    </region>
-    <region id="5" left="36" top="108" width="66" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+    <region left="36" top="90" width="66" height="24" color="#000000" fontSize="10">
       <math>
         <input>
           <e type="operand">N</e>
@@ -64,12 +67,14 @@
         </input>
       </math>
     </region>
-    <region id="6" left="153" top="108" width="144" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>-moc przenoszona</p>
+    <region left="153" top="90" width="142" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">-moc przenoszona</p>
+        </content>
       </text>
     </region>
-    <region id="7" left="36" top="126" width="102" height="41" color="#000000" bgColor="#ffffff" fontSize="10">
+    <region left="36" top="108" width="103" height="41" color="#000000" fontSize="10">
       <math optimize="2">
         <input>
           <e type="operand">ω</e>
@@ -84,20 +89,21 @@
         </input>
       </math>
     </region>
-    <region id="8" left="153" top="126" width="209" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>-prędkość kątowa silnika</p>
+    <region left="153" top="108" width="206" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">-prędkość kątowa silnika</p>
+        </content>
       </text>
     </region>
-    <region id="9" left="513" top="126" width="168" height="72" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>Korzystając z norm:
- -PN-67/M-85203
- -PN-67/M-85201
- -PN-67/M-85202</p>
+    <region left="513" top="108" width="166" height="68" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">Korzystając z norm:<br /> -PN-67/M-85203<br /> -PN-67/M-85201<br /> -PN-67/M-85202</p>
+        </content>
       </text>
     </region>
-    <region id="10" left="36" top="153" width="70" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+    <region left="36" top="135" width="70" height="24" color="#000000" fontSize="10">
       <math>
         <input>
           <e type="operand">u</e>
@@ -106,12 +112,14 @@
         </input>
       </math>
     </region>
-    <region id="11" left="153" top="153" width="201" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>-przełożenie przekładni</p>
+    <region left="153" top="135" width="198" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">-przełożenie przekładni</p>
+        </content>
       </text>
     </region>
-    <region id="12" left="36" top="180" width="90" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+    <region left="36" top="162" width="90" height="24" color="#000000" fontSize="10">
       <math>
         <input>
           <e type="operand">T</e>
@@ -122,12 +130,14 @@
         </input>
       </math>
     </region>
-    <region id="13" left="153" top="180" width="143" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>-trwałość łożysk</p>
+    <region left="153" top="162" width="142" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">-trwałość łożysk</p>
+        </content>
       </text>
     </region>
-    <region id="14" left="36" top="207" width="88" height="30" color="#000000" bgColor="#ffffff" fontSize="10">
+    <region left="36" top="189" width="89" height="30" color="#000000" fontSize="10">
       <math>
         <input>
           <e type="operand">a.w</e>
@@ -138,32 +148,42 @@
         </input>
       </math>
     </region>
-    <region id="15" left="162" top="207" width="414" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>-wymagana konstrukcyjnie odległość osi przekładni</p>
+    <region left="162" top="189" width="406" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">-wymagana konstrukcyjnie odległość osi przekładni</p>
+        </content>
       </text>
     </region>
-    <region id="16" left="36" top="234" width="111" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>koła miękkie</p>
+    <region left="36" top="216" width="110" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">koła miękkie</p>
+        </content>
       </text>
     </region>
-    <region id="17" left="36" top="261" width="283" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>materiał zębnika: stal St5 (E295)</p>
+    <region left="36" top="243" width="278" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">materiał zębnika: stal St5 (E295)</p>
+        </content>
       </text>
     </region>
-    <region id="18" left="36" top="288" width="201" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>materiał koła: stal St4</p>
+    <region left="36" top="270" width="198" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">materiał koła: stal St4</p>
+        </content>
       </text>
     </region>
-    <region id="19" left="36" top="315" width="389" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>IT10 - klasa dokładnści wykonania kół zębatych</p>
+    <region left="36" top="297" width="382" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">IT10 - klasa dokładnści wykonania kół zębatych</p>
+        </content>
       </text>
     </region>
-    <region id="20" left="36" top="342" width="88" height="30" color="#000000" bgColor="#ffffff" fontSize="10">
+    <region left="36" top="324" width="89" height="30" color="#000000" fontSize="10">
       <math>
         <input>
           <e type="operand">α.n</e>
@@ -174,12 +194,14 @@
         </input>
       </math>
     </region>
-    <region id="21" left="135" top="342" width="193" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>-normalny kąt przyporu</p>
+    <region left="135" top="324" width="190" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">-normalny kąt przyporu</p>
+        </content>
       </text>
     </region>
-    <region id="22" left="36" top="369" width="82" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+    <region left="36" top="351" width="82" height="24" color="#000000" fontSize="10">
       <math>
         <input>
           <e type="operand">β</e>
@@ -190,12 +212,14 @@
         </input>
       </math>
     </region>
-    <region id="23" left="135" top="369" width="356" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>-kąt pochylenia linii śrubowej zęba (8-15)</p>
+    <region left="135" top="351" width="350" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">-kąt pochylenia linii śrubowej zęba (8-15)</p>
+        </content>
       </text>
     </region>
-    <region id="24" left="36" top="387" width="154" height="41" color="#000000" bgColor="#ffffff" fontSize="10">
+    <region left="36" top="369" width="155" height="41" color="#000000" fontSize="10">
       <math>
         <input>
           <e type="operand">M.1</e>
@@ -214,12 +238,14 @@
         </result>
       </math>
     </region>
-    <region id="25" left="225" top="396" width="226" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>-moment obciążający zębnik</p>
+    <region left="225" top="378" width="222" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">-moment obciążający zębnik</p>
+        </content>
       </text>
     </region>
-    <region id="26" left="36" top="432" width="60" height="30" color="#000000" bgColor="#ffffff" fontSize="10">
+    <region left="36" top="414" width="60" height="30" color="#000000" fontSize="10">
       <math>
         <input>
           <e type="operand">z.1</e>
@@ -228,12 +254,14 @@
         </input>
       </math>
     </region>
-    <region id="27" left="144" top="432" width="251" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>-liczba zębów zębnika (15-25)</p>
+    <region left="144" top="414" width="246" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">-liczba zębów zębnika (15-25)</p>
+        </content>
       </text>
     </region>
-    <region id="28" left="36" top="459" width="235" height="55" color="#000000" bgColor="#ffffff" fontSize="10">
+    <region left="36" top="441" width="238" height="55" color="#000000" fontSize="10">
       <math>
         <input>
           <e type="operand">m.no</e>
@@ -260,12 +288,14 @@
         </result>
       </math>
     </region>
-    <region id="29" left="306" top="477" width="246" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>-obliczeniowy moduł normalny </p>
+    <region left="306" top="459" width="246" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">-obliczeniowy moduł normalny </p>
+        </content>
       </text>
     </region>
-    <region id="30" left="36" top="513" width="80" height="30" color="#000000" bgColor="#ffffff" fontSize="10">
+    <region left="36" top="495" width="81" height="30" color="#000000" fontSize="10">
       <math>
         <input>
           <e type="operand">m.n</e>
@@ -276,12 +306,14 @@
         </input>
       </math>
     </region>
-    <region id="31" left="171" top="513" width="282" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>-moduł normalny nie większy od 22</p>
+    <region left="171" top="495" width="278" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">-moduł normalny nie większy od 22</p>
+        </content>
       </text>
     </region>
-    <region id="32" left="36" top="540" width="195" height="30" color="#000000" bgColor="#ffffff" fontSize="10">
+    <region left="36" top="522" width="184" height="30" color="#000000" fontSize="10">
       <math>
         <input>
           <e type="operand">u.min</e>
@@ -297,12 +329,14 @@
         </result>
       </math>
     </region>
-    <region id="33" left="261" top="540" width="365" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>-dolna granica błędu przełożenia przekładni</p>
+    <region left="261" top="522" width="358" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">-dolna granica błędu przełożenia przekładni</p>
+        </content>
       </text>
     </region>
-    <region id="34" left="36" top="576" width="203" height="30" color="#000000" bgColor="#ffffff" fontSize="10">
+    <region left="36" top="558" width="192" height="30" color="#000000" fontSize="10">
       <math>
         <input>
           <e type="operand">u.max</e>
@@ -318,12 +352,14 @@
         </result>
       </math>
     </region>
-    <region id="35" left="270" top="576" width="365" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>-górna granica błędu przełożenia przekładni</p>
+    <region left="270" top="558" width="358" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">-górna granica błędu przełożenia przekładni</p>
+        </content>
       </text>
     </region>
-    <region id="36" left="36" top="612" width="128" height="30" color="#000000" bgColor="#ffffff" fontSize="10">
+    <region left="36" top="594" width="118" height="30" color="#000000" fontSize="10">
       <math>
         <input>
           <e type="operand">z.2o</e>
@@ -337,12 +373,14 @@
         </result>
       </math>
     </region>
-    <region id="37" left="189" top="612" width="340" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>-obliczeniowa liczba zębów drugiego koła</p>
+    <region left="189" top="594" width="334" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">-obliczeniowa liczba zębów drugiego koła</p>
+        </content>
       </text>
     </region>
-    <region id="38" left="36" top="648" width="60" height="30" color="#000000" bgColor="#ffffff" fontSize="10">
+    <region left="36" top="630" width="60" height="30" color="#000000" fontSize="10">
       <math>
         <input>
           <e type="operand">z.2</e>
@@ -351,12 +389,14 @@
         </input>
       </math>
     </region>
-    <region id="39" left="135" top="648" width="234" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>-liczba zębów drugiego koła</p>
+    <region left="135" top="630" width="230" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">-liczba zębów drugiego koła</p>
+        </content>
       </text>
     </region>
-    <region id="40" left="36" top="666" width="130" height="53" color="#000000" bgColor="#ffffff" fontSize="10">
+    <region left="36" top="648" width="119" height="53" color="#000000" fontSize="10">
       <math>
         <input>
           <e type="operand">u.rz</e>
@@ -370,12 +410,14 @@
         </result>
       </math>
     </region>
-    <region id="41" left="189" top="675" width="521" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>-przełożenie rzeczywiste mieści się granicach błędu tolerancji</p>
+    <region left="189" top="657" width="510" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">-przełożenie rzeczywiste mieści się granicach błędu tolerancji</p>
+        </content>
       </text>
     </region>
-    <region id="42" left="36" top="720" width="232" height="51" color="#000000" bgColor="#ffffff" fontSize="10">
+    <region left="36" top="702" width="235" height="51" color="#000000" fontSize="10">
       <math>
         <input>
           <e type="operand">a.o</e>
@@ -400,17 +442,21 @@
         </result>
       </math>
     </region>
-    <region id="43" left="315" top="738" width="185" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>-zerowa odległość osi</p>
+    <region left="315" top="720" width="182" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">-zerowa odległość osi</p>
+        </content>
       </text>
     </region>
-    <region id="44" left="36" top="774" width="28" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>X=</p>
+    <region left="36" top="756" width="30" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">X=</p>
+        </content>
       </text>
     </region>
-    <region id="45" left="63" top="774" width="58" height="30" color="#000000" bgColor="#ffffff" fontSize="10">
+    <region left="63" top="756" width="59" height="30" color="#000000" fontSize="10">
       <math>
         <input>
           <e type="operand">x.1</e>
@@ -419,17 +465,21 @@
         </input>
       </math>
     </region>
-    <region id="46" left="171" top="774" width="431" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>-suma współczynników korekcji (Przesunięcia zarysu)</p>
+    <region left="171" top="756" width="422" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">-suma współczynników korekcji (Przesunięcia zarysu)</p>
+        </content>
       </text>
     </region>
-    <region id="47" left="36" top="801" width="184" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>-W przedziale &lt;0;0,9&gt;</p>
+    <region left="36" top="783" width="182" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">-W przedziale &lt;0;0,9&gt;</p>
+        </content>
       </text>
     </region>
-    <region id="48" left="36" top="828" width="170" height="53" color="#000000" bgColor="#ffffff" fontSize="10">
+    <region left="36" top="810" width="160" height="53" color="#000000" fontSize="10">
       <math>
         <input>
           <e type="operand">X.z</e>
@@ -445,12 +495,14 @@
         </result>
       </math>
     </region>
-    <region id="49" left="252" top="837" width="415" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="eng">
-        <p>-przybliżona wartość sumy współczynników korekcji</p>
+    <region left="252" top="819" width="406" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="eng" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">-przybliżona wartość sumy współczynników korekcji</p>
+        </content>
       </text>
     </region>
-    <region id="50" left="36" top="873" width="228" height="53" color="#000000" bgColor="#ffffff" fontSize="10">
+    <region left="36" top="855" width="217" height="53" color="#000000" fontSize="10">
       <math>
         <input>
           <e type="operand">α.t</e>
@@ -467,12 +519,14 @@
         </result>
       </math>
     </region>
-    <region id="51" left="315" top="891" width="307" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="eng">
-        <p>-kąt zarysu w przekroju czołowym α.t</p>
+    <region left="315" top="873" width="302" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="eng" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">-kąt zarysu w przekroju czołowym α.t</p>
+        </content>
       </text>
     </region>
-    <region id="52" left="36" top="918" width="272" height="55" color="#000000" bgColor="#ffffff" fontSize="10">
+    <region left="36" top="900" width="263" height="55" color="#000000" fontSize="10">
       <math>
         <input>
           <e type="operand">α.tw</e>
@@ -490,12 +544,14 @@
         </result>
       </math>
     </region>
-    <region id="53" left="324" top="936" width="389" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="eng">
-        <p>-kąt przyporu toczny w przekroju czołowym α.tw</p>
+    <region left="324" top="918" width="382" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="eng" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">-kąt przyporu toczny w przekroju czołowym α.tw</p>
+        </content>
       </text>
     </region>
-    <region id="54" left="36" top="972" width="327" height="32" color="#000000" bgColor="#ffffff" fontSize="10">
+    <region left="36" top="954" width="319" height="32" color="#000000" fontSize="10">
       <math decimalPlaces="15">
         <input>
           <e type="operand">invα.tw</e>
@@ -510,12 +566,14 @@
         </result>
       </math>
     </region>
-    <region id="55" left="396" top="972" width="300" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>-involuta, funkcja ewolwentowa α.tw</p>
+    <region left="396" top="954" width="294" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">-involuta, funkcja ewolwentowa α.tw</p>
+        </content>
       </text>
     </region>
-    <region id="56" left="36" top="1017" width="309" height="32" color="#000000" bgColor="#ffffff" fontSize="10">
+    <region left="36" top="999" width="299" height="32" color="#000000" fontSize="10">
       <math decimalPlaces="15">
         <input>
           <e type="operand">invα.t</e>
@@ -530,12 +588,14 @@
         </result>
       </math>
     </region>
-    <region id="57" left="396" top="1017" width="284" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>-involuta,funkcja ewolwentowa α.t</p>
+    <region left="396" top="999" width="278" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">-involuta,funkcja ewolwentowa α.t</p>
+        </content>
       </text>
     </region>
-    <region id="58" left="36" top="1098" width="309" height="55" color="#000000" bgColor="#ffffff" fontSize="10">
+    <region left="36" top="1080" width="301" height="55" color="#000000" fontSize="10">
       <math decimalPlaces="5">
         <input>
           <e type="operand">X</e>
@@ -559,12 +619,14 @@
         </result>
       </math>
     </region>
-    <region id="59" left="369" top="1116" width="250" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>-suma współczynników korekcji</p>
+    <region left="369" top="1098" width="246" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">-suma współczynników korekcji</p>
+        </content>
       </text>
     </region>
-    <region id="60" left="36" top="1152" width="371" height="57" color="#000000" bgColor="#ffffff" fontSize="10">
+    <region left="36" top="1134" width="363" height="57" color="#000000" fontSize="10">
       <math>
         <input>
           <e type="operand">β.b</e>
@@ -586,13 +648,14 @@
         </result>
       </math>
     </region>
-    <region id="61" left="423" top="1161" width="298" height="40" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="eng">
-        <p>-kąt pochylenia linii zęba na walcu
- zasadniczym</p>
+    <region left="423" top="1143" width="294" height="38" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="eng" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">-kąt pochylenia linii zęba na walcu<br /> zasadniczym</p>
+        </content>
       </text>
     </region>
-    <region id="62" left="36" top="1206" width="260" height="64" color="#000000" bgColor="#ffffff" fontSize="10">
+    <region left="36" top="1188" width="251" height="64" color="#000000" fontSize="10">
       <math>
         <input>
           <e type="operand">z.γ1</e>
@@ -612,12 +675,14 @@
         </result>
       </math>
     </region>
-    <region id="63" left="306" top="1215" width="266" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>-zastępcza liczba zębów zębnika</p>
+    <region left="306" top="1197" width="262" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">-zastępcza liczba zębów zębnika</p>
+        </content>
       </text>
     </region>
-    <region id="64" left="36" top="1269" width="260" height="64" color="#000000" bgColor="#ffffff" fontSize="10">
+    <region left="36" top="1251" width="251" height="64" color="#000000" fontSize="10">
       <math>
         <input>
           <e type="operand">z.γ2</e>
@@ -637,12 +702,14 @@
         </result>
       </math>
     </region>
-    <region id="65" left="306" top="1278" width="241" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>-zastępcza liczba zębów koła</p>
+    <region left="306" top="1260" width="238" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">-zastępcza liczba zębów koła</p>
+        </content>
       </text>
     </region>
-    <region id="66" left="36" top="1332" width="205" height="47" color="#000000" bgColor="#ffffff" fontSize="10">
+    <region left="36" top="1314" width="195" height="47" color="#000000" fontSize="10">
       <math>
         <input>
           <e type="operand">z.γ12</e>
@@ -658,12 +725,14 @@
         </result>
       </math>
     </region>
-    <region id="67" left="288" top="1341" width="323" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>-średnia z zastępczej liczby zębów kół</p>
+    <region left="288" top="1323" width="318" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">-średnia z zastępczej liczby zębów kół</p>
+        </content>
       </text>
     </region>
-    <region id="68" left="36" top="1386" width="76" height="30" color="#000000" bgColor="#ffffff" fontSize="10">
+    <region left="36" top="1368" width="76" height="30" color="#000000" fontSize="10">
       <math>
         <input>
           <e type="operand">x.1</e>
@@ -672,12 +741,14 @@
         </input>
       </math>
     </region>
-    <region id="69" left="144" top="1386" width="427" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>-ODCZYTANY Z WYKRESU współczynnik korekcji zębnika </p>
+    <region left="144" top="1368" width="422" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">-ODCZYTANY Z WYKRESU współczynnik korekcji zębnika </p>
+        </content>
       </text>
     </region>
-    <region id="70" left="36" top="1422" width="168" height="30" color="#000000" bgColor="#ffffff" fontSize="10">
+    <region left="36" top="1404" width="158" height="30" color="#000000" fontSize="10">
       <math decimalPlaces="5">
         <input>
           <e type="operand">x.2</e>
@@ -691,17 +762,21 @@
         </result>
       </math>
     </region>
-    <region id="71" left="216" top="1422" width="234" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>-współczynnik korekcji koła</p>
+    <region left="216" top="1404" width="230" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">-współczynnik korekcji koła</p>
+        </content>
       </text>
     </region>
-    <region id="72" left="207" top="1449" width="300" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>-moment obrotowy obciążający zębnik</p>
+    <region left="207" top="1431" width="294" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">-moment obrotowy obciążający zębnik</p>
+        </content>
       </text>
     </region>
-    <region id="73" left="36" top="1458" width="122" height="30" color="#000000" bgColor="#ffffff" fontSize="10">
+    <region left="36" top="1440" width="123" height="30" color="#000000" fontSize="10">
       <math>
         <input>
           <e type="operand">M.1</e>
@@ -716,7 +791,7 @@
         </result>
       </math>
     </region>
-    <region id="74" left="36" top="1485" width="192" height="53" color="#000000" bgColor="#ffffff" fontSize="10">
+    <region left="36" top="1467" width="194" height="53" color="#000000" fontSize="10">
       <math decimalPlaces="3">
         <input>
           <e type="operand">d.w1</e>
@@ -737,12 +812,14 @@
         </result>
       </math>
     </region>
-    <region id="75" left="270" top="1494" width="209" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>-średnica toczna zębnika</p>
+    <region left="270" top="1476" width="206" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">-średnica toczna zębnika</p>
+        </content>
       </text>
     </region>
-    <region id="76" left="36" top="1539" width="194" height="30" color="#000000" bgColor="#ffffff" fontSize="10">
+    <region left="36" top="1521" width="197" height="30" color="#000000" fontSize="10">
       <math decimalPlaces="3">
         <input>
           <e type="operand">d.w2</e>
@@ -759,12 +836,14 @@
         </result>
       </math>
     </region>
-    <region id="77" left="270" top="1539" width="184" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>-średnica toczna koła</p>
+    <region left="270" top="1521" width="182" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">-średnica toczna koła</p>
+        </content>
       </text>
     </region>
-    <region id="78" left="36" top="1575" width="260" height="32" color="#000000" bgColor="#ffffff" fontSize="10">
+    <region left="36" top="1557" width="263" height="32" color="#000000" fontSize="10">
       <math>
         <input>
           <e type="operand">a.p</e>
@@ -786,12 +865,14 @@
         </result>
       </math>
     </region>
-    <region id="79" left="342" top="1584" width="193" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>-pozorna odległość osi</p>
+    <region left="342" top="1566" width="190" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">-pozorna odległość osi</p>
+        </content>
       </text>
     </region>
-    <region id="80" left="36" top="1602" width="164" height="53" color="#000000" bgColor="#ffffff" fontSize="10">
+    <region left="36" top="1584" width="154" height="53" color="#000000" fontSize="10">
       <math>
         <input>
           <e type="operand">k</e>
@@ -807,12 +888,14 @@
         </result>
       </math>
     </region>
-    <region id="81" left="261" top="1620" width="201" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>-współczynnik zsunięcia</p>
+    <region left="261" top="1602" width="198" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">-współczynnik zsunięcia</p>
+        </content>
       </text>
     </region>
-    <region id="82" left="36" top="1647" width="203" height="49" color="#000000" bgColor="#ffffff" fontSize="10">
+    <region left="36" top="1629" width="204" height="49" color="#000000" fontSize="10">
       <math>
         <input>
           <e type="operand">d.11</e>
@@ -832,12 +915,14 @@
         </result>
       </math>
     </region>
-    <region id="83" left="306" top="1665" width="242" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>-średnica podziałowa zębnika</p>
+    <region left="306" top="1647" width="238" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">-średnica podziałowa zębnika</p>
+        </content>
       </text>
     </region>
-    <region id="84" left="36" top="1701" width="218" height="30" color="#000000" bgColor="#ffffff" fontSize="10">
+    <region left="36" top="1683" width="221" height="30" color="#000000" fontSize="10">
       <math>
         <input>
           <e type="operand">d.12</e>
@@ -856,12 +941,14 @@
         </result>
       </math>
     </region>
-    <region id="85" left="306" top="1701" width="217" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>-średnica podziałowa koła</p>
+    <region left="306" top="1683" width="214" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">-średnica podziałowa koła</p>
+        </content>
       </text>
     </region>
-    <region id="86" left="36" top="1728" width="162" height="53" color="#000000" bgColor="#ffffff" fontSize="10">
+    <region left="36" top="1710" width="163" height="53" color="#000000" fontSize="10">
       <math>
         <input>
           <e type="operand">m.t</e>
@@ -878,17 +965,21 @@
         </result>
       </math>
     </region>
-    <region id="87" left="234" top="1737" width="127" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>-moduł czołowy</p>
+    <region left="234" top="1719" width="126" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">-moduł czołowy</p>
+        </content>
       </text>
     </region>
-    <region id="88" left="36" top="1773" width="421" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="eng">
-        <p>Kąty pochylenia linii zęba na średnicach tocznych:</p>
+    <region left="36" top="1755" width="414" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="eng" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">Kąty pochylenia linii zęba na średnicach tocznych:</p>
+        </content>
       </text>
     </region>
-    <region id="89" left="36" top="1791" width="256" height="55" color="#000000" bgColor="#ffffff" fontSize="10">
+    <region left="36" top="1773" width="247" height="55" color="#000000" fontSize="10">
       <math>
         <input>
           <e type="operand">β.w1</e>
@@ -906,17 +997,21 @@
         </result>
       </math>
     </region>
-    <region id="90" left="306" top="1800" width="266" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>-średnica pochylenia linii zęba</p>
+    <region left="306" top="1782" width="262" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">-średnica pochylenia linii zęba</p>
+        </content>
       </text>
     </region>
-    <region id="91" left="315" top="1818" width="234" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>na średnicy tocznej zębnika</p>
+    <region left="315" top="1800" width="230" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">na średnicy tocznej zębnika</p>
+        </content>
       </text>
     </region>
-    <region id="92" left="36" top="1836" width="256" height="55" color="#000000" bgColor="#ffffff" fontSize="10">
+    <region left="36" top="1818" width="247" height="55" color="#000000" fontSize="10">
       <math>
         <input>
           <e type="operand">β.w2</e>
@@ -934,17 +1029,21 @@
         </result>
       </math>
     </region>
-    <region id="93" left="315" top="1845" width="266" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>-średnica pochylenia linii zęba</p>
+    <region left="315" top="1827" width="262" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">-średnica pochylenia linii zęba</p>
+        </content>
       </text>
     </region>
-    <region id="94" left="324" top="1863" width="209" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>na średnicy tocznej koła</p>
+    <region left="324" top="1845" width="206" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">na średnicy tocznej koła</p>
+        </content>
       </text>
     </region>
-    <region id="95" left="36" top="1872" width="198" height="53" color="#000000" bgColor="#ffffff" fontSize="10">
+    <region left="36" top="1854" width="188" height="53" color="#000000" fontSize="10">
       <math>
         <input>
           <e type="operand">S.mt</e>
@@ -962,12 +1061,14 @@
         </result>
       </math>
     </region>
-    <region id="96" left="279" top="1881" width="119" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>-siła styczna</p>
+    <region left="279" top="1863" width="118" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">-siła styczna</p>
+        </content>
       </text>
     </region>
-    <region id="97" left="36" top="1926" width="237" height="32" color="#000000" bgColor="#ffffff" fontSize="10">
+    <region left="36" top="1908" width="229" height="32" color="#000000" fontSize="10">
       <math>
         <input>
           <e type="operand">S.mo</e>
@@ -984,12 +1085,14 @@
         </result>
       </math>
     </region>
-    <region id="98" left="288" top="1926" width="127" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>-siła wzdłużna</p>
+    <region left="288" top="1908" width="126" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">-siła wzdłużna</p>
+        </content>
       </text>
     </region>
-    <region id="99" left="36" top="1962" width="229" height="32" color="#000000" bgColor="#ffffff" fontSize="10">
+    <region left="36" top="1944" width="221" height="32" color="#000000" fontSize="10">
       <math>
         <input>
           <e type="operand">S.mr</e>
@@ -1006,17 +1109,21 @@
         </result>
       </math>
     </region>
-    <region id="100" left="288" top="1962" width="152" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>-siła promieniowa</p>
+    <region left="288" top="1944" width="150" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">-siła promieniowa</p>
+        </content>
       </text>
     </region>
-    <region id="101" left="36" top="1998" width="291" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>Klasa dokładności wykonania zęba 8</p>
+    <region left="36" top="1980" width="286" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">Klasa dokładności wykonania zęba 8</p>
+        </content>
       </text>
     </region>
-    <region id="102" left="36" top="2034" width="74" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+    <region left="36" top="2016" width="74" height="24" color="#000000" fontSize="10">
       <math>
         <input>
           <e type="operand">b</e>
@@ -1027,12 +1134,14 @@
         </input>
       </math>
     </region>
-    <region id="103" left="171" top="2034" width="135" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>-szerokość koła</p>
+    <region left="171" top="2016" width="134" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">-szerokość koła</p>
+        </content>
       </text>
     </region>
-    <region id="104" left="36" top="2052" width="191" height="49" color="#000000" bgColor="#ffffff" fontSize="10">
+    <region left="36" top="2034" width="181" height="49" color="#000000" fontSize="10">
       <math>
         <input>
           <e type="operand">ε.β</e>
@@ -1051,9 +1160,11 @@
         </result>
       </math>
     </region>
-    <region id="105" left="243" top="2061" width="225" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-      <text lang="pol">
-        <p>-poskokowa liczba przyporu</p>
+    <region left="243" top="2043" width="222" height="23" color="#000000" fontSize="10" isBreakable="false">
+      <text lang="pol" fontFamily="Arial" fontSize="10">
+        <content>
+          <p style="font-family: Courier New;">-poskokowa liczba przyporu</p>
+        </content>
       </text>
     </region>
   </regions>

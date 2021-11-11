@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>920</width>
+    <width>919</width>
     <height>665</height>
    </rect>
   </property>
@@ -335,6 +335,12 @@ QPushButton:hover{
         <pointsize>14</pointsize>
        </font>
       </property>
+      <property name="acceptDrops">
+       <bool>false</bool>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(242, 242, 246);</string>
       </property>
@@ -512,7 +518,7 @@ height: 40;</string>
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="forces_btn">
+           <widget class="QPushButton" name="factors_btn">
             <property name="enabled">
              <bool>false</bool>
             </property>
@@ -532,7 +538,7 @@ height: 40;</string>
              <string notr="true">background-color: rgb(180, 180, 180);</string>
             </property>
             <property name="text">
-             <string>NAPRĘŻENIA</string>
+             <string>WSP. KOREKCJI</string>
             </property>
             <property name="checkable">
              <bool>true</bool>
@@ -662,7 +668,7 @@ height: 40;</string>
           <string notr="true">background-color: rgb(255, 255, 255);</string>
          </property>
          <property name="currentIndex">
-          <number>2</number>
+          <number>3</number>
          </property>
          <widget class="QWidget" name="page_input_data">
           <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -682,7 +688,7 @@ height: 40;</string>
             <number>0</number>
            </property>
            <item>
-            <widget class="QFrame" name="row_frame_1">
+            <widget class="QFrame" name="page_input_data_main_frame">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                <horstretch>0</horstretch>
@@ -701,7 +707,7 @@ color: rgb(33, 38, 55);
 }
 QLineEdit{
 background-color: rgb(242, 242, 246);
-border: none;
+border: 1px solid rgb(180,180,180);
 padding-left: 3px;
 color: rgb(33, 38, 55);
 }
@@ -2388,7 +2394,7 @@ background-color: rgb(51, 82, 148);
            </item>
           </layout>
          </widget>
-         <widget class="QWidget" name="zalozenia_page">
+         <widget class="QWidget" name="page_preconditions">
           <layout class="QVBoxLayout" name="verticalLayout_8">
            <property name="spacing">
             <number>10</number>
@@ -2406,7 +2412,7 @@ background-color: rgb(51, 82, 148);
             <number>0</number>
            </property>
            <item>
-            <widget class="QFrame" name="row_frame_2">
+            <widget class="QFrame" name="page_preconditions_main_frame">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                <horstretch>0</horstretch>
@@ -2425,7 +2431,7 @@ color: rgb(33, 38, 55);
 }
 QLineEdit{
 background-color: rgb(242, 242, 246);
-border: none;
+border: 1px solid rgb(180,180,180);
 padding-left: 3px;
 color: rgb(33, 38, 55);
 }
@@ -3621,25 +3627,25 @@ background-color: rgb(51, 82, 148);
            </item>
           </layout>
          </widget>
-         <widget class="QWidget" name="wyniki_wstepne_page">
+         <widget class="QWidget" name="page_preliminary_results">
           <layout class="QVBoxLayout" name="verticalLayout_11">
            <property name="spacing">
             <number>0</number>
            </property>
            <property name="leftMargin">
-            <number>0</number>
+            <number>20</number>
            </property>
            <property name="topMargin">
-            <number>0</number>
+            <number>20</number>
            </property>
            <property name="rightMargin">
-            <number>0</number>
+            <number>20</number>
            </property>
            <property name="bottomMargin">
             <number>0</number>
            </property>
            <item>
-            <widget class="QFrame" name="row_frame_3">
+            <widget class="QFrame" name="page_preliminary_results_main_frame">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                <horstretch>0</horstretch>
@@ -3658,8 +3664,7 @@ color: rgb(33, 38, 55);
 }
 QLineEdit{
 background-color: rgb(242, 242, 246);
-border: none;
-padding-left: 3px;
+border: 1px solid rgb(180,180,180);padding-left: 3px;
 color: rgb(33, 38, 55);
 }
 
@@ -4154,7 +4159,7 @@ QListView::item {
                        <bool>true</bool>
                       </property>
                       <property name="sizePolicy">
-                       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                         <horstretch>0</horstretch>
                         <verstretch>0</verstretch>
                        </sizepolicy>
@@ -4162,7 +4167,7 @@ QListView::item {
                       <property name="minimumSize">
                        <size>
                         <width>0</width>
-                        <height>40</height>
+                        <height>0</height>
                        </size>
                       </property>
                       <property name="maximumSize">
@@ -4615,7 +4620,7 @@ background-color: rgb(51, 82, 148);
                        <bool>false</bool>
                       </property>
                       <property name="sizePolicy">
-                       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                         <horstretch>0</horstretch>
                         <verstretch>0</verstretch>
                        </sizepolicy>
@@ -4794,7 +4799,453 @@ background-color: rgb(51, 82, 148);
            </item>
           </layout>
          </widget>
-         <widget class="QWidget" name="naprezenia_page"/>
+         <widget class="QWidget" name="page_corection_factors">
+          <layout class="QVBoxLayout" name="verticalLayout_12">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QFrame" name="correction_factors_header_frame">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>Calibri</family>
+               <pointsize>14</pointsize>
+              </font>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::NoFrame</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Plain</enum>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_12">
+              <property name="spacing">
+               <number>0</number>
+              </property>
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item alignment="Qt::AlignHCenter">
+               <widget class="QLabel" name="correction_factors_header_label">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>260</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>260</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Calibri</family>
+                  <pointsize>16</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>WSPÓŁCZYNNIKI KOREKCJI</string>
+                </property>
+                <property name="textFormat">
+                 <enum>Qt::PlainText</enum>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="bring_back_defaults_btn">
+                <property name="maximumSize">
+                 <size>
+                  <width>150</width>
+                  <height>50</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton{
+color: rgb(242, 242, 246);
+background-color: rgb(76, 118, 232);
+border: none;
+height: 40;
+margin: 10px
+}
+QPushButton:hover{
+background-color: rgb(51, 82, 148);
+}
+</string>
+                </property>
+                <property name="text">
+                 <string>WART. DOMYŚLNE</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QFrame" name="correction_factors_main_frame">
+             <property name="styleSheet">
+              <string notr="true">QLineEdit{
+background-color: rgb(242, 242, 246);
+border: 1px solid rgb(180,180,180);
+padding-left: 3px;
+color: rgb(33, 38, 55);
+}
+</string>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::NoFrame</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Plain</enum>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_13">
+              <property name="spacing">
+               <number>0</number>
+              </property>
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QFrame" name="graph_data_frame">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>42</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>42</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QLabel{
+padding-left: 5px;
+}
+QLineEdit{
+margiin: 10px;
+}
+</string>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_41">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>10</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>10</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="factors_sum_frame">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>130</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>130</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <family>Calibri</family>
+                     <pointsize>14</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>(X1 + X2) / 2</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="factors_sum_line_edit">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <family>Calibri</family>
+                     <pointsize>14</pointsize>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">margin: 10px;
+margin-right: 25px;</string>
+                   </property>
+                   <property name="dragEnabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="placeholderText">
+                    <string/>
+                   </property>
+                   <property name="clearButtonEnabled">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="tooth_number_sum_frame">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>130</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>130</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <family>Calibri</family>
+                     <pointsize>14</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>(Z1 + Z2) / 2</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="tooth_number_sum_line_edit">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <family>Calibri</family>
+                     <pointsize>14</pointsize>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">margin: 10px;</string>
+                   </property>
+                   <property name="dragEnabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="placeholderText">
+                    <string/>
+                   </property>
+                   <property name="clearButtonEnabled">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QFrame" name="graph_frame">
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_13">
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="QPushButton" name="graph_generate_button">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>100</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <family>Calibri</family>
+                     <pointsize>14</pointsize>
+                     <weight>50</weight>
+                     <italic>false</italic>
+                     <bold>false</bold>
+                     <underline>false</underline>
+                     <strikeout>false</strikeout>
+                     <stylestrategy>PreferDefault</stylestrategy>
+                     <kerning>true</kerning>
+                    </font>
+                   </property>
+                   <property name="acceptDrops">
+                    <bool>true</bool>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
+color: rgb(242, 242, 246);
+background-color: rgb(76, 118, 232);
+border: none;
+height: 40;
+}
+QPushButton:hover{
+background-color: rgb(51, 82, 148);
+}
+</string>
+                   </property>
+                   <property name="text">
+                    <string>GENERUJ</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="MplWidget" name="MplWidget">
+                   <property name="font">
+                    <font>
+                     <family>MS Serif</family>
+                     <weight>50</weight>
+                     <bold>false</bold>
+                    </font>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
          <widget class="QWidget" name="srednice_page"/>
          <widget class="QWidget" name="wyniki_page"/>
          <widget class="QWidget" name="excel_page"/>
@@ -4807,6 +5258,14 @@ background-color: rgb(51, 82, 148);
    </layout>
   </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MplWidget</class>
+   <extends>QFrame</extends>
+   <header>mplwidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="demo.qrc"/>
  </resources>

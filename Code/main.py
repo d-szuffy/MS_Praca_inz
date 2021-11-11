@@ -1,16 +1,18 @@
 from PyQt5.QtGui import QDoubleValidator, QValidator
-
+from data.linear_functions import PointsForLinearFunctions
 from decimal import Decimal
 import Gear_UI
 import sys
 import math
 import numpy
 
-from Code.data.input_data import *
-from Code.data.preconditions import *
-from Code.data.results import *
+from data.input_data import *
+from data.preconditions import *
+from data.results import *
 from PyQt5.QtWidgets import QMainWindow, QApplication, QMessageBox, QPushButton
 from PyQt5.QtCore import Qt
+
+from matplotlib.backends.backend_qt5agg import (NavigationToolbar2QT as NavigationToolbar)
 
 WINDOW_SIZE = 0
 
@@ -46,6 +48,9 @@ class MyForm(QMainWindow):
                 }
                 QPushButton:hover{background-color: rgb(61, 101, 206);}"""
 
+    #załadowanie punktów tworzących proste
+    LIST_OF_POINTS = PointsForLinearFunctions.LIST_OF_POINTS
+
     def __init__(self):
         super().__init__()
         self.ui = Gear_UI.Ui_MainWindow()
@@ -60,31 +65,47 @@ class MyForm(QMainWindow):
         self.ui.close_btn.clicked.connect(lambda: self.close())
         # Restore/Maximize window
         self.ui.restore_btn.clicked.connect(lambda: self.restore_or_maximize_window())
+        #setting default page
         self.ui.stackedWidget.setCurrentWidget(self.ui.page_input_data)
+        #setting default value for combo box
         self.toggle_material_combo_box(True)
+        #headers buttons functionality
         self.ui.materials_btn.clicked.connect(
             lambda: self.set_current_page(self.ui.page_input_data, self.ui.materials_btn))
-        self.ui.input_btn.clicked.connect(lambda: self.set_current_page(self.ui.zalozenia_page, self.ui.input_btn))
+        self.ui.input_btn.clicked.connect(lambda: self.set_current_page(self.ui.page_preconditions, self.ui.input_btn))
         self.ui.base_outcome_btn.clicked.connect(
-            lambda: self.set_current_page(self.ui.wyniki_wstepne_page, self.ui.base_outcome_btn))
-        self.ui.forces_btn.clicked.connect(lambda: self.set_current_page(self.ui.naprezenia_page, self.ui.forces_btn))
+            lambda: self.set_current_page(self.ui.page_preliminary_results, self.ui.base_outcome_btn))
+        self.ui.factors_btn.clicked.connect(lambda: self.set_current_page(self.ui.page_corection_factors, self.ui.factors_btn))
         self.ui.diameters_btn.clicked.connect(
             lambda: self.set_current_page(self.ui.srednice_page, self.ui.diameters_btn))
         self.ui.excel_btn.clicked.connect(lambda: self.set_current_page(self.ui.excel_page, self.ui.excel_btn))
         self.ui.scheme_btn.clicked.connect(lambda: self.set_current_page(self.ui.schemat_page, self.ui.scheme_btn))
+
+        #clear and calculate buttons on both pages
         self.ui.clear_btn.clicked.connect(lambda: self.clear_input_data(True))
         self.ui.preconditions_clear_btn.clicked.connect(lambda: self.clear_input_data(False))
-        self.ui.calculate_btn.clicked.connect(lambda: self.get_and_validate_input_date())
-        self.ui.preconditions_calculate_btn.clicked.connect(lambda: self.get_and_validate_input_date())
+        self.ui.calculate_btn.clicked.connect(lambda: self.get_and_validate_input_data())
+        self.ui.preconditions_calculate_btn.clicked.connect(lambda: self.get_and_validate_input_data())
+
+        #control material combo box based on radio buttons
         self.ui.radio_btn_soft_wheels.clicked.connect(lambda: self.toggle_material_combo_box(True))
         self.ui.radio_btn_hard_wheels.clicked.connect(lambda: self.toggle_material_combo_box(False))
+
+        #enable next parts of calculations after confirming normal module value and 2nd gear tooth number value
         self.ui.normal_module_confirm_btn.clicked.connect(lambda: self.enable_next_geometric_parameters_after_confirming_normal_module())
         self.ui.second_wheel_tooth_number_confirm_btn.clicked.connect(lambda: self.calculate_real_ratio_after_setting_2nd_wheel_tooth_number())
+
+        #put point on graph
+        self.ui.graph_generate_button.clicked.connect(lambda: self.put_given_point_on_correction_factors_graph())
+        self.ui.bring_back_defaults_btn.clicked.connect(lambda: self.default_values_for_correction_factors_graph())
+
+
+        #set validators for user's interactive line Edits
         self.power_validator = RangeDoubleValidator()
         self.power_validator.setRange(0.0, 1000, 6)
         self.ui.lineEdit_power.setValidator(self.power_validator)
         self.ratio_validator = RangeDoubleValidator()
-        self.ratio_validator.setRange(0.01, 300, 3)
+        self.ratio_validator.setRange(1, 950, 3)
         self.ui.lineEdit_ratio.setValidator(self.ratio_validator)
         self.velocity_in_validator = RangeDoubleValidator()
         self.velocity_in_validator.setRange(0.0, 30000, 3)
@@ -106,6 +127,9 @@ class MyForm(QMainWindow):
         print(self.ui.stackedWidget.currentIndex())
 
         self.currentButton = self.ui.materials_btn
+
+        #self.ui.MplWidget.canvas.axes.legend(('cosinus', 'sinus'), loc='upper right')
+        self.ui.MplWidget.canvas.kutas.set_title('Współczynniki korekcji')
 
         # Restore or maximize your window
 
@@ -171,8 +195,10 @@ class MyForm(QMainWindow):
             border-bottom: 3px solid rgb(33, 38, 55);\n
             height: 40;\n}"""
                                   )
+
         self.currentButton = next_button
         self.ui.stackedWidget.setCurrentWidget(page)
+
 
     def clear_input_data(self, which_page):
         if which_page:
@@ -197,7 +223,7 @@ class MyForm(QMainWindow):
             self.ui.comboBox_helix_angle.setCurrentIndex(0)
             self.ui.comboBox_teeth_number.setCurrentIndex(0)
 
-    def get_and_validate_input_date(self):
+    def get_and_validate_input_data(self):
         power, ratio, velocity_in, velocity_out, machine_driving, machine_driven, durability, wheelbase, pressure_angle = \
             self.ui.lineEdit_power.text(), \
             self.ui.lineEdit_ratio.text(), \
@@ -215,15 +241,18 @@ class MyForm(QMainWindow):
                                      "Nie wszystkie dane wejściowe i założenia zostały uzupełnione",
                                      "Złe dane wejściowe", QMessageBox.Ok)
         if is_data_filled:
-            self.enable_output_buttons()
+            self.enable_base_outcome_page()
             self.rewriting_input_data_to_variables()
 
-    def enable_output_buttons(self):
+    def enable_base_outcome_page(self):
 
         self.ui.base_outcome_btn.setStyleSheet(MyForm.ENABLED_BTN_STYLE_SHEET)
         self.ui.base_outcome_btn.setEnabled(True)
-        self.ui.forces_btn.setStyleSheet(MyForm.ENABLED_BTN_STYLE_SHEET)
-        self.ui.forces_btn.setEnabled(True)
+
+    def enable_other_pages(self):
+
+        self.ui.factors_btn.setStyleSheet(MyForm.ENABLED_BTN_STYLE_SHEET)
+        self.ui.factors_btn.setEnabled(True)
         self.ui.diameters_btn.setStyleSheet(MyForm.ENABLED_BTN_STYLE_SHEET)
         self.ui.diameters_btn.setEnabled(True)
         self.ui.excel_btn.setStyleSheet(MyForm.ENABLED_BTN_STYLE_SHEET)
@@ -305,9 +334,17 @@ class MyForm(QMainWindow):
     def calculate_on_input_data(self):
         Result.pinion_torque = InputData.power / InputData.rad_velocity_in
         Result.calculated_normal_module = (InputData.wheelbase * 2 * math.cos(numpy.deg2rad(InputData.helix_angle))) / (InputData.pinion_tooth_number * (1 + InputData.ratio))
-        Result.ratio_bottom_border = 0.975 * InputData.ratio
-        Result.ratio_upper_border = 1.025 * InputData.ratio
         Result.calculated_2nd_wheel_tooth_number = InputData.pinion_tooth_number * InputData.ratio
+
+        if 1 <= InputData.ratio <= 4.5:
+            Result.ratio_bottom_border = 0.975 * InputData.ratio
+            Result.ratio_upper_border = 1.025 * InputData.ratio
+        elif 5 <= InputData.ratio <= 224:
+            Result.ratio_bottom_border = 0.96 * InputData.ratio
+            Result.ratio_upper_border = 1.04 * InputData.ratio
+        elif InputData.ratio >= 250:
+            Result.ratio_bottom_border = 0.95 * InputData.ratio
+            Result.ratio_upper_border = 1.05 * InputData.ratio
         self.rewrite_results_data_to_line_edits()
 
     def enable_next_geometric_parameters_after_confirming_normal_module(self):
@@ -327,23 +364,68 @@ class MyForm(QMainWindow):
             Result.real_ratio = Result.second_wheel_tooth_number / InputData.pinion_tooth_number
             if Result.ratio_bottom_border <= Result.real_ratio <= Result.ratio_upper_border:
                 self.ui.lineEdit_real_ratio.setText(str(Result.real_ratio))
+                print("czy to działa")
                 self.prepare_values_for_further_ui_development()
+                self.enable_other_pages()
+                self.generate_correction_factors_graph()
             else:
                 self.display_message_box(QMessageBox.Warning, f"Wartość przełożenia musi mieścić się w przediale {Result.ratio_bottom_border} < u < {Result.ratio_upper_border}. Obecna wartość przełożenia to {Result.real_ratio}. Zmień liczbę zębów drugiego koła.", "Błąd przełożenia", QMessageBox.Ok)
+
+    def generate_correction_factors_graph(self):
+        self.ui.MplWidget.canvas.kutas.clear()
+        for points in self.LIST_OF_POINTS:
+            self.ui.MplWidget.canvas.kutas.axline(points[0], points[1])
+            self.ui.MplWidget.canvas.kutas.set_xlim(10, 150)
+            self.ui.MplWidget.canvas.kutas.set_ylim(-0.5, 1)
+            # self.ui.MplWidget.canvas.axes.plot.xlim([10, 150])
+            # self.ui.MplWidget.canvas.axes.plot.ylim([-0.5, 1])
+            self.ui.MplWidget.canvas.draw()
+
+    def put_given_point_on_correction_factors_graph(self):
+        self.ui.MplWidget.canvas.kutas.clear()
+        self.generate_correction_factors_graph()
+
+        if self.ui.factors_sum_line_edit.text() == "" or self.ui.tooth_number_sum_line_edit.text() == "":
+            self.display_message_box(QMessageBox.Warning,
+                                     f"Aby wygenerować punkt, podaj jego współrzędne.", f"Złe współrzędne", QMessageBox.Ok)
+
+        elif not (-0.5 < float(self.ui.factors_sum_line_edit.text()) < 1 and 0 < float(self.ui.tooth_number_sum_line_edit.text()) < 150):
+            self.display_message_box(QMessageBox.Warning,
+                                     f"Punkt o podanych współrzędnych jest spoza zakresu wykresu. Zmień współrzędne punktu.", f"Złe współrzędne", QMessageBox.Ok)
+
+        else:
+            Result.half_of_correction_factors_sum = float(self.ui.factors_sum_line_edit.text())
+            Result.half_of_pinion_and_wheel_tooth_number_sum = float(self.ui.tooth_number_sum_line_edit.text())
+            self.ui.MplWidget.canvas.kutas.plot(Result.half_of_pinion_and_wheel_tooth_number_sum,
+                                                Result.half_of_correction_factors_sum, marker="o", markersize=5, markerfacecolor="red", markeredgecolor="red")
+            self.ui.MplWidget.canvas.draw()
+
+    def default_values_for_correction_factors_graph(self):
+        Result.half_of_correction_factors_sum = Result.correction_factors_sum / 2
+        Result.half_of_pinion_and_wheel_tooth_number_sum = (InputData.pinion_tooth_number + Result.second_wheel_tooth_number) / 2
+        self.ui.factors_sum_line_edit.setText(str(Result.half_of_correction_factors_sum))
+        self.ui.tooth_number_sum_line_edit.setText(str(Result.half_of_pinion_and_wheel_tooth_number_sum))
 
     def prepare_values_for_further_ui_development(self):
         Result.wheelbase_zero = ((InputData.pinion_tooth_number + Result.second_wheel_tooth_number)
                                  * Result.normal_module) / (2 * math.cos(numpy.deg2rad(InputData.helix_angle)))
         # RESULT.WHEELBASE_ZERO wyświetla poprawną wartość, mozna podpinać pod UI
         print(f"Zerowa odległośc osi: {Result.wheelbase_zero}")
-        Result.estimated_correction_factors_sum = (InputData.wheelbase - Result.wheelbase_zero) / Result.normal_module
-        print(f"Przybliżona wartość sumy wspólczynników korekcji (przesunięcia zarysu): {Result.estimated_correction_factors_sum}")
+        print(
+            f"Przybliżona wartość sumy wspólczynników korekcji (przesunięcia zarysu): {Result.estimated_correction_factors_sum}")
         # POPRAWNA WARTOŚĆ PRZYBLIZONEGO WSPOLCZYNNIKA KOREKCJI ZWROCONA
 
-        Result.alfa_t = math.atan(math.tan(numpy.deg2rad(InputData.pressure_angle)) / math.cos(numpy.deg2rad(InputData.helix_angle)))
-        print(f" Kąt zarysu w przekroju czołowym: {Result.alfa_t}")
+        Result.alfa_t = math.atan(
+            math.tan(numpy.deg2rad(InputData.pressure_angle)) / math.cos(numpy.deg2rad(InputData.helix_angle)))
+        print(f"Kąt zarysu w przekroju czołowym: {Result.alfa_t}")
         # POPRAWNIE OBLICZONA WARTOSC ALFA_T
 
+        # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+        # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+        # @@@@@@@@@@@@@@@@@@@@@@DOPYTAC O PROCEDURE OBLICZEN DLA WIESZKYCH PRZELOZEN@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+        # @@@@@@@@@@@@@@@@@@@@@@@PONIEWAZ W TEJ LINIJCE ARC COS DOSTAJE ARGUMENT Z POZA@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+        # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@PRZEDZIAŁU (-1,1)@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+        print(f"Argument arc cosinusa: {Result.wheelbase_zero * math.cos(Result.alfa_t) / InputData.wheelbase}")
         Result.alfa_tw = math.acos(Result.wheelbase_zero * math.cos(Result.alfa_t) / InputData.wheelbase)
         print(f"Kąt przyporu toczny w przekroju czołowym: {Result.alfa_tw}")
         # POPRAWNIE OBLICZONA WARTOSC ALFA_TW
@@ -355,11 +437,18 @@ class MyForm(QMainWindow):
         Result.inv_alfa_t = math.tan(Result.alfa_t) - Result.alfa_t
         print(f"Involuta, funkcja ewolwentowa alfa_t: {Result.inv_alfa_t}")
         # POPRAWNIE OBLICZONA WARTOSC
+        Result.estimated_correction_factors_sum = (InputData.wheelbase - Result.wheelbase_zero) / Result.normal_module
+
 
         Result.correction_factors_sum = ((Result.inv_alfa_tw - Result.inv_alfa_t) *
                                          (InputData.pinion_tooth_number + Result.second_wheel_tooth_number)) / \
                                         (2 * math.tan(numpy.deg2rad(InputData.pressure_angle)))
         print(f"Suma współczynników korekcji: {Result.correction_factors_sum}")
+
+        Result.half_of_correction_factors_sum = Result.correction_factors_sum / 2
+        Result.half_of_pinion_and_wheel_tooth_number_sum = (InputData.pinion_tooth_number + Result.second_wheel_tooth_number) / 2
+        self.ui.factors_sum_line_edit.setText(str(Result.half_of_correction_factors_sum))
+        self.ui.tooth_number_sum_line_edit.setText(str(Result.half_of_pinion_and_wheel_tooth_number_sum))
 
         Result.beta_b_helix_angle = math.atan(math.tan(numpy.deg2rad(InputData.helix_angle)) *
                                               math.cos(math.atan(math.tan(numpy.deg2rad(InputData.pressure_angle)) /

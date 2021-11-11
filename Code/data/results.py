@@ -34,7 +34,8 @@ class Result(object):
     force_radial = None
     second_wheel_width = None
     stepping_pressure_number = None
-
+    half_of_correction_factors_sum = None
+    half_of_pinion_and_wheel_tooth_number_sum = None
 
 
 

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'Gear_v3QIDHkO.ui'
+## Form generated from reading UI file 'Gear_v3nHJabH.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.1
 ##
@@ -13,7 +13,6 @@ from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 
 from data.correctio_factors_diag import MplWidget
-
 import demo_rc
 
 class Ui_MainWindow(object):
@@ -296,26 +295,25 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "QComboBox{\n"
-"padding-left: 3px;\n"
-"margin-left: 10px;\n"
-"}\n"
-"QComboBox{\n"
 "background-color: rgb(255, 255, 255);\n"
 "color: rgb(33, 38, 55);\n"
 "border: 1px solid rgb(242, 242, 246);\n"
 "padding: 1px 1px 1px 1px;\n"
 "}\n"
 "QComboBox::drop-down{\n"
-"background-color: rgb(76, 118, 232);\n"
-"border-left: 1px solid rgb(242, 242, 246);\n"
+"background-color: rgb(255, 255, 255);\n"
+"border: none;\n"
+"margin-right: 2px;\n"
 "width:20px;\n"
 "}\n"
 "QComboBox::down-arrow{\n"
 "image: url(:/demo/icons/cil-arrow-circle-bottom.png);\n"
+"background-color: rgb(76, 118, 232);\n"
+"border-radius: 10px;\n"
 "width: 20px;\n"
 "height: 20px;\n"
 "}\n"
-"QComboBox::drop-down::hover{\n"
+"QComboBox::down-arrow::hover{\n"
 "	background-color: rgb(61, 101, 206);\n"
 "}\n"
 "QListView::item {\n"
@@ -326,8 +324,8 @@ class Ui_MainWindow(object):
 "   stop: 1 #DBDBDB );\n"
 "   border-style: solid;\n"
 "   border-width: 1px;\n"
-"   border-color: rgb(0, 9"
-                        "3, 168);\n"
+"   border-color: rgb(0, 93, 16"
+                        "8);\n"
 "   border-radius: 20px;\n"
 "}")
         self.page_input_data_main_frame.setFrameShape(QFrame.NoFrame)
@@ -437,36 +435,7 @@ class Ui_MainWindow(object):
         font2 = QFont()
         font2.setPointSize(12)
         self.comboBox_power.setFont(font2)
-        self.comboBox_power.setStyleSheet(u"QComboBox{\n"
-"background-color: rgb(255, 255, 255);\n"
-"color: rgb(33, 38, 55);\n"
-"border: 1px solid rgb(242, 242, 246);\n"
-"padding: 1px 1px 1px 1px;\n"
-"}\n"
-"QComboBox::drop-down{\n"
-"background-color: rgb(76, 118, 232);\n"
-"border-left: 1px solid rgb(242, 242, 246);\n"
-"width:20px;\n"
-"}\n"
-"QComboBox::down-arrow{\n"
-"image: url(:/demo/icons/cil-arrow-circle-bottom.png);\n"
-"width: 20px;\n"
-"height: 20px;\n"
-"}\n"
-"QComboBox::drop-down::hover{\n"
-"	background-color: rgb(61, 101, 206);\n"
-"}\n"
-"QListView::item {\n"
-"   background: qradialgradient(\n"
-"   cx: 0.5, cy: -1.6, fx: 0.5, fy: 0,\n"
-"   radius: 2,\n"
-"   stop: 0 #C4C4C4,\n"
-"   stop: 1 #DBDBDB );\n"
-"   border-style: solid;\n"
-"   border-width: 1px;\n"
-"   border-color: rgb(0, 93, 168);\n"
-"   border-radius: 20px;\n"
-"}")
+        self.comboBox_power.setStyleSheet(u"")
 
         self.horizontalLayout_21.addWidget(self.comboBox_power)
 
@@ -502,7 +471,7 @@ class Ui_MainWindow(object):
         self.lineEdit_ratio.setMinimumSize(QSize(0, 40))
         self.lineEdit_ratio.setMaximumSize(QSize(16777215, 16777215))
         self.lineEdit_ratio.setFont(font)
-        self.lineEdit_ratio.setStyleSheet(u"margin: 10px;")
+        self.lineEdit_ratio.setStyleSheet(u"margin: 10px 0px 10px 10px;")
         self.lineEdit_ratio.setDragEnabled(False)
         self.lineEdit_ratio.setClearButtonEnabled(True)
 
@@ -641,7 +610,7 @@ class Ui_MainWindow(object):
         sizePolicy1.setHeightForWidth(self.comboBox_driving_machine.sizePolicy().hasHeightForWidth())
         self.comboBox_driving_machine.setSizePolicy(sizePolicy1)
         self.comboBox_driving_machine.setFont(font2)
-        self.comboBox_driving_machine.setStyleSheet(u"")
+        self.comboBox_driving_machine.setStyleSheet(u"margin-left: 10px;")
 
         self.horizontalLayout_23.addWidget(self.comboBox_driving_machine)
 
@@ -722,7 +691,7 @@ class Ui_MainWindow(object):
         sizePolicy1.setHeightForWidth(self.comboBox_driven_machine.sizePolicy().hasHeightForWidth())
         self.comboBox_driven_machine.setSizePolicy(sizePolicy1)
         self.comboBox_driven_machine.setFont(font2)
-        self.comboBox_driven_machine.setStyleSheet(u"")
+        self.comboBox_driven_machine.setStyleSheet(u"margin-left: 10px;")
 
         self.horizontalLayout_24.addWidget(self.comboBox_driven_machine)
 
@@ -925,26 +894,26 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "QComboBox{\n"
-"padding-left: 3px;\n"
-"margin-left: 10px;\n"
-"}\n"
-"QComboBox{\n"
 "background-color: rgb(255, 255, 255);\n"
 "color: rgb(33, 38, 55);\n"
 "border: 1px solid rgb(242, 242, 246);\n"
 "padding: 1px 1px 1px 1px;\n"
+"margin-left: 10px;\n"
 "}\n"
 "QComboBox::drop-down{\n"
-"background-color: rgb(76, 118, 232);\n"
-"border-left: 1px solid rgb(242, 242, 246);\n"
+"background-color: rgb(255, 255, 255);\n"
+"border: none;\n"
+"margin-right: 2px;\n"
 "width:20px;\n"
 "}\n"
 "QComboBox::down-arrow{\n"
 "image: url(:/demo/icons/cil-arrow-circle-bottom.png);\n"
+"background-color: rgb(76, 118, 232);\n"
+"border-radius: 10px;\n"
 "width: 20px;\n"
 "height: 20px;\n"
 "}\n"
-"QComboBox::drop-down::hover{\n"
+"QComboBox::down-arrow::hover{\n"
 "	background-color: rgb(61, 101, 206);\n"
 "}\n"
 "QListView::item {\n"
@@ -955,8 +924,8 @@ class Ui_MainWindow(object):
 "   stop: 1 #DBDBDB );\n"
 "   border-style: solid;\n"
 "   border-width: 1px;\n"
-"   border-color: rgb(0, 9"
-                        "3, 168);\n"
+"   bord"
+                        "er-color: rgb(0, 93, 168);\n"
 "   border-radius: 20px;\n"
 "}")
         self.page_preconditions_main_frame.setFrameShape(QFrame.NoFrame)
@@ -1070,16 +1039,19 @@ class Ui_MainWindow(object):
 "padding: 1px 1px 1px 1px;\n"
 "}\n"
 "QComboBox::drop-down{\n"
-"background-color: rgb(76, 118, 232);\n"
-"border-left: 1px solid rgb(242, 242, 246);\n"
+"background-color: rgb(255, 255, 255);\n"
+"border: none;\n"
+"margin-right: 2px;\n"
 "width:20px;\n"
 "}\n"
 "QComboBox::down-arrow{\n"
 "image: url(:/demo/icons/cil-arrow-circle-bottom.png);\n"
+"background-color: rgb(76, 118, 232);\n"
+"border-radius: 10px;\n"
 "width: 20px;\n"
 "height: 20px;\n"
 "}\n"
-"QComboBox::drop-down::hover{\n"
+"QComboBox::down-arrow::hover{\n"
 "	background-color: rgb(61, 101, 206);\n"
 "}\n"
 "QListView::item {\n"
@@ -1195,7 +1167,7 @@ class Ui_MainWindow(object):
         self.label_pressure_angle.setObjectName(u"label_pressure_angle")
         sizePolicy2.setHeightForWidth(self.label_pressure_angle.sizePolicy().hasHeightForWidth())
         self.label_pressure_angle.setSizePolicy(sizePolicy2)
-        self.label_pressure_angle.setMinimumSize(QSize(370, 0))
+        self.label_pressure_angle.setMinimumSize(QSize(370, 40))
         self.label_pressure_angle.setMaximumSize(QSize(370, 16777215))
         self.label_pressure_angle.setFont(font)
 
@@ -1206,9 +1178,9 @@ class Ui_MainWindow(object):
         sizePolicy1.setHeightForWidth(self.lineEdit_pressure_angle.sizePolicy().hasHeightForWidth())
         self.lineEdit_pressure_angle.setSizePolicy(sizePolicy1)
         self.lineEdit_pressure_angle.setMinimumSize(QSize(0, 40))
-        self.lineEdit_pressure_angle.setMaximumSize(QSize(16777215, 16777215))
+        self.lineEdit_pressure_angle.setMaximumSize(QSize(16777215, 40))
         self.lineEdit_pressure_angle.setFont(font)
-        self.lineEdit_pressure_angle.setStyleSheet(u"margin: 10px;")
+        self.lineEdit_pressure_angle.setStyleSheet(u"margin: 10px 0px 10px 10px;")
         self.lineEdit_pressure_angle.setDragEnabled(False)
         self.lineEdit_pressure_angle.setClearButtonEnabled(True)
 
@@ -1636,7 +1608,7 @@ class Ui_MainWindow(object):
         sizePolicy1.setHeightForWidth(self.lineEdit_bottom_ratio_border.sizePolicy().hasHeightForWidth())
         self.lineEdit_bottom_ratio_border.setSizePolicy(sizePolicy1)
         self.lineEdit_bottom_ratio_border.setMinimumSize(QSize(0, 40))
-        self.lineEdit_bottom_ratio_border.setMaximumSize(QSize(16777215, 16777215))
+        self.lineEdit_bottom_ratio_border.setMaximumSize(QSize(16777215, 40))
         self.lineEdit_bottom_ratio_border.setFont(font)
         self.lineEdit_bottom_ratio_border.setStyleSheet(u"margin: 10px;")
         self.lineEdit_bottom_ratio_border.setDragEnabled(False)
@@ -1674,7 +1646,7 @@ class Ui_MainWindow(object):
         sizePolicy1.setHeightForWidth(self.lineEdit_upper_ratio_border.sizePolicy().hasHeightForWidth())
         self.lineEdit_upper_ratio_border.setSizePolicy(sizePolicy1)
         self.lineEdit_upper_ratio_border.setMinimumSize(QSize(0, 40))
-        self.lineEdit_upper_ratio_border.setMaximumSize(QSize(16777215, 16777215))
+        self.lineEdit_upper_ratio_border.setMaximumSize(QSize(16777215, 40))
         self.lineEdit_upper_ratio_border.setFont(font)
         self.lineEdit_upper_ratio_border.setStyleSheet(u"margin: 10px;")
         self.lineEdit_upper_ratio_border.setDragEnabled(False)
@@ -1712,7 +1684,7 @@ class Ui_MainWindow(object):
         sizePolicy1.setHeightForWidth(self.lineEdit_calculated_tooth_number.sizePolicy().hasHeightForWidth())
         self.lineEdit_calculated_tooth_number.setSizePolicy(sizePolicy1)
         self.lineEdit_calculated_tooth_number.setMinimumSize(QSize(0, 40))
-        self.lineEdit_calculated_tooth_number.setMaximumSize(QSize(16777215, 16777215))
+        self.lineEdit_calculated_tooth_number.setMaximumSize(QSize(16777215, 40))
         self.lineEdit_calculated_tooth_number.setFont(font)
         self.lineEdit_calculated_tooth_number.setStyleSheet(u"margin: 10px;")
         self.lineEdit_calculated_tooth_number.setDragEnabled(False)
@@ -1750,7 +1722,7 @@ class Ui_MainWindow(object):
         sizePolicy5.setHeightForWidth(self.lineEdit_2nd_wheel_tooth_number.sizePolicy().hasHeightForWidth())
         self.lineEdit_2nd_wheel_tooth_number.setSizePolicy(sizePolicy5)
         self.lineEdit_2nd_wheel_tooth_number.setMinimumSize(QSize(0, 40))
-        self.lineEdit_2nd_wheel_tooth_number.setMaximumSize(QSize(16777215, 16777215))
+        self.lineEdit_2nd_wheel_tooth_number.setMaximumSize(QSize(16777215, 40))
         self.lineEdit_2nd_wheel_tooth_number.setFont(font)
         self.lineEdit_2nd_wheel_tooth_number.setStyleSheet(u"margin: 10px;")
         self.lineEdit_2nd_wheel_tooth_number.setDragEnabled(False)
@@ -1805,7 +1777,7 @@ class Ui_MainWindow(object):
         sizePolicy1.setHeightForWidth(self.lineEdit_real_ratio.sizePolicy().hasHeightForWidth())
         self.lineEdit_real_ratio.setSizePolicy(sizePolicy1)
         self.lineEdit_real_ratio.setMinimumSize(QSize(0, 40))
-        self.lineEdit_real_ratio.setMaximumSize(QSize(16777215, 16777215))
+        self.lineEdit_real_ratio.setMaximumSize(QSize(16777215, 40))
         self.lineEdit_real_ratio.setFont(font)
         self.lineEdit_real_ratio.setStyleSheet(u"margin: 10px;")
         self.lineEdit_real_ratio.setDragEnabled(False)
@@ -2003,8 +1975,8 @@ class Ui_MainWindow(object):
         font4.setBold(False)
         font4.setWeight(50)
         self.MplWidget.setFont(font4)
-        #self.MplWidget.setFrameShape(QFrame.StyledPanel)
-        #self.MplWidget.setFrameShadow(QFrame.Raised)
+        # self.MplWidget.setFrameShape(QFrame.StyledPanel)
+        # self.MplWidget.setFrameShadow(QFrame.Raised)
 
         self.horizontalLayout_13.addWidget(self.MplWidget)
 
@@ -2015,18 +1987,1160 @@ class Ui_MainWindow(object):
         self.verticalLayout_12.addWidget(self.correction_factors_main_frame)
 
         self.stackedWidget.addWidget(self.page_corection_factors)
-        self.srednice_page = QWidget()
-        self.srednice_page.setObjectName(u"srednice_page")
-        self.stackedWidget.addWidget(self.srednice_page)
-        self.wyniki_page = QWidget()
-        self.wyniki_page.setObjectName(u"wyniki_page")
-        self.stackedWidget.addWidget(self.wyniki_page)
-        self.excel_page = QWidget()
-        self.excel_page.setObjectName(u"excel_page")
-        self.stackedWidget.addWidget(self.excel_page)
-        self.schemat_page = QWidget()
-        self.schemat_page.setObjectName(u"schemat_page")
-        self.stackedWidget.addWidget(self.schemat_page)
+        self.page_outcomes = QWidget()
+        self.page_outcomes.setObjectName(u"page_outcomes")
+        self.verticalLayout_14 = QVBoxLayout(self.page_outcomes)
+        self.verticalLayout_14.setObjectName(u"verticalLayout_14")
+        self.frame = QFrame(self.page_outcomes)
+        self.frame.setObjectName(u"frame")
+        self.frame.setMinimumSize(QSize(0, 0))
+        self.frame.setFrameShape(QFrame.NoFrame)
+        self.frame.setFrameShadow(QFrame.Plain)
+        self.horizontalLayout_15 = QHBoxLayout(self.frame)
+        self.horizontalLayout_15.setSpacing(0)
+        self.horizontalLayout_15.setObjectName(u"horizontalLayout_15")
+        self.horizontalLayout_15.setContentsMargins(0, 0, 0, 0)
+        self.frame_preconditions_3 = QFrame(self.frame)
+        self.frame_preconditions_3.setObjectName(u"frame_preconditions_3")
+        sizePolicy.setHeightForWidth(self.frame_preconditions_3.sizePolicy().hasHeightForWidth())
+        self.frame_preconditions_3.setSizePolicy(sizePolicy)
+        self.frame_preconditions_3.setMaximumSize(QSize(16777215, 50))
+        self.frame_preconditions_3.setFont(font)
+        self.frame_preconditions_3.setFrameShape(QFrame.NoFrame)
+        self.frame_preconditions_3.setFrameShadow(QFrame.Plain)
+        self.horizontalLayout_14 = QHBoxLayout(self.frame_preconditions_3)
+        self.horizontalLayout_14.setSpacing(0)
+        self.horizontalLayout_14.setObjectName(u"horizontalLayout_14")
+        self.horizontalLayout_14.setContentsMargins(0, 0, 0, 0)
+        self.label_preconditions_3 = QLabel(self.frame_preconditions_3)
+        self.label_preconditions_3.setObjectName(u"label_preconditions_3")
+        sizePolicy2.setHeightForWidth(self.label_preconditions_3.sizePolicy().hasHeightForWidth())
+        self.label_preconditions_3.setSizePolicy(sizePolicy2)
+        self.label_preconditions_3.setMinimumSize(QSize(50, 30))
+        self.label_preconditions_3.setMaximumSize(QSize(75, 30))
+        self.label_preconditions_3.setFont(font1)
+        self.label_preconditions_3.setFrameShape(QFrame.NoFrame)
+        self.label_preconditions_3.setTextFormat(Qt.PlainText)
+
+        self.horizontalLayout_14.addWidget(self.label_preconditions_3, 0, Qt.AlignHCenter|Qt.AlignVCenter)
+
+
+        self.horizontalLayout_15.addWidget(self.frame_preconditions_3)
+
+
+        self.verticalLayout_14.addWidget(self.frame)
+
+        self.scrollArea = QScrollArea(self.page_outcomes)
+        self.scrollArea.setObjectName(u"scrollArea")
+        self.scrollArea.setStyleSheet(u"QScrollBar:vertical\n"
+"    {\n"
+"		background-color: rgb(76, 118, 232);\n"
+"        width: 15px;\n"
+"        margin: 15px 3px 15px 3px;\n"
+"        border: 1px transparent #2A2929;\n"
+"        border-radius: 4px;\n"
+"    }\n"
+"QScrollBar::handle:vertical\n"
+"    {\n"
+"		background-color: rgb(51, 82, 148);\n"
+"        min-height: 5px;\n"
+"        border-radius: 4px;\n"
+"    }\n"
+"QScrollBar::handle:vertical:hover\n"
+"    {\n"
+"        background-color: rgb(41, 72, 138);\n"
+"        min-height: 5px;\n"
+"        border-radius: 4px;\n"
+"    }\n"
+"\n"
+"QScrollBar::sub-line:vertical\n"
+"    {\n"
+"        margin: 3px 0px 3px 0px;\n"
+"        border-image: url(:/qss_icons/rc/up_arrow_disabled.png);\n"
+"        height: 10px;\n"
+"        width: 10px;\n"
+"        subcontrol-position: top;\n"
+"        subcontrol-origin: margin;\n"
+"    }\n"
+"\n"
+"QScrollBar::add-line:vertical\n"
+"    {\n"
+"        margin: 3px 0px 3px 0px;\n"
+"        border-image: url(:/qss_icons/rc/down_arrow_disabled.png);\n"
+"        height: 10px;\n"
+""
+                        "        width: 10px;\n"
+"        subcontrol-position: bottom;\n"
+"        subcontrol-origin: margin;\n"
+"    }\n"
+"\n"
+"QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical\n"
+"    {\n"
+"        background: none;\n"
+"    }\n"
+"\n"
+"QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical\n"
+"    {\n"
+"        background: none;\n"
+"    }")
+        self.scrollArea.setFrameShape(QFrame.NoFrame)
+        self.scrollArea.setFrameShadow(QFrame.Plain)
+        self.scrollArea.setWidgetResizable(True)
+        self.scrollAreaWidgetContents = QWidget()
+        self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 786, 1212))
+        self.scrollAreaWidgetContents.setStyleSheet(u"QLineEdit{\n"
+"background-color: rgb(242, 242, 246);\n"
+"border: 1px solid rgb(180,180,180);padding-left: 3px;\n"
+"color: rgb(33, 38, 55);\n"
+"}")
+        self.verticalLayout_15 = QVBoxLayout(self.scrollAreaWidgetContents)
+        self.verticalLayout_15.setObjectName(u"verticalLayout_15")
+        self.frame_wheelbase_zero = QFrame(self.scrollAreaWidgetContents)
+        self.frame_wheelbase_zero.setObjectName(u"frame_wheelbase_zero")
+        sizePolicy3.setHeightForWidth(self.frame_wheelbase_zero.sizePolicy().hasHeightForWidth())
+        self.frame_wheelbase_zero.setSizePolicy(sizePolicy3)
+        self.frame_wheelbase_zero.setMinimumSize(QSize(0, 42))
+        self.frame_wheelbase_zero.setMaximumSize(QSize(16777215, 42))
+        self.frame_wheelbase_zero.setStyleSheet(u"")
+        self.frame_wheelbase_zero.setFrameShape(QFrame.StyledPanel)
+        self.frame_wheelbase_zero.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_54 = QHBoxLayout(self.frame_wheelbase_zero)
+        self.horizontalLayout_54.setSpacing(0)
+        self.horizontalLayout_54.setObjectName(u"horizontalLayout_54")
+        self.horizontalLayout_54.setContentsMargins(0, 0, 0, 0)
+        self.label_wheelbase_zero = QLabel(self.frame_wheelbase_zero)
+        self.label_wheelbase_zero.setObjectName(u"label_wheelbase_zero")
+        sizePolicy2.setHeightForWidth(self.label_wheelbase_zero.sizePolicy().hasHeightForWidth())
+        self.label_wheelbase_zero.setSizePolicy(sizePolicy2)
+        self.label_wheelbase_zero.setMinimumSize(QSize(400, 0))
+        self.label_wheelbase_zero.setMaximumSize(QSize(400, 16777215))
+        self.label_wheelbase_zero.setFont(font)
+
+        self.horizontalLayout_54.addWidget(self.label_wheelbase_zero)
+
+        self.lineEdit_wheelbase_zero = QLineEdit(self.frame_wheelbase_zero)
+        self.lineEdit_wheelbase_zero.setObjectName(u"lineEdit_wheelbase_zero")
+        self.lineEdit_wheelbase_zero.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.lineEdit_wheelbase_zero.sizePolicy().hasHeightForWidth())
+        self.lineEdit_wheelbase_zero.setSizePolicy(sizePolicy1)
+        self.lineEdit_wheelbase_zero.setMinimumSize(QSize(0, 40))
+        self.lineEdit_wheelbase_zero.setMaximumSize(QSize(16777215, 16777215))
+        self.lineEdit_wheelbase_zero.setFont(font)
+        self.lineEdit_wheelbase_zero.setStyleSheet(u"margin: 10px;")
+        self.lineEdit_wheelbase_zero.setDragEnabled(False)
+        self.lineEdit_wheelbase_zero.setClearButtonEnabled(True)
+
+        self.horizontalLayout_54.addWidget(self.lineEdit_wheelbase_zero)
+
+
+        self.verticalLayout_15.addWidget(self.frame_wheelbase_zero)
+
+        self.frame_estimated_correction_factors_sum = QFrame(self.scrollAreaWidgetContents)
+        self.frame_estimated_correction_factors_sum.setObjectName(u"frame_estimated_correction_factors_sum")
+        sizePolicy3.setHeightForWidth(self.frame_estimated_correction_factors_sum.sizePolicy().hasHeightForWidth())
+        self.frame_estimated_correction_factors_sum.setSizePolicy(sizePolicy3)
+        self.frame_estimated_correction_factors_sum.setMinimumSize(QSize(0, 42))
+        self.frame_estimated_correction_factors_sum.setMaximumSize(QSize(16777215, 42))
+        self.frame_estimated_correction_factors_sum.setStyleSheet(u"")
+        self.frame_estimated_correction_factors_sum.setFrameShape(QFrame.StyledPanel)
+        self.frame_estimated_correction_factors_sum.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_53 = QHBoxLayout(self.frame_estimated_correction_factors_sum)
+        self.horizontalLayout_53.setSpacing(0)
+        self.horizontalLayout_53.setObjectName(u"horizontalLayout_53")
+        self.horizontalLayout_53.setContentsMargins(0, 0, 0, 0)
+        self.label_estimated_correction_factors_sum = QLabel(self.frame_estimated_correction_factors_sum)
+        self.label_estimated_correction_factors_sum.setObjectName(u"label_estimated_correction_factors_sum")
+        sizePolicy2.setHeightForWidth(self.label_estimated_correction_factors_sum.sizePolicy().hasHeightForWidth())
+        self.label_estimated_correction_factors_sum.setSizePolicy(sizePolicy2)
+        self.label_estimated_correction_factors_sum.setMinimumSize(QSize(400, 0))
+        self.label_estimated_correction_factors_sum.setMaximumSize(QSize(400, 16777215))
+        self.label_estimated_correction_factors_sum.setFont(font)
+
+        self.horizontalLayout_53.addWidget(self.label_estimated_correction_factors_sum)
+
+        self.lineEdit_estimated_correction_factors_sum = QLineEdit(self.frame_estimated_correction_factors_sum)
+        self.lineEdit_estimated_correction_factors_sum.setObjectName(u"lineEdit_estimated_correction_factors_sum")
+        self.lineEdit_estimated_correction_factors_sum.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.lineEdit_estimated_correction_factors_sum.sizePolicy().hasHeightForWidth())
+        self.lineEdit_estimated_correction_factors_sum.setSizePolicy(sizePolicy1)
+        self.lineEdit_estimated_correction_factors_sum.setMinimumSize(QSize(0, 40))
+        self.lineEdit_estimated_correction_factors_sum.setMaximumSize(QSize(16777215, 16777215))
+        self.lineEdit_estimated_correction_factors_sum.setFont(font)
+        self.lineEdit_estimated_correction_factors_sum.setStyleSheet(u"margin: 10px;")
+        self.lineEdit_estimated_correction_factors_sum.setDragEnabled(False)
+        self.lineEdit_estimated_correction_factors_sum.setClearButtonEnabled(True)
+
+        self.horizontalLayout_53.addWidget(self.lineEdit_estimated_correction_factors_sum)
+
+
+        self.verticalLayout_15.addWidget(self.frame_estimated_correction_factors_sum)
+
+        self.frame_alfa_t = QFrame(self.scrollAreaWidgetContents)
+        self.frame_alfa_t.setObjectName(u"frame_alfa_t")
+        sizePolicy3.setHeightForWidth(self.frame_alfa_t.sizePolicy().hasHeightForWidth())
+        self.frame_alfa_t.setSizePolicy(sizePolicy3)
+        self.frame_alfa_t.setMinimumSize(QSize(0, 42))
+        self.frame_alfa_t.setMaximumSize(QSize(16777215, 42))
+        self.frame_alfa_t.setStyleSheet(u"")
+        self.frame_alfa_t.setFrameShape(QFrame.StyledPanel)
+        self.frame_alfa_t.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_52 = QHBoxLayout(self.frame_alfa_t)
+        self.horizontalLayout_52.setSpacing(0)
+        self.horizontalLayout_52.setObjectName(u"horizontalLayout_52")
+        self.horizontalLayout_52.setContentsMargins(0, 0, 0, 0)
+        self.label_alfa_t = QLabel(self.frame_alfa_t)
+        self.label_alfa_t.setObjectName(u"label_alfa_t")
+        sizePolicy2.setHeightForWidth(self.label_alfa_t.sizePolicy().hasHeightForWidth())
+        self.label_alfa_t.setSizePolicy(sizePolicy2)
+        self.label_alfa_t.setMinimumSize(QSize(400, 0))
+        self.label_alfa_t.setMaximumSize(QSize(400, 16777215))
+        self.label_alfa_t.setFont(font)
+
+        self.horizontalLayout_52.addWidget(self.label_alfa_t)
+
+        self.lineEdit_alfa_t = QLineEdit(self.frame_alfa_t)
+        self.lineEdit_alfa_t.setObjectName(u"lineEdit_alfa_t")
+        self.lineEdit_alfa_t.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.lineEdit_alfa_t.sizePolicy().hasHeightForWidth())
+        self.lineEdit_alfa_t.setSizePolicy(sizePolicy1)
+        self.lineEdit_alfa_t.setMinimumSize(QSize(0, 40))
+        self.lineEdit_alfa_t.setMaximumSize(QSize(16777215, 16777215))
+        self.lineEdit_alfa_t.setFont(font)
+        self.lineEdit_alfa_t.setStyleSheet(u"margin: 10px;")
+        self.lineEdit_alfa_t.setDragEnabled(False)
+        self.lineEdit_alfa_t.setClearButtonEnabled(True)
+
+        self.horizontalLayout_52.addWidget(self.lineEdit_alfa_t)
+
+
+        self.verticalLayout_15.addWidget(self.frame_alfa_t)
+
+        self.frame_alfa_tw = QFrame(self.scrollAreaWidgetContents)
+        self.frame_alfa_tw.setObjectName(u"frame_alfa_tw")
+        sizePolicy3.setHeightForWidth(self.frame_alfa_tw.sizePolicy().hasHeightForWidth())
+        self.frame_alfa_tw.setSizePolicy(sizePolicy3)
+        self.frame_alfa_tw.setMinimumSize(QSize(0, 42))
+        self.frame_alfa_tw.setMaximumSize(QSize(16777215, 42))
+        self.frame_alfa_tw.setStyleSheet(u"")
+        self.frame_alfa_tw.setFrameShape(QFrame.StyledPanel)
+        self.frame_alfa_tw.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_51 = QHBoxLayout(self.frame_alfa_tw)
+        self.horizontalLayout_51.setSpacing(0)
+        self.horizontalLayout_51.setObjectName(u"horizontalLayout_51")
+        self.horizontalLayout_51.setContentsMargins(0, 0, 0, 0)
+        self.label_alfa_tw = QLabel(self.frame_alfa_tw)
+        self.label_alfa_tw.setObjectName(u"label_alfa_tw")
+        sizePolicy2.setHeightForWidth(self.label_alfa_tw.sizePolicy().hasHeightForWidth())
+        self.label_alfa_tw.setSizePolicy(sizePolicy2)
+        self.label_alfa_tw.setMinimumSize(QSize(400, 0))
+        self.label_alfa_tw.setMaximumSize(QSize(400, 16777215))
+        self.label_alfa_tw.setFont(font)
+
+        self.horizontalLayout_51.addWidget(self.label_alfa_tw)
+
+        self.lineEdit_alfa_tw = QLineEdit(self.frame_alfa_tw)
+        self.lineEdit_alfa_tw.setObjectName(u"lineEdit_alfa_tw")
+        self.lineEdit_alfa_tw.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.lineEdit_alfa_tw.sizePolicy().hasHeightForWidth())
+        self.lineEdit_alfa_tw.setSizePolicy(sizePolicy1)
+        self.lineEdit_alfa_tw.setMinimumSize(QSize(0, 40))
+        self.lineEdit_alfa_tw.setMaximumSize(QSize(16777215, 16777215))
+        self.lineEdit_alfa_tw.setFont(font)
+        self.lineEdit_alfa_tw.setStyleSheet(u"margin: 10px;")
+        self.lineEdit_alfa_tw.setDragEnabled(False)
+        self.lineEdit_alfa_tw.setClearButtonEnabled(True)
+
+        self.horizontalLayout_51.addWidget(self.lineEdit_alfa_tw)
+
+
+        self.verticalLayout_15.addWidget(self.frame_alfa_tw)
+
+        self.frame_inv_alfa_tw = QFrame(self.scrollAreaWidgetContents)
+        self.frame_inv_alfa_tw.setObjectName(u"frame_inv_alfa_tw")
+        sizePolicy3.setHeightForWidth(self.frame_inv_alfa_tw.sizePolicy().hasHeightForWidth())
+        self.frame_inv_alfa_tw.setSizePolicy(sizePolicy3)
+        self.frame_inv_alfa_tw.setMinimumSize(QSize(0, 42))
+        self.frame_inv_alfa_tw.setMaximumSize(QSize(16777215, 42))
+        self.frame_inv_alfa_tw.setStyleSheet(u"")
+        self.frame_inv_alfa_tw.setFrameShape(QFrame.StyledPanel)
+        self.frame_inv_alfa_tw.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_50 = QHBoxLayout(self.frame_inv_alfa_tw)
+        self.horizontalLayout_50.setSpacing(0)
+        self.horizontalLayout_50.setObjectName(u"horizontalLayout_50")
+        self.horizontalLayout_50.setContentsMargins(0, 0, 0, 0)
+        self.label_inv_alfa_tw = QLabel(self.frame_inv_alfa_tw)
+        self.label_inv_alfa_tw.setObjectName(u"label_inv_alfa_tw")
+        sizePolicy2.setHeightForWidth(self.label_inv_alfa_tw.sizePolicy().hasHeightForWidth())
+        self.label_inv_alfa_tw.setSizePolicy(sizePolicy2)
+        self.label_inv_alfa_tw.setMinimumSize(QSize(400, 0))
+        self.label_inv_alfa_tw.setMaximumSize(QSize(400, 16777215))
+        self.label_inv_alfa_tw.setFont(font)
+
+        self.horizontalLayout_50.addWidget(self.label_inv_alfa_tw)
+
+        self.lineEdit_inv_alfa_tw = QLineEdit(self.frame_inv_alfa_tw)
+        self.lineEdit_inv_alfa_tw.setObjectName(u"lineEdit_inv_alfa_tw")
+        self.lineEdit_inv_alfa_tw.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.lineEdit_inv_alfa_tw.sizePolicy().hasHeightForWidth())
+        self.lineEdit_inv_alfa_tw.setSizePolicy(sizePolicy1)
+        self.lineEdit_inv_alfa_tw.setMinimumSize(QSize(0, 40))
+        self.lineEdit_inv_alfa_tw.setMaximumSize(QSize(16777215, 16777215))
+        self.lineEdit_inv_alfa_tw.setFont(font)
+        self.lineEdit_inv_alfa_tw.setStyleSheet(u"margin: 10px;")
+        self.lineEdit_inv_alfa_tw.setDragEnabled(False)
+        self.lineEdit_inv_alfa_tw.setClearButtonEnabled(True)
+
+        self.horizontalLayout_50.addWidget(self.lineEdit_inv_alfa_tw)
+
+
+        self.verticalLayout_15.addWidget(self.frame_inv_alfa_tw)
+
+        self.frame_inv_alfa_t = QFrame(self.scrollAreaWidgetContents)
+        self.frame_inv_alfa_t.setObjectName(u"frame_inv_alfa_t")
+        sizePolicy3.setHeightForWidth(self.frame_inv_alfa_t.sizePolicy().hasHeightForWidth())
+        self.frame_inv_alfa_t.setSizePolicy(sizePolicy3)
+        self.frame_inv_alfa_t.setMinimumSize(QSize(0, 42))
+        self.frame_inv_alfa_t.setMaximumSize(QSize(16777215, 42))
+        self.frame_inv_alfa_t.setStyleSheet(u"")
+        self.frame_inv_alfa_t.setFrameShape(QFrame.StyledPanel)
+        self.frame_inv_alfa_t.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_47 = QHBoxLayout(self.frame_inv_alfa_t)
+        self.horizontalLayout_47.setSpacing(0)
+        self.horizontalLayout_47.setObjectName(u"horizontalLayout_47")
+        self.horizontalLayout_47.setContentsMargins(0, 0, 0, 0)
+        self.label_inv_alfa_t = QLabel(self.frame_inv_alfa_t)
+        self.label_inv_alfa_t.setObjectName(u"label_inv_alfa_t")
+        sizePolicy2.setHeightForWidth(self.label_inv_alfa_t.sizePolicy().hasHeightForWidth())
+        self.label_inv_alfa_t.setSizePolicy(sizePolicy2)
+        self.label_inv_alfa_t.setMinimumSize(QSize(400, 0))
+        self.label_inv_alfa_t.setMaximumSize(QSize(400, 16777215))
+        self.label_inv_alfa_t.setFont(font)
+
+        self.horizontalLayout_47.addWidget(self.label_inv_alfa_t)
+
+        self.lineEdit_inv_alfa_t = QLineEdit(self.frame_inv_alfa_t)
+        self.lineEdit_inv_alfa_t.setObjectName(u"lineEdit_inv_alfa_t")
+        self.lineEdit_inv_alfa_t.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.lineEdit_inv_alfa_t.sizePolicy().hasHeightForWidth())
+        self.lineEdit_inv_alfa_t.setSizePolicy(sizePolicy1)
+        self.lineEdit_inv_alfa_t.setMinimumSize(QSize(0, 40))
+        self.lineEdit_inv_alfa_t.setMaximumSize(QSize(16777215, 16777215))
+        self.lineEdit_inv_alfa_t.setFont(font)
+        self.lineEdit_inv_alfa_t.setStyleSheet(u"margin: 10px;")
+        self.lineEdit_inv_alfa_t.setDragEnabled(False)
+        self.lineEdit_inv_alfa_t.setClearButtonEnabled(True)
+
+        self.horizontalLayout_47.addWidget(self.lineEdit_inv_alfa_t)
+
+
+        self.verticalLayout_15.addWidget(self.frame_inv_alfa_t)
+
+        self.frame_correction_factors_sum = QFrame(self.scrollAreaWidgetContents)
+        self.frame_correction_factors_sum.setObjectName(u"frame_correction_factors_sum")
+        sizePolicy3.setHeightForWidth(self.frame_correction_factors_sum.sizePolicy().hasHeightForWidth())
+        self.frame_correction_factors_sum.setSizePolicy(sizePolicy3)
+        self.frame_correction_factors_sum.setMinimumSize(QSize(0, 42))
+        self.frame_correction_factors_sum.setMaximumSize(QSize(16777215, 42))
+        self.frame_correction_factors_sum.setStyleSheet(u"")
+        self.frame_correction_factors_sum.setFrameShape(QFrame.StyledPanel)
+        self.frame_correction_factors_sum.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_46 = QHBoxLayout(self.frame_correction_factors_sum)
+        self.horizontalLayout_46.setSpacing(0)
+        self.horizontalLayout_46.setObjectName(u"horizontalLayout_46")
+        self.horizontalLayout_46.setContentsMargins(0, 0, 0, 0)
+        self.label_correction_factors_sum = QLabel(self.frame_correction_factors_sum)
+        self.label_correction_factors_sum.setObjectName(u"label_correction_factors_sum")
+        sizePolicy2.setHeightForWidth(self.label_correction_factors_sum.sizePolicy().hasHeightForWidth())
+        self.label_correction_factors_sum.setSizePolicy(sizePolicy2)
+        self.label_correction_factors_sum.setMinimumSize(QSize(400, 0))
+        self.label_correction_factors_sum.setMaximumSize(QSize(400, 16777215))
+        self.label_correction_factors_sum.setFont(font)
+
+        self.horizontalLayout_46.addWidget(self.label_correction_factors_sum)
+
+        self.lineEdit_correction_factors_sum = QLineEdit(self.frame_correction_factors_sum)
+        self.lineEdit_correction_factors_sum.setObjectName(u"lineEdit_correction_factors_sum")
+        self.lineEdit_correction_factors_sum.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.lineEdit_correction_factors_sum.sizePolicy().hasHeightForWidth())
+        self.lineEdit_correction_factors_sum.setSizePolicy(sizePolicy1)
+        self.lineEdit_correction_factors_sum.setMinimumSize(QSize(0, 40))
+        self.lineEdit_correction_factors_sum.setMaximumSize(QSize(16777215, 16777215))
+        self.lineEdit_correction_factors_sum.setFont(font)
+        self.lineEdit_correction_factors_sum.setStyleSheet(u"margin: 10px;")
+        self.lineEdit_correction_factors_sum.setDragEnabled(False)
+        self.lineEdit_correction_factors_sum.setClearButtonEnabled(True)
+
+        self.horizontalLayout_46.addWidget(self.lineEdit_correction_factors_sum)
+
+
+        self.verticalLayout_15.addWidget(self.frame_correction_factors_sum)
+
+        self.frame_beta_b_helix_angle = QFrame(self.scrollAreaWidgetContents)
+        self.frame_beta_b_helix_angle.setObjectName(u"frame_beta_b_helix_angle")
+        sizePolicy3.setHeightForWidth(self.frame_beta_b_helix_angle.sizePolicy().hasHeightForWidth())
+        self.frame_beta_b_helix_angle.setSizePolicy(sizePolicy3)
+        self.frame_beta_b_helix_angle.setMinimumSize(QSize(0, 42))
+        self.frame_beta_b_helix_angle.setMaximumSize(QSize(16777215, 42))
+        self.frame_beta_b_helix_angle.setStyleSheet(u"")
+        self.frame_beta_b_helix_angle.setFrameShape(QFrame.StyledPanel)
+        self.frame_beta_b_helix_angle.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_45 = QHBoxLayout(self.frame_beta_b_helix_angle)
+        self.horizontalLayout_45.setSpacing(0)
+        self.horizontalLayout_45.setObjectName(u"horizontalLayout_45")
+        self.horizontalLayout_45.setContentsMargins(0, 0, 0, 0)
+        self.label_beta_b_helix_angle = QLabel(self.frame_beta_b_helix_angle)
+        self.label_beta_b_helix_angle.setObjectName(u"label_beta_b_helix_angle")
+        sizePolicy2.setHeightForWidth(self.label_beta_b_helix_angle.sizePolicy().hasHeightForWidth())
+        self.label_beta_b_helix_angle.setSizePolicy(sizePolicy2)
+        self.label_beta_b_helix_angle.setMinimumSize(QSize(400, 0))
+        self.label_beta_b_helix_angle.setMaximumSize(QSize(400, 16777215))
+        self.label_beta_b_helix_angle.setFont(font)
+
+        self.horizontalLayout_45.addWidget(self.label_beta_b_helix_angle)
+
+        self.lineEdit_beta_b_helix_angle = QLineEdit(self.frame_beta_b_helix_angle)
+        self.lineEdit_beta_b_helix_angle.setObjectName(u"lineEdit_beta_b_helix_angle")
+        self.lineEdit_beta_b_helix_angle.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.lineEdit_beta_b_helix_angle.sizePolicy().hasHeightForWidth())
+        self.lineEdit_beta_b_helix_angle.setSizePolicy(sizePolicy1)
+        self.lineEdit_beta_b_helix_angle.setMinimumSize(QSize(0, 40))
+        self.lineEdit_beta_b_helix_angle.setMaximumSize(QSize(16777215, 16777215))
+        self.lineEdit_beta_b_helix_angle.setFont(font)
+        self.lineEdit_beta_b_helix_angle.setStyleSheet(u"margin: 10px;")
+        self.lineEdit_beta_b_helix_angle.setDragEnabled(False)
+        self.lineEdit_beta_b_helix_angle.setClearButtonEnabled(True)
+
+        self.horizontalLayout_45.addWidget(self.lineEdit_beta_b_helix_angle)
+
+
+        self.verticalLayout_15.addWidget(self.frame_beta_b_helix_angle)
+
+        self.frame_pinion_tooth_number_placeholder = QFrame(self.scrollAreaWidgetContents)
+        self.frame_pinion_tooth_number_placeholder.setObjectName(u"frame_pinion_tooth_number_placeholder")
+        sizePolicy3.setHeightForWidth(self.frame_pinion_tooth_number_placeholder.sizePolicy().hasHeightForWidth())
+        self.frame_pinion_tooth_number_placeholder.setSizePolicy(sizePolicy3)
+        self.frame_pinion_tooth_number_placeholder.setMinimumSize(QSize(0, 42))
+        self.frame_pinion_tooth_number_placeholder.setMaximumSize(QSize(16777215, 42))
+        self.frame_pinion_tooth_number_placeholder.setStyleSheet(u"")
+        self.frame_pinion_tooth_number_placeholder.setFrameShape(QFrame.StyledPanel)
+        self.frame_pinion_tooth_number_placeholder.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_44 = QHBoxLayout(self.frame_pinion_tooth_number_placeholder)
+        self.horizontalLayout_44.setSpacing(0)
+        self.horizontalLayout_44.setObjectName(u"horizontalLayout_44")
+        self.horizontalLayout_44.setContentsMargins(0, 0, 0, 0)
+        self.label_pinion_tooth_number_placeholder = QLabel(self.frame_pinion_tooth_number_placeholder)
+        self.label_pinion_tooth_number_placeholder.setObjectName(u"label_pinion_tooth_number_placeholder")
+        sizePolicy2.setHeightForWidth(self.label_pinion_tooth_number_placeholder.sizePolicy().hasHeightForWidth())
+        self.label_pinion_tooth_number_placeholder.setSizePolicy(sizePolicy2)
+        self.label_pinion_tooth_number_placeholder.setMinimumSize(QSize(400, 0))
+        self.label_pinion_tooth_number_placeholder.setMaximumSize(QSize(400, 16777215))
+        self.label_pinion_tooth_number_placeholder.setFont(font)
+
+        self.horizontalLayout_44.addWidget(self.label_pinion_tooth_number_placeholder)
+
+        self.lineEdit_pinion_tooth_number_placeholder = QLineEdit(self.frame_pinion_tooth_number_placeholder)
+        self.lineEdit_pinion_tooth_number_placeholder.setObjectName(u"lineEdit_pinion_tooth_number_placeholder")
+        self.lineEdit_pinion_tooth_number_placeholder.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.lineEdit_pinion_tooth_number_placeholder.sizePolicy().hasHeightForWidth())
+        self.lineEdit_pinion_tooth_number_placeholder.setSizePolicy(sizePolicy1)
+        self.lineEdit_pinion_tooth_number_placeholder.setMinimumSize(QSize(0, 40))
+        self.lineEdit_pinion_tooth_number_placeholder.setMaximumSize(QSize(16777215, 16777215))
+        self.lineEdit_pinion_tooth_number_placeholder.setFont(font)
+        self.lineEdit_pinion_tooth_number_placeholder.setStyleSheet(u"margin: 10px;")
+        self.lineEdit_pinion_tooth_number_placeholder.setDragEnabled(False)
+        self.lineEdit_pinion_tooth_number_placeholder.setClearButtonEnabled(True)
+
+        self.horizontalLayout_44.addWidget(self.lineEdit_pinion_tooth_number_placeholder)
+
+
+        self.verticalLayout_15.addWidget(self.frame_pinion_tooth_number_placeholder)
+
+        self.frame_second_wheel_tooth_number_placeholder = QFrame(self.scrollAreaWidgetContents)
+        self.frame_second_wheel_tooth_number_placeholder.setObjectName(u"frame_second_wheel_tooth_number_placeholder")
+        sizePolicy3.setHeightForWidth(self.frame_second_wheel_tooth_number_placeholder.sizePolicy().hasHeightForWidth())
+        self.frame_second_wheel_tooth_number_placeholder.setSizePolicy(sizePolicy3)
+        self.frame_second_wheel_tooth_number_placeholder.setMinimumSize(QSize(0, 42))
+        self.frame_second_wheel_tooth_number_placeholder.setMaximumSize(QSize(16777215, 42))
+        self.frame_second_wheel_tooth_number_placeholder.setStyleSheet(u"")
+        self.frame_second_wheel_tooth_number_placeholder.setFrameShape(QFrame.StyledPanel)
+        self.frame_second_wheel_tooth_number_placeholder.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_43 = QHBoxLayout(self.frame_second_wheel_tooth_number_placeholder)
+        self.horizontalLayout_43.setSpacing(0)
+        self.horizontalLayout_43.setObjectName(u"horizontalLayout_43")
+        self.horizontalLayout_43.setContentsMargins(0, 0, 0, 0)
+        self.label_second_wheel_tooth_number_placeholder = QLabel(self.frame_second_wheel_tooth_number_placeholder)
+        self.label_second_wheel_tooth_number_placeholder.setObjectName(u"label_second_wheel_tooth_number_placeholder")
+        sizePolicy2.setHeightForWidth(self.label_second_wheel_tooth_number_placeholder.sizePolicy().hasHeightForWidth())
+        self.label_second_wheel_tooth_number_placeholder.setSizePolicy(sizePolicy2)
+        self.label_second_wheel_tooth_number_placeholder.setMinimumSize(QSize(400, 0))
+        self.label_second_wheel_tooth_number_placeholder.setMaximumSize(QSize(400, 16777215))
+        self.label_second_wheel_tooth_number_placeholder.setFont(font)
+
+        self.horizontalLayout_43.addWidget(self.label_second_wheel_tooth_number_placeholder)
+
+        self.lineEdit_second_wheel_tooth_number_placeholder = QLineEdit(self.frame_second_wheel_tooth_number_placeholder)
+        self.lineEdit_second_wheel_tooth_number_placeholder.setObjectName(u"lineEdit_second_wheel_tooth_number_placeholder")
+        self.lineEdit_second_wheel_tooth_number_placeholder.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.lineEdit_second_wheel_tooth_number_placeholder.sizePolicy().hasHeightForWidth())
+        self.lineEdit_second_wheel_tooth_number_placeholder.setSizePolicy(sizePolicy1)
+        self.lineEdit_second_wheel_tooth_number_placeholder.setMinimumSize(QSize(0, 40))
+        self.lineEdit_second_wheel_tooth_number_placeholder.setMaximumSize(QSize(16777215, 16777215))
+        self.lineEdit_second_wheel_tooth_number_placeholder.setFont(font)
+        self.lineEdit_second_wheel_tooth_number_placeholder.setStyleSheet(u"margin: 10px;")
+        self.lineEdit_second_wheel_tooth_number_placeholder.setDragEnabled(False)
+        self.lineEdit_second_wheel_tooth_number_placeholder.setClearButtonEnabled(True)
+
+        self.horizontalLayout_43.addWidget(self.lineEdit_second_wheel_tooth_number_placeholder)
+
+
+        self.verticalLayout_15.addWidget(self.frame_second_wheel_tooth_number_placeholder)
+
+        self.frame_pinion_correction_factor = QFrame(self.scrollAreaWidgetContents)
+        self.frame_pinion_correction_factor.setObjectName(u"frame_pinion_correction_factor")
+        sizePolicy3.setHeightForWidth(self.frame_pinion_correction_factor.sizePolicy().hasHeightForWidth())
+        self.frame_pinion_correction_factor.setSizePolicy(sizePolicy3)
+        self.frame_pinion_correction_factor.setMinimumSize(QSize(0, 42))
+        self.frame_pinion_correction_factor.setMaximumSize(QSize(16777215, 42))
+        self.frame_pinion_correction_factor.setStyleSheet(u"")
+        self.frame_pinion_correction_factor.setFrameShape(QFrame.StyledPanel)
+        self.frame_pinion_correction_factor.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_61 = QHBoxLayout(self.frame_pinion_correction_factor)
+        self.horizontalLayout_61.setSpacing(0)
+        self.horizontalLayout_61.setObjectName(u"horizontalLayout_61")
+        self.horizontalLayout_61.setContentsMargins(0, 0, 0, 0)
+        self.label_pinion_correction_factor = QLabel(self.frame_pinion_correction_factor)
+        self.label_pinion_correction_factor.setObjectName(u"label_pinion_correction_factor")
+        sizePolicy2.setHeightForWidth(self.label_pinion_correction_factor.sizePolicy().hasHeightForWidth())
+        self.label_pinion_correction_factor.setSizePolicy(sizePolicy2)
+        self.label_pinion_correction_factor.setMinimumSize(QSize(400, 0))
+        self.label_pinion_correction_factor.setMaximumSize(QSize(400, 16777215))
+        self.label_pinion_correction_factor.setFont(font)
+
+        self.horizontalLayout_61.addWidget(self.label_pinion_correction_factor)
+
+        self.lineEdit_pinion_correction_factor = QLineEdit(self.frame_pinion_correction_factor)
+        self.lineEdit_pinion_correction_factor.setObjectName(u"lineEdit_pinion_correction_factor")
+        self.lineEdit_pinion_correction_factor.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.lineEdit_pinion_correction_factor.sizePolicy().hasHeightForWidth())
+        self.lineEdit_pinion_correction_factor.setSizePolicy(sizePolicy1)
+        self.lineEdit_pinion_correction_factor.setMinimumSize(QSize(0, 40))
+        self.lineEdit_pinion_correction_factor.setMaximumSize(QSize(16777215, 16777215))
+        self.lineEdit_pinion_correction_factor.setFont(font)
+        self.lineEdit_pinion_correction_factor.setStyleSheet(u"margin: 10px;")
+        self.lineEdit_pinion_correction_factor.setDragEnabled(False)
+        self.lineEdit_pinion_correction_factor.setClearButtonEnabled(True)
+
+        self.horizontalLayout_61.addWidget(self.lineEdit_pinion_correction_factor)
+
+
+        self.verticalLayout_15.addWidget(self.frame_pinion_correction_factor)
+
+        self.frame_second_wheel_correction_factor = QFrame(self.scrollAreaWidgetContents)
+        self.frame_second_wheel_correction_factor.setObjectName(u"frame_second_wheel_correction_factor")
+        sizePolicy3.setHeightForWidth(self.frame_second_wheel_correction_factor.sizePolicy().hasHeightForWidth())
+        self.frame_second_wheel_correction_factor.setSizePolicy(sizePolicy3)
+        self.frame_second_wheel_correction_factor.setMinimumSize(QSize(0, 42))
+        self.frame_second_wheel_correction_factor.setMaximumSize(QSize(16777215, 42))
+        self.frame_second_wheel_correction_factor.setStyleSheet(u"")
+        self.frame_second_wheel_correction_factor.setFrameShape(QFrame.StyledPanel)
+        self.frame_second_wheel_correction_factor.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_60 = QHBoxLayout(self.frame_second_wheel_correction_factor)
+        self.horizontalLayout_60.setSpacing(0)
+        self.horizontalLayout_60.setObjectName(u"horizontalLayout_60")
+        self.horizontalLayout_60.setContentsMargins(0, 0, 0, 0)
+        self.label_second_wheel_correction_factor = QLabel(self.frame_second_wheel_correction_factor)
+        self.label_second_wheel_correction_factor.setObjectName(u"label_second_wheel_correction_factor")
+        sizePolicy2.setHeightForWidth(self.label_second_wheel_correction_factor.sizePolicy().hasHeightForWidth())
+        self.label_second_wheel_correction_factor.setSizePolicy(sizePolicy2)
+        self.label_second_wheel_correction_factor.setMinimumSize(QSize(400, 0))
+        self.label_second_wheel_correction_factor.setMaximumSize(QSize(400, 16777215))
+        self.label_second_wheel_correction_factor.setFont(font)
+
+        self.horizontalLayout_60.addWidget(self.label_second_wheel_correction_factor)
+
+        self.lineEdit_second_wheel_correction_factor = QLineEdit(self.frame_second_wheel_correction_factor)
+        self.lineEdit_second_wheel_correction_factor.setObjectName(u"lineEdit_second_wheel_correction_factor")
+        self.lineEdit_second_wheel_correction_factor.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.lineEdit_second_wheel_correction_factor.sizePolicy().hasHeightForWidth())
+        self.lineEdit_second_wheel_correction_factor.setSizePolicy(sizePolicy1)
+        self.lineEdit_second_wheel_correction_factor.setMinimumSize(QSize(0, 40))
+        self.lineEdit_second_wheel_correction_factor.setMaximumSize(QSize(16777215, 16777215))
+        self.lineEdit_second_wheel_correction_factor.setFont(font)
+        self.lineEdit_second_wheel_correction_factor.setStyleSheet(u"margin: 10px;")
+        self.lineEdit_second_wheel_correction_factor.setDragEnabled(False)
+        self.lineEdit_second_wheel_correction_factor.setClearButtonEnabled(True)
+
+        self.horizontalLayout_60.addWidget(self.lineEdit_second_wheel_correction_factor)
+
+
+        self.verticalLayout_15.addWidget(self.frame_second_wheel_correction_factor)
+
+        self.frame_pinion_rolling_diameter = QFrame(self.scrollAreaWidgetContents)
+        self.frame_pinion_rolling_diameter.setObjectName(u"frame_pinion_rolling_diameter")
+        sizePolicy3.setHeightForWidth(self.frame_pinion_rolling_diameter.sizePolicy().hasHeightForWidth())
+        self.frame_pinion_rolling_diameter.setSizePolicy(sizePolicy3)
+        self.frame_pinion_rolling_diameter.setMinimumSize(QSize(0, 42))
+        self.frame_pinion_rolling_diameter.setMaximumSize(QSize(16777215, 42))
+        self.frame_pinion_rolling_diameter.setStyleSheet(u"")
+        self.frame_pinion_rolling_diameter.setFrameShape(QFrame.StyledPanel)
+        self.frame_pinion_rolling_diameter.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_59 = QHBoxLayout(self.frame_pinion_rolling_diameter)
+        self.horizontalLayout_59.setSpacing(0)
+        self.horizontalLayout_59.setObjectName(u"horizontalLayout_59")
+        self.horizontalLayout_59.setContentsMargins(0, 0, 0, 0)
+        self.label_pinion_rolling_diameter = QLabel(self.frame_pinion_rolling_diameter)
+        self.label_pinion_rolling_diameter.setObjectName(u"label_pinion_rolling_diameter")
+        sizePolicy2.setHeightForWidth(self.label_pinion_rolling_diameter.sizePolicy().hasHeightForWidth())
+        self.label_pinion_rolling_diameter.setSizePolicy(sizePolicy2)
+        self.label_pinion_rolling_diameter.setMinimumSize(QSize(400, 0))
+        self.label_pinion_rolling_diameter.setMaximumSize(QSize(400, 16777215))
+        self.label_pinion_rolling_diameter.setFont(font)
+
+        self.horizontalLayout_59.addWidget(self.label_pinion_rolling_diameter)
+
+        self.lineEdit_pinion_rolling_diameter = QLineEdit(self.frame_pinion_rolling_diameter)
+        self.lineEdit_pinion_rolling_diameter.setObjectName(u"lineEdit_pinion_rolling_diameter")
+        self.lineEdit_pinion_rolling_diameter.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.lineEdit_pinion_rolling_diameter.sizePolicy().hasHeightForWidth())
+        self.lineEdit_pinion_rolling_diameter.setSizePolicy(sizePolicy1)
+        self.lineEdit_pinion_rolling_diameter.setMinimumSize(QSize(0, 40))
+        self.lineEdit_pinion_rolling_diameter.setMaximumSize(QSize(16777215, 16777215))
+        self.lineEdit_pinion_rolling_diameter.setFont(font)
+        self.lineEdit_pinion_rolling_diameter.setStyleSheet(u"margin: 10px;")
+        self.lineEdit_pinion_rolling_diameter.setDragEnabled(False)
+        self.lineEdit_pinion_rolling_diameter.setClearButtonEnabled(True)
+
+        self.horizontalLayout_59.addWidget(self.lineEdit_pinion_rolling_diameter)
+
+
+        self.verticalLayout_15.addWidget(self.frame_pinion_rolling_diameter)
+
+        self.frame_second_wheel_rolling_diameter = QFrame(self.scrollAreaWidgetContents)
+        self.frame_second_wheel_rolling_diameter.setObjectName(u"frame_second_wheel_rolling_diameter")
+        sizePolicy3.setHeightForWidth(self.frame_second_wheel_rolling_diameter.sizePolicy().hasHeightForWidth())
+        self.frame_second_wheel_rolling_diameter.setSizePolicy(sizePolicy3)
+        self.frame_second_wheel_rolling_diameter.setMinimumSize(QSize(0, 42))
+        self.frame_second_wheel_rolling_diameter.setMaximumSize(QSize(16777215, 42))
+        self.frame_second_wheel_rolling_diameter.setStyleSheet(u"")
+        self.frame_second_wheel_rolling_diameter.setFrameShape(QFrame.StyledPanel)
+        self.frame_second_wheel_rolling_diameter.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_58 = QHBoxLayout(self.frame_second_wheel_rolling_diameter)
+        self.horizontalLayout_58.setSpacing(0)
+        self.horizontalLayout_58.setObjectName(u"horizontalLayout_58")
+        self.horizontalLayout_58.setContentsMargins(0, 0, 0, 0)
+        self.label_second_wheel_rolling_diameter = QLabel(self.frame_second_wheel_rolling_diameter)
+        self.label_second_wheel_rolling_diameter.setObjectName(u"label_second_wheel_rolling_diameter")
+        sizePolicy2.setHeightForWidth(self.label_second_wheel_rolling_diameter.sizePolicy().hasHeightForWidth())
+        self.label_second_wheel_rolling_diameter.setSizePolicy(sizePolicy2)
+        self.label_second_wheel_rolling_diameter.setMinimumSize(QSize(400, 0))
+        self.label_second_wheel_rolling_diameter.setMaximumSize(QSize(400, 16777215))
+        self.label_second_wheel_rolling_diameter.setFont(font)
+
+        self.horizontalLayout_58.addWidget(self.label_second_wheel_rolling_diameter)
+
+        self.lineEdit_second_wheel_rolling_diameter = QLineEdit(self.frame_second_wheel_rolling_diameter)
+        self.lineEdit_second_wheel_rolling_diameter.setObjectName(u"lineEdit_second_wheel_rolling_diameter")
+        self.lineEdit_second_wheel_rolling_diameter.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.lineEdit_second_wheel_rolling_diameter.sizePolicy().hasHeightForWidth())
+        self.lineEdit_second_wheel_rolling_diameter.setSizePolicy(sizePolicy1)
+        self.lineEdit_second_wheel_rolling_diameter.setMinimumSize(QSize(0, 40))
+        self.lineEdit_second_wheel_rolling_diameter.setMaximumSize(QSize(16777215, 16777215))
+        self.lineEdit_second_wheel_rolling_diameter.setFont(font)
+        self.lineEdit_second_wheel_rolling_diameter.setStyleSheet(u"margin: 10px;")
+        self.lineEdit_second_wheel_rolling_diameter.setDragEnabled(False)
+        self.lineEdit_second_wheel_rolling_diameter.setClearButtonEnabled(True)
+
+        self.horizontalLayout_58.addWidget(self.lineEdit_second_wheel_rolling_diameter)
+
+
+        self.verticalLayout_15.addWidget(self.frame_second_wheel_rolling_diameter)
+
+        self.frame_wheelbase_aparent = QFrame(self.scrollAreaWidgetContents)
+        self.frame_wheelbase_aparent.setObjectName(u"frame_wheelbase_aparent")
+        sizePolicy3.setHeightForWidth(self.frame_wheelbase_aparent.sizePolicy().hasHeightForWidth())
+        self.frame_wheelbase_aparent.setSizePolicy(sizePolicy3)
+        self.frame_wheelbase_aparent.setMinimumSize(QSize(0, 42))
+        self.frame_wheelbase_aparent.setMaximumSize(QSize(16777215, 42))
+        self.frame_wheelbase_aparent.setStyleSheet(u"")
+        self.frame_wheelbase_aparent.setFrameShape(QFrame.StyledPanel)
+        self.frame_wheelbase_aparent.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_57 = QHBoxLayout(self.frame_wheelbase_aparent)
+        self.horizontalLayout_57.setSpacing(0)
+        self.horizontalLayout_57.setObjectName(u"horizontalLayout_57")
+        self.horizontalLayout_57.setContentsMargins(0, 0, 0, 0)
+        self.label_wheelbase_aparent = QLabel(self.frame_wheelbase_aparent)
+        self.label_wheelbase_aparent.setObjectName(u"label_wheelbase_aparent")
+        sizePolicy2.setHeightForWidth(self.label_wheelbase_aparent.sizePolicy().hasHeightForWidth())
+        self.label_wheelbase_aparent.setSizePolicy(sizePolicy2)
+        self.label_wheelbase_aparent.setMinimumSize(QSize(400, 0))
+        self.label_wheelbase_aparent.setMaximumSize(QSize(400, 16777215))
+        self.label_wheelbase_aparent.setFont(font)
+
+        self.horizontalLayout_57.addWidget(self.label_wheelbase_aparent)
+
+        self.lineEdit_wheelbase_aparent = QLineEdit(self.frame_wheelbase_aparent)
+        self.lineEdit_wheelbase_aparent.setObjectName(u"lineEdit_wheelbase_aparent")
+        self.lineEdit_wheelbase_aparent.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.lineEdit_wheelbase_aparent.sizePolicy().hasHeightForWidth())
+        self.lineEdit_wheelbase_aparent.setSizePolicy(sizePolicy1)
+        self.lineEdit_wheelbase_aparent.setMinimumSize(QSize(0, 40))
+        self.lineEdit_wheelbase_aparent.setMaximumSize(QSize(16777215, 16777215))
+        self.lineEdit_wheelbase_aparent.setFont(font)
+        self.lineEdit_wheelbase_aparent.setStyleSheet(u"margin: 10px;")
+        self.lineEdit_wheelbase_aparent.setDragEnabled(False)
+        self.lineEdit_wheelbase_aparent.setClearButtonEnabled(True)
+
+        self.horizontalLayout_57.addWidget(self.lineEdit_wheelbase_aparent)
+
+
+        self.verticalLayout_15.addWidget(self.frame_wheelbase_aparent)
+
+        self.frame_slip_factor = QFrame(self.scrollAreaWidgetContents)
+        self.frame_slip_factor.setObjectName(u"frame_slip_factor")
+        sizePolicy3.setHeightForWidth(self.frame_slip_factor.sizePolicy().hasHeightForWidth())
+        self.frame_slip_factor.setSizePolicy(sizePolicy3)
+        self.frame_slip_factor.setMinimumSize(QSize(0, 42))
+        self.frame_slip_factor.setMaximumSize(QSize(16777215, 42))
+        self.frame_slip_factor.setStyleSheet(u"")
+        self.frame_slip_factor.setFrameShape(QFrame.StyledPanel)
+        self.frame_slip_factor.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_56 = QHBoxLayout(self.frame_slip_factor)
+        self.horizontalLayout_56.setSpacing(0)
+        self.horizontalLayout_56.setObjectName(u"horizontalLayout_56")
+        self.horizontalLayout_56.setContentsMargins(0, 0, 0, 0)
+        self.label_slip_factor = QLabel(self.frame_slip_factor)
+        self.label_slip_factor.setObjectName(u"label_slip_factor")
+        sizePolicy2.setHeightForWidth(self.label_slip_factor.sizePolicy().hasHeightForWidth())
+        self.label_slip_factor.setSizePolicy(sizePolicy2)
+        self.label_slip_factor.setMinimumSize(QSize(400, 0))
+        self.label_slip_factor.setMaximumSize(QSize(400, 16777215))
+        self.label_slip_factor.setFont(font)
+
+        self.horizontalLayout_56.addWidget(self.label_slip_factor)
+
+        self.lineEdit_slip_factor = QLineEdit(self.frame_slip_factor)
+        self.lineEdit_slip_factor.setObjectName(u"lineEdit_slip_factor")
+        self.lineEdit_slip_factor.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.lineEdit_slip_factor.sizePolicy().hasHeightForWidth())
+        self.lineEdit_slip_factor.setSizePolicy(sizePolicy1)
+        self.lineEdit_slip_factor.setMinimumSize(QSize(0, 40))
+        self.lineEdit_slip_factor.setMaximumSize(QSize(16777215, 16777215))
+        self.lineEdit_slip_factor.setFont(font)
+        self.lineEdit_slip_factor.setStyleSheet(u"margin: 10px;")
+        self.lineEdit_slip_factor.setDragEnabled(False)
+        self.lineEdit_slip_factor.setClearButtonEnabled(True)
+
+        self.horizontalLayout_56.addWidget(self.lineEdit_slip_factor)
+
+
+        self.verticalLayout_15.addWidget(self.frame_slip_factor)
+
+        self.frame_pinion_pitch_diameter = QFrame(self.scrollAreaWidgetContents)
+        self.frame_pinion_pitch_diameter.setObjectName(u"frame_pinion_pitch_diameter")
+        sizePolicy3.setHeightForWidth(self.frame_pinion_pitch_diameter.sizePolicy().hasHeightForWidth())
+        self.frame_pinion_pitch_diameter.setSizePolicy(sizePolicy3)
+        self.frame_pinion_pitch_diameter.setMinimumSize(QSize(0, 42))
+        self.frame_pinion_pitch_diameter.setMaximumSize(QSize(16777215, 42))
+        self.frame_pinion_pitch_diameter.setStyleSheet(u"")
+        self.frame_pinion_pitch_diameter.setFrameShape(QFrame.StyledPanel)
+        self.frame_pinion_pitch_diameter.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_55 = QHBoxLayout(self.frame_pinion_pitch_diameter)
+        self.horizontalLayout_55.setSpacing(0)
+        self.horizontalLayout_55.setObjectName(u"horizontalLayout_55")
+        self.horizontalLayout_55.setContentsMargins(0, 0, 0, 0)
+        self.label_pinion_pitch_diameter = QLabel(self.frame_pinion_pitch_diameter)
+        self.label_pinion_pitch_diameter.setObjectName(u"label_pinion_pitch_diameter")
+        sizePolicy2.setHeightForWidth(self.label_pinion_pitch_diameter.sizePolicy().hasHeightForWidth())
+        self.label_pinion_pitch_diameter.setSizePolicy(sizePolicy2)
+        self.label_pinion_pitch_diameter.setMinimumSize(QSize(400, 0))
+        self.label_pinion_pitch_diameter.setMaximumSize(QSize(400, 16777215))
+        self.label_pinion_pitch_diameter.setFont(font)
+
+        self.horizontalLayout_55.addWidget(self.label_pinion_pitch_diameter)
+
+        self.lineEdit_pinion_pitch_diameter = QLineEdit(self.frame_pinion_pitch_diameter)
+        self.lineEdit_pinion_pitch_diameter.setObjectName(u"lineEdit_pinion_pitch_diameter")
+        self.lineEdit_pinion_pitch_diameter.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.lineEdit_pinion_pitch_diameter.sizePolicy().hasHeightForWidth())
+        self.lineEdit_pinion_pitch_diameter.setSizePolicy(sizePolicy1)
+        self.lineEdit_pinion_pitch_diameter.setMinimumSize(QSize(0, 40))
+        self.lineEdit_pinion_pitch_diameter.setMaximumSize(QSize(16777215, 16777215))
+        self.lineEdit_pinion_pitch_diameter.setFont(font)
+        self.lineEdit_pinion_pitch_diameter.setStyleSheet(u"margin: 10px;")
+        self.lineEdit_pinion_pitch_diameter.setDragEnabled(False)
+        self.lineEdit_pinion_pitch_diameter.setClearButtonEnabled(True)
+
+        self.horizontalLayout_55.addWidget(self.lineEdit_pinion_pitch_diameter)
+
+
+        self.verticalLayout_15.addWidget(self.frame_pinion_pitch_diameter)
+
+        self.frame_second_wheel_pitch_diameter = QFrame(self.scrollAreaWidgetContents)
+        self.frame_second_wheel_pitch_diameter.setObjectName(u"frame_second_wheel_pitch_diameter")
+        sizePolicy3.setHeightForWidth(self.frame_second_wheel_pitch_diameter.sizePolicy().hasHeightForWidth())
+        self.frame_second_wheel_pitch_diameter.setSizePolicy(sizePolicy3)
+        self.frame_second_wheel_pitch_diameter.setMinimumSize(QSize(0, 42))
+        self.frame_second_wheel_pitch_diameter.setMaximumSize(QSize(16777215, 42))
+        self.frame_second_wheel_pitch_diameter.setStyleSheet(u"")
+        self.frame_second_wheel_pitch_diameter.setFrameShape(QFrame.StyledPanel)
+        self.frame_second_wheel_pitch_diameter.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_68 = QHBoxLayout(self.frame_second_wheel_pitch_diameter)
+        self.horizontalLayout_68.setSpacing(0)
+        self.horizontalLayout_68.setObjectName(u"horizontalLayout_68")
+        self.horizontalLayout_68.setContentsMargins(0, 0, 0, 0)
+        self.label_second_wheel_pitch_diameter = QLabel(self.frame_second_wheel_pitch_diameter)
+        self.label_second_wheel_pitch_diameter.setObjectName(u"label_second_wheel_pitch_diameter")
+        sizePolicy2.setHeightForWidth(self.label_second_wheel_pitch_diameter.sizePolicy().hasHeightForWidth())
+        self.label_second_wheel_pitch_diameter.setSizePolicy(sizePolicy2)
+        self.label_second_wheel_pitch_diameter.setMinimumSize(QSize(400, 0))
+        self.label_second_wheel_pitch_diameter.setMaximumSize(QSize(400, 16777215))
+        self.label_second_wheel_pitch_diameter.setFont(font)
+
+        self.horizontalLayout_68.addWidget(self.label_second_wheel_pitch_diameter)
+
+        self.lineEdit_second_wheel_pitch_diameter = QLineEdit(self.frame_second_wheel_pitch_diameter)
+        self.lineEdit_second_wheel_pitch_diameter.setObjectName(u"lineEdit_second_wheel_pitch_diameter")
+        self.lineEdit_second_wheel_pitch_diameter.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.lineEdit_second_wheel_pitch_diameter.sizePolicy().hasHeightForWidth())
+        self.lineEdit_second_wheel_pitch_diameter.setSizePolicy(sizePolicy1)
+        self.lineEdit_second_wheel_pitch_diameter.setMinimumSize(QSize(0, 40))
+        self.lineEdit_second_wheel_pitch_diameter.setMaximumSize(QSize(16777215, 16777215))
+        self.lineEdit_second_wheel_pitch_diameter.setFont(font)
+        self.lineEdit_second_wheel_pitch_diameter.setStyleSheet(u"margin: 10px;")
+        self.lineEdit_second_wheel_pitch_diameter.setDragEnabled(False)
+        self.lineEdit_second_wheel_pitch_diameter.setClearButtonEnabled(True)
+
+        self.horizontalLayout_68.addWidget(self.lineEdit_second_wheel_pitch_diameter)
+
+
+        self.verticalLayout_15.addWidget(self.frame_second_wheel_pitch_diameter)
+
+        self.frame_frontal_module = QFrame(self.scrollAreaWidgetContents)
+        self.frame_frontal_module.setObjectName(u"frame_frontal_module")
+        sizePolicy3.setHeightForWidth(self.frame_frontal_module.sizePolicy().hasHeightForWidth())
+        self.frame_frontal_module.setSizePolicy(sizePolicy3)
+        self.frame_frontal_module.setMinimumSize(QSize(0, 42))
+        self.frame_frontal_module.setMaximumSize(QSize(16777215, 42))
+        self.frame_frontal_module.setStyleSheet(u"")
+        self.frame_frontal_module.setFrameShape(QFrame.StyledPanel)
+        self.frame_frontal_module.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_67 = QHBoxLayout(self.frame_frontal_module)
+        self.horizontalLayout_67.setSpacing(0)
+        self.horizontalLayout_67.setObjectName(u"horizontalLayout_67")
+        self.horizontalLayout_67.setContentsMargins(0, 0, 0, 0)
+        self.label_frontal_module = QLabel(self.frame_frontal_module)
+        self.label_frontal_module.setObjectName(u"label_frontal_module")
+        sizePolicy2.setHeightForWidth(self.label_frontal_module.sizePolicy().hasHeightForWidth())
+        self.label_frontal_module.setSizePolicy(sizePolicy2)
+        self.label_frontal_module.setMinimumSize(QSize(400, 0))
+        self.label_frontal_module.setMaximumSize(QSize(400, 16777215))
+        self.label_frontal_module.setFont(font)
+
+        self.horizontalLayout_67.addWidget(self.label_frontal_module)
+
+        self.lineEdit_frontal_module = QLineEdit(self.frame_frontal_module)
+        self.lineEdit_frontal_module.setObjectName(u"lineEdit_frontal_module")
+        self.lineEdit_frontal_module.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.lineEdit_frontal_module.sizePolicy().hasHeightForWidth())
+        self.lineEdit_frontal_module.setSizePolicy(sizePolicy1)
+        self.lineEdit_frontal_module.setMinimumSize(QSize(0, 40))
+        self.lineEdit_frontal_module.setMaximumSize(QSize(16777215, 16777215))
+        self.lineEdit_frontal_module.setFont(font)
+        self.lineEdit_frontal_module.setStyleSheet(u"margin: 10px;")
+        self.lineEdit_frontal_module.setDragEnabled(False)
+        self.lineEdit_frontal_module.setClearButtonEnabled(True)
+
+        self.horizontalLayout_67.addWidget(self.lineEdit_frontal_module)
+
+
+        self.verticalLayout_15.addWidget(self.frame_frontal_module)
+
+        self.frame_pinion_torque_outcome = QFrame(self.scrollAreaWidgetContents)
+        self.frame_pinion_torque_outcome.setObjectName(u"frame_pinion_torque_outcome")
+        sizePolicy3.setHeightForWidth(self.frame_pinion_torque_outcome.sizePolicy().hasHeightForWidth())
+        self.frame_pinion_torque_outcome.setSizePolicy(sizePolicy3)
+        self.frame_pinion_torque_outcome.setMinimumSize(QSize(0, 42))
+        self.frame_pinion_torque_outcome.setMaximumSize(QSize(16777215, 42))
+        self.frame_pinion_torque_outcome.setStyleSheet(u"")
+        self.frame_pinion_torque_outcome.setFrameShape(QFrame.StyledPanel)
+        self.frame_pinion_torque_outcome.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_66 = QHBoxLayout(self.frame_pinion_torque_outcome)
+        self.horizontalLayout_66.setSpacing(0)
+        self.horizontalLayout_66.setObjectName(u"horizontalLayout_66")
+        self.horizontalLayout_66.setContentsMargins(0, 0, 0, 0)
+        self.label_pinion_toqrue_outcome = QLabel(self.frame_pinion_torque_outcome)
+        self.label_pinion_toqrue_outcome.setObjectName(u"label_pinion_toqrue_outcome")
+        sizePolicy2.setHeightForWidth(self.label_pinion_toqrue_outcome.sizePolicy().hasHeightForWidth())
+        self.label_pinion_toqrue_outcome.setSizePolicy(sizePolicy2)
+        self.label_pinion_toqrue_outcome.setMinimumSize(QSize(400, 0))
+        self.label_pinion_toqrue_outcome.setMaximumSize(QSize(400, 16777215))
+        self.label_pinion_toqrue_outcome.setFont(font)
+
+        self.horizontalLayout_66.addWidget(self.label_pinion_toqrue_outcome)
+
+        self.lineEdit_pinion_torque_outcome = QLineEdit(self.frame_pinion_torque_outcome)
+        self.lineEdit_pinion_torque_outcome.setObjectName(u"lineEdit_pinion_torque_outcome")
+        self.lineEdit_pinion_torque_outcome.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.lineEdit_pinion_torque_outcome.sizePolicy().hasHeightForWidth())
+        self.lineEdit_pinion_torque_outcome.setSizePolicy(sizePolicy1)
+        self.lineEdit_pinion_torque_outcome.setMinimumSize(QSize(0, 40))
+        self.lineEdit_pinion_torque_outcome.setMaximumSize(QSize(16777215, 16777215))
+        self.lineEdit_pinion_torque_outcome.setFont(font)
+        self.lineEdit_pinion_torque_outcome.setStyleSheet(u"margin: 10px;")
+        self.lineEdit_pinion_torque_outcome.setDragEnabled(False)
+        self.lineEdit_pinion_torque_outcome.setClearButtonEnabled(True)
+
+        self.horizontalLayout_66.addWidget(self.lineEdit_pinion_torque_outcome)
+
+
+        self.verticalLayout_15.addWidget(self.frame_pinion_torque_outcome)
+
+        self.frame_force_tangential = QFrame(self.scrollAreaWidgetContents)
+        self.frame_force_tangential.setObjectName(u"frame_force_tangential")
+        sizePolicy3.setHeightForWidth(self.frame_force_tangential.sizePolicy().hasHeightForWidth())
+        self.frame_force_tangential.setSizePolicy(sizePolicy3)
+        self.frame_force_tangential.setMinimumSize(QSize(0, 42))
+        self.frame_force_tangential.setMaximumSize(QSize(16777215, 42))
+        self.frame_force_tangential.setStyleSheet(u"")
+        self.frame_force_tangential.setFrameShape(QFrame.StyledPanel)
+        self.frame_force_tangential.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_65 = QHBoxLayout(self.frame_force_tangential)
+        self.horizontalLayout_65.setSpacing(0)
+        self.horizontalLayout_65.setObjectName(u"horizontalLayout_65")
+        self.horizontalLayout_65.setContentsMargins(0, 0, 0, 0)
+        self.label_force_tangential = QLabel(self.frame_force_tangential)
+        self.label_force_tangential.setObjectName(u"label_force_tangential")
+        sizePolicy2.setHeightForWidth(self.label_force_tangential.sizePolicy().hasHeightForWidth())
+        self.label_force_tangential.setSizePolicy(sizePolicy2)
+        self.label_force_tangential.setMinimumSize(QSize(400, 0))
+        self.label_force_tangential.setMaximumSize(QSize(400, 16777215))
+        self.label_force_tangential.setFont(font)
+
+        self.horizontalLayout_65.addWidget(self.label_force_tangential)
+
+        self.lineEdit_force_tangential = QLineEdit(self.frame_force_tangential)
+        self.lineEdit_force_tangential.setObjectName(u"lineEdit_force_tangential")
+        self.lineEdit_force_tangential.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.lineEdit_force_tangential.sizePolicy().hasHeightForWidth())
+        self.lineEdit_force_tangential.setSizePolicy(sizePolicy1)
+        self.lineEdit_force_tangential.setMinimumSize(QSize(0, 40))
+        self.lineEdit_force_tangential.setMaximumSize(QSize(16777215, 16777215))
+        self.lineEdit_force_tangential.setFont(font)
+        self.lineEdit_force_tangential.setStyleSheet(u"margin: 10px;")
+        self.lineEdit_force_tangential.setDragEnabled(False)
+        self.lineEdit_force_tangential.setClearButtonEnabled(True)
+
+        self.horizontalLayout_65.addWidget(self.lineEdit_force_tangential)
+
+
+        self.verticalLayout_15.addWidget(self.frame_force_tangential)
+
+        self.frame_force_longitudinal = QFrame(self.scrollAreaWidgetContents)
+        self.frame_force_longitudinal.setObjectName(u"frame_force_longitudinal")
+        sizePolicy3.setHeightForWidth(self.frame_force_longitudinal.sizePolicy().hasHeightForWidth())
+        self.frame_force_longitudinal.setSizePolicy(sizePolicy3)
+        self.frame_force_longitudinal.setMinimumSize(QSize(0, 42))
+        self.frame_force_longitudinal.setMaximumSize(QSize(16777215, 42))
+        self.frame_force_longitudinal.setStyleSheet(u"")
+        self.frame_force_longitudinal.setFrameShape(QFrame.StyledPanel)
+        self.frame_force_longitudinal.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_64 = QHBoxLayout(self.frame_force_longitudinal)
+        self.horizontalLayout_64.setSpacing(0)
+        self.horizontalLayout_64.setObjectName(u"horizontalLayout_64")
+        self.horizontalLayout_64.setContentsMargins(0, 0, 0, 0)
+        self.label_force_longitudinal = QLabel(self.frame_force_longitudinal)
+        self.label_force_longitudinal.setObjectName(u"label_force_longitudinal")
+        sizePolicy2.setHeightForWidth(self.label_force_longitudinal.sizePolicy().hasHeightForWidth())
+        self.label_force_longitudinal.setSizePolicy(sizePolicy2)
+        self.label_force_longitudinal.setMinimumSize(QSize(400, 0))
+        self.label_force_longitudinal.setMaximumSize(QSize(400, 16777215))
+        self.label_force_longitudinal.setFont(font)
+
+        self.horizontalLayout_64.addWidget(self.label_force_longitudinal)
+
+        self.lineEdit_force_longitudinal = QLineEdit(self.frame_force_longitudinal)
+        self.lineEdit_force_longitudinal.setObjectName(u"lineEdit_force_longitudinal")
+        self.lineEdit_force_longitudinal.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.lineEdit_force_longitudinal.sizePolicy().hasHeightForWidth())
+        self.lineEdit_force_longitudinal.setSizePolicy(sizePolicy1)
+        self.lineEdit_force_longitudinal.setMinimumSize(QSize(0, 40))
+        self.lineEdit_force_longitudinal.setMaximumSize(QSize(16777215, 16777215))
+        self.lineEdit_force_longitudinal.setFont(font)
+        self.lineEdit_force_longitudinal.setStyleSheet(u"margin: 10px;")
+        self.lineEdit_force_longitudinal.setDragEnabled(False)
+        self.lineEdit_force_longitudinal.setClearButtonEnabled(True)
+
+        self.horizontalLayout_64.addWidget(self.lineEdit_force_longitudinal)
+
+
+        self.verticalLayout_15.addWidget(self.frame_force_longitudinal)
+
+        self.frame_force_radial = QFrame(self.scrollAreaWidgetContents)
+        self.frame_force_radial.setObjectName(u"frame_force_radial")
+        sizePolicy3.setHeightForWidth(self.frame_force_radial.sizePolicy().hasHeightForWidth())
+        self.frame_force_radial.setSizePolicy(sizePolicy3)
+        self.frame_force_radial.setMinimumSize(QSize(0, 42))
+        self.frame_force_radial.setMaximumSize(QSize(16777215, 42))
+        self.frame_force_radial.setStyleSheet(u"")
+        self.frame_force_radial.setFrameShape(QFrame.StyledPanel)
+        self.frame_force_radial.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_63 = QHBoxLayout(self.frame_force_radial)
+        self.horizontalLayout_63.setSpacing(0)
+        self.horizontalLayout_63.setObjectName(u"horizontalLayout_63")
+        self.horizontalLayout_63.setContentsMargins(0, 0, 0, 0)
+        self.label_force_radial = QLabel(self.frame_force_radial)
+        self.label_force_radial.setObjectName(u"label_force_radial")
+        sizePolicy2.setHeightForWidth(self.label_force_radial.sizePolicy().hasHeightForWidth())
+        self.label_force_radial.setSizePolicy(sizePolicy2)
+        self.label_force_radial.setMinimumSize(QSize(400, 0))
+        self.label_force_radial.setMaximumSize(QSize(400, 16777215))
+        self.label_force_radial.setFont(font)
+
+        self.horizontalLayout_63.addWidget(self.label_force_radial)
+
+        self.lineEdit_force_radial = QLineEdit(self.frame_force_radial)
+        self.lineEdit_force_radial.setObjectName(u"lineEdit_force_radial")
+        self.lineEdit_force_radial.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.lineEdit_force_radial.sizePolicy().hasHeightForWidth())
+        self.lineEdit_force_radial.setSizePolicy(sizePolicy1)
+        self.lineEdit_force_radial.setMinimumSize(QSize(0, 40))
+        self.lineEdit_force_radial.setMaximumSize(QSize(16777215, 16777215))
+        self.lineEdit_force_radial.setFont(font)
+        self.lineEdit_force_radial.setStyleSheet(u"margin: 10px;")
+        self.lineEdit_force_radial.setDragEnabled(False)
+        self.lineEdit_force_radial.setClearButtonEnabled(True)
+
+        self.horizontalLayout_63.addWidget(self.lineEdit_force_radial)
+
+
+        self.verticalLayout_15.addWidget(self.frame_force_radial)
+
+        self.frame_second_wheel_width = QFrame(self.scrollAreaWidgetContents)
+        self.frame_second_wheel_width.setObjectName(u"frame_second_wheel_width")
+        sizePolicy3.setHeightForWidth(self.frame_second_wheel_width.sizePolicy().hasHeightForWidth())
+        self.frame_second_wheel_width.setSizePolicy(sizePolicy3)
+        self.frame_second_wheel_width.setMinimumSize(QSize(0, 42))
+        self.frame_second_wheel_width.setMaximumSize(QSize(16777215, 42))
+        self.frame_second_wheel_width.setStyleSheet(u"")
+        self.frame_second_wheel_width.setFrameShape(QFrame.StyledPanel)
+        self.frame_second_wheel_width.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_69 = QHBoxLayout(self.frame_second_wheel_width)
+        self.horizontalLayout_69.setSpacing(0)
+        self.horizontalLayout_69.setObjectName(u"horizontalLayout_69")
+        self.horizontalLayout_69.setContentsMargins(0, 0, 0, 0)
+        self.label_second_wheel_width = QLabel(self.frame_second_wheel_width)
+        self.label_second_wheel_width.setObjectName(u"label_second_wheel_width")
+        sizePolicy2.setHeightForWidth(self.label_second_wheel_width.sizePolicy().hasHeightForWidth())
+        self.label_second_wheel_width.setSizePolicy(sizePolicy2)
+        self.label_second_wheel_width.setMinimumSize(QSize(400, 0))
+        self.label_second_wheel_width.setMaximumSize(QSize(400, 16777215))
+        self.label_second_wheel_width.setFont(font)
+
+        self.horizontalLayout_69.addWidget(self.label_second_wheel_width)
+
+        self.lineEdit_second_wheel_width = QLineEdit(self.frame_second_wheel_width)
+        self.lineEdit_second_wheel_width.setObjectName(u"lineEdit_second_wheel_width")
+        self.lineEdit_second_wheel_width.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.lineEdit_second_wheel_width.sizePolicy().hasHeightForWidth())
+        self.lineEdit_second_wheel_width.setSizePolicy(sizePolicy1)
+        self.lineEdit_second_wheel_width.setMinimumSize(QSize(0, 40))
+        self.lineEdit_second_wheel_width.setMaximumSize(QSize(16777215, 16777215))
+        self.lineEdit_second_wheel_width.setFont(font)
+        self.lineEdit_second_wheel_width.setStyleSheet(u"margin: 10px;")
+        self.lineEdit_second_wheel_width.setDragEnabled(False)
+        self.lineEdit_second_wheel_width.setClearButtonEnabled(True)
+
+        self.horizontalLayout_69.addWidget(self.lineEdit_second_wheel_width)
+
+
+        self.verticalLayout_15.addWidget(self.frame_second_wheel_width)
+
+        self.frame_stepping_presure_number = QFrame(self.scrollAreaWidgetContents)
+        self.frame_stepping_presure_number.setObjectName(u"frame_stepping_presure_number")
+        sizePolicy3.setHeightForWidth(self.frame_stepping_presure_number.sizePolicy().hasHeightForWidth())
+        self.frame_stepping_presure_number.setSizePolicy(sizePolicy3)
+        self.frame_stepping_presure_number.setMinimumSize(QSize(0, 42))
+        self.frame_stepping_presure_number.setMaximumSize(QSize(16777215, 42))
+        self.frame_stepping_presure_number.setStyleSheet(u"")
+        self.frame_stepping_presure_number.setFrameShape(QFrame.StyledPanel)
+        self.frame_stepping_presure_number.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_42 = QHBoxLayout(self.frame_stepping_presure_number)
+        self.horizontalLayout_42.setSpacing(0)
+        self.horizontalLayout_42.setObjectName(u"horizontalLayout_42")
+        self.horizontalLayout_42.setContentsMargins(0, 0, 0, 0)
+        self.label_stepping_pressure_number = QLabel(self.frame_stepping_presure_number)
+        self.label_stepping_pressure_number.setObjectName(u"label_stepping_pressure_number")
+        sizePolicy2.setHeightForWidth(self.label_stepping_pressure_number.sizePolicy().hasHeightForWidth())
+        self.label_stepping_pressure_number.setSizePolicy(sizePolicy2)
+        self.label_stepping_pressure_number.setMinimumSize(QSize(400, 0))
+        self.label_stepping_pressure_number.setMaximumSize(QSize(400, 16777215))
+        self.label_stepping_pressure_number.setFont(font)
+
+        self.horizontalLayout_42.addWidget(self.label_stepping_pressure_number)
+
+        self.lineEdit_stepping_pressure_number = QLineEdit(self.frame_stepping_presure_number)
+        self.lineEdit_stepping_pressure_number.setObjectName(u"lineEdit_stepping_pressure_number")
+        self.lineEdit_stepping_pressure_number.setEnabled(False)
+        sizePolicy1.setHeightForWidth(self.lineEdit_stepping_pressure_number.sizePolicy().hasHeightForWidth())
+        self.lineEdit_stepping_pressure_number.setSizePolicy(sizePolicy1)
+        self.lineEdit_stepping_pressure_number.setMinimumSize(QSize(0, 40))
+        self.lineEdit_stepping_pressure_number.setMaximumSize(QSize(16777215, 16777215))
+        self.lineEdit_stepping_pressure_number.setFont(font)
+        self.lineEdit_stepping_pressure_number.setStyleSheet(u"margin: 10px;")
+        self.lineEdit_stepping_pressure_number.setDragEnabled(False)
+        self.lineEdit_stepping_pressure_number.setClearButtonEnabled(True)
+
+        self.horizontalLayout_42.addWidget(self.lineEdit_stepping_pressure_number)
+
+
+        self.verticalLayout_15.addWidget(self.frame_stepping_presure_number)
+
+        self.scrollArea.setWidget(self.scrollAreaWidgetContents)
+
+        self.verticalLayout_14.addWidget(self.scrollArea)
+
+        self.stackedWidget.addWidget(self.page_outcomes)
+        self.page_excel = QWidget()
+        self.page_excel.setObjectName(u"page_excel")
+        self.gridLayout = QGridLayout(self.page_excel)
+        self.gridLayout.setObjectName(u"gridLayout")
+        self.verticalSpacer = QSpacerItem(20, 177, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.gridLayout.addItem(self.verticalSpacer, 0, 1, 1, 1)
+
+        self.horizontalSpacer = QSpacerItem(302, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.gridLayout.addItem(self.horizontalSpacer, 1, 0, 1, 1)
+
+        self.horizontalSpacer_2 = QSpacerItem(301, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.gridLayout.addItem(self.horizontalSpacer_2, 1, 2, 1, 1)
+
+        self.verticalSpacer_2 = QSpacerItem(20, 177, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.gridLayout.addItem(self.verticalSpacer_2, 2, 1, 1, 1)
+
+        self.pushButton = QPushButton(self.page_excel)
+        self.pushButton.setObjectName(u"pushButton")
+        self.pushButton.setMinimumSize(QSize(180, 75))
+        self.pushButton.setFont(font)
+        self.pushButton.setStyleSheet(u"QPushButton{\n"
+"color: rgb(242, 242, 246);\n"
+"background-color: rgb(76, 118, 232);\n"
+"border: none;\n"
+"}\n"
+"QPushButton:hover{\n"
+"background-color: rgb(51, 82, 148);\n"
+"}\n"
+"")
+
+        self.gridLayout.addWidget(self.pushButton, 1, 1, 1, 1)
+
+        self.stackedWidget.addWidget(self.page_excel)
+        self.page_scheme = QWidget()
+        self.page_scheme.setObjectName(u"page_scheme")
+        self.stackedWidget.addWidget(self.page_scheme)
 
         self.verticalLayout_2.addWidget(self.stackedWidget)
 
@@ -2037,7 +3151,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(3)
+        self.stackedWidget.setCurrentIndex(5)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -2053,7 +3167,7 @@ class Ui_MainWindow(object):
         self.input_btn.setText(QCoreApplication.translate("MainWindow", u"ZA\u0141O\u017bENIA", None))
         self.base_outcome_btn.setText(QCoreApplication.translate("MainWindow", u"WYNIKI WST\u0118PNE", None))
         self.factors_btn.setText(QCoreApplication.translate("MainWindow", u"WSP. KOREKCJI", None))
-        self.diameters_btn.setText(QCoreApplication.translate("MainWindow", u"\u015aREDNICE", None))
+        self.diameters_btn.setText(QCoreApplication.translate("MainWindow", u"WYNIKI", None))
         self.excel_btn.setText(QCoreApplication.translate("MainWindow", u"EXCEL", None))
         self.scheme_btn.setText(QCoreApplication.translate("MainWindow", u"SCHEMAT", None))
         self.label_input_data.setText(QCoreApplication.translate("MainWindow", u"DANE WEJ\u015aCIOWE", None))
@@ -2218,6 +3332,66 @@ class Ui_MainWindow(object):
         self.factors_sum_line_edit.setPlaceholderText("")
         self.tooth_number_sum_frame.setText(QCoreApplication.translate("MainWindow", u"(Z1 + Z2) / 2", None))
         self.tooth_number_sum_line_edit.setPlaceholderText("")
-        self.graph_generate_button.setText(QCoreApplication.translate("MainWindow", u"GENERUJ", None))
+        self.graph_generate_button.setText(QCoreApplication.translate("MainWindow", u"G\n"
+"E\n"
+"N\n"
+"E\n"
+"R\n"
+"U\n"
+"J", None))
+        self.label_preconditions_3.setText(QCoreApplication.translate("MainWindow", u"WYNIKI", None))
+        self.label_wheelbase_zero.setText(QCoreApplication.translate("MainWindow", u"ZEROWA ODLEG\u0141O\u015a\u0106 OSI", None))
+        self.lineEdit_wheelbase_zero.setPlaceholderText("")
+        self.label_estimated_correction_factors_sum.setText(QCoreApplication.translate("MainWindow", u"PRZYBLI\u017bONA WARTO\u015a\u0106 SUMY WSP. KOREKCJI", None))
+        self.lineEdit_estimated_correction_factors_sum.setPlaceholderText("")
+        self.label_alfa_t.setText(QCoreApplication.translate("MainWindow", u"K\u0104T ZARYSU W PRZEKROJU CZO\u0141OWYM", None))
+        self.lineEdit_alfa_t.setPlaceholderText("")
+        self.label_alfa_tw.setText(QCoreApplication.translate("MainWindow", u"K\u0104T PRZYPORU TOCZNY W PRZEKROJU CZO\u0141OWYM ", None))
+        self.lineEdit_alfa_tw.setPlaceholderText("")
+        self.label_inv_alfa_tw.setText(QCoreApplication.translate("MainWindow", u"FUNKCJA EWOLWENTOWA ALFA_TW", None))
+        self.lineEdit_inv_alfa_tw.setPlaceholderText("")
+        self.label_inv_alfa_t.setText(QCoreApplication.translate("MainWindow", u"FUNKCJA EWOLWENTOWA ALFTA_T", None))
+        self.lineEdit_inv_alfa_t.setPlaceholderText("")
+        self.label_correction_factors_sum.setText(QCoreApplication.translate("MainWindow", u"SUMA WSP\u00d3\u0141CZYNNIK\u00d3W KOREKCJI", None))
+        self.lineEdit_correction_factors_sum.setPlaceholderText("")
+        self.label_beta_b_helix_angle.setText(QCoreApplication.translate("MainWindow", u"K\u0104T POCHYLENIA LINII Z\u0118BA \n"
+"NA WALCU ZASADNICZYM", None))
+        self.lineEdit_beta_b_helix_angle.setPlaceholderText("")
+        self.label_pinion_tooth_number_placeholder.setText(QCoreApplication.translate("MainWindow", u"ZAST\u0118PCZA LICZBA Z\u0118B\u00d3W Z\u0118BNIKA", None))
+        self.lineEdit_pinion_tooth_number_placeholder.setPlaceholderText("")
+        self.label_second_wheel_tooth_number_placeholder.setText(QCoreApplication.translate("MainWindow", u"ZAST\u0118PCZA LICZBA Z\u0118B\u00d3W KO\u0141A", None))
+        self.lineEdit_second_wheel_tooth_number_placeholder.setPlaceholderText("")
+        self.label_pinion_correction_factor.setText(QCoreApplication.translate("MainWindow", u"WSP\u00d3\u0141CZYNNIK KOREKCJI Z\u0118BNIKA", None))
+        self.lineEdit_pinion_correction_factor.setPlaceholderText("")
+        self.label_second_wheel_correction_factor.setText(QCoreApplication.translate("MainWindow", u"WSP\u00d3\u0141CZYNNIK KOREKCJI KO\u0141A", None))
+        self.lineEdit_second_wheel_correction_factor.setPlaceholderText("")
+        self.label_pinion_rolling_diameter.setText(QCoreApplication.translate("MainWindow", u"\u015aREDNICA TOCZNA Z\u0118BNIKA", None))
+        self.lineEdit_pinion_rolling_diameter.setPlaceholderText("")
+        self.label_second_wheel_rolling_diameter.setText(QCoreApplication.translate("MainWindow", u"\u015aREDNICA TOCZNA KO\u0141A", None))
+        self.lineEdit_second_wheel_rolling_diameter.setPlaceholderText("")
+        self.label_wheelbase_aparent.setText(QCoreApplication.translate("MainWindow", u"POZORNA ODLEG\u0141O\u015a\u0106 OSI", None))
+        self.lineEdit_wheelbase_aparent.setPlaceholderText("")
+        self.label_slip_factor.setText(QCoreApplication.translate("MainWindow", u"WSP\u00d3\u0141CZYNNIK ZSUNI\u0118CIA", None))
+        self.lineEdit_slip_factor.setPlaceholderText("")
+        self.label_pinion_pitch_diameter.setText(QCoreApplication.translate("MainWindow", u"\u015aREDNICA PODZIA\u0141OWA Z\u0118BNIKA", None))
+        self.lineEdit_pinion_pitch_diameter.setPlaceholderText("")
+        self.label_second_wheel_pitch_diameter.setText(QCoreApplication.translate("MainWindow", u"\u015aREDNICA PODZIA\u0141OWA KO\u0141A", None))
+        self.lineEdit_second_wheel_pitch_diameter.setPlaceholderText("")
+        self.label_frontal_module.setText(QCoreApplication.translate("MainWindow", u"MODU\u0141 CZO\u0141OWY", None))
+        self.lineEdit_frontal_module.setPlaceholderText("")
+        self.label_pinion_toqrue_outcome.setText(QCoreApplication.translate("MainWindow", u"MOMENT OBROTOWY OBCI\u0104\u017bAJ\u0104CY Z\u0118BNIK", None))
+        self.lineEdit_pinion_torque_outcome.setPlaceholderText("")
+        self.label_force_tangential.setText(QCoreApplication.translate("MainWindow", u"SI\u0141A STYCZNA", None))
+        self.lineEdit_force_tangential.setPlaceholderText("")
+        self.label_force_longitudinal.setText(QCoreApplication.translate("MainWindow", u"SI\u0141A WZD\u0141U\u017bNA", None))
+        self.lineEdit_force_longitudinal.setPlaceholderText("")
+        self.label_force_radial.setText(QCoreApplication.translate("MainWindow", u"SI\u0141A PROMIENIOWA", None))
+        self.lineEdit_force_radial.setPlaceholderText("")
+        self.label_second_wheel_width.setText(QCoreApplication.translate("MainWindow", u"SZEROKO\u015a\u0106 KO\u0141A", None))
+        self.lineEdit_second_wheel_width.setPlaceholderText("")
+        self.label_stepping_pressure_number.setText(QCoreApplication.translate("MainWindow", u"POSKOKOWA LICZBA PRZYPORU", None))
+        self.lineEdit_stepping_pressure_number.setPlaceholderText("")
+        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"ZAPISZ WYNIKI \n"
+"DO PLIKU EXCEL", None))
     # retranslateUi
 

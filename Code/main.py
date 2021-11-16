@@ -1,6 +1,7 @@
 from PyQt5.QtGui import QDoubleValidator, QValidator
 from data.linear_functions import PointsForLinearFunctions
 from decimal import Decimal
+from data.correctio_factors_diag import *
 import Gear_UI
 import sys
 import math
@@ -15,7 +16,6 @@ from PyQt5.QtCore import Qt
 from matplotlib.backends.backend_qt5agg import (NavigationToolbar2QT as NavigationToolbar)
 
 WINDOW_SIZE = 0
-
 
 class RangeDoubleValidator(QDoubleValidator):
     def __init__(self, *__args):
@@ -50,6 +50,7 @@ class MyForm(QMainWindow):
 
     #załadowanie punktów tworzących proste
     LIST_OF_POINTS = PointsForLinearFunctions.LIST_OF_POINTS
+    GIVEN_POINT = []
 
     def __init__(self):
         super().__init__()
@@ -77,9 +78,11 @@ class MyForm(QMainWindow):
             lambda: self.set_current_page(self.ui.page_preliminary_results, self.ui.base_outcome_btn))
         self.ui.factors_btn.clicked.connect(lambda: self.set_current_page(self.ui.page_corection_factors, self.ui.factors_btn))
         self.ui.diameters_btn.clicked.connect(
-            lambda: self.set_current_page(self.ui.srednice_page, self.ui.diameters_btn))
-        self.ui.excel_btn.clicked.connect(lambda: self.set_current_page(self.ui.excel_page, self.ui.excel_btn))
-        self.ui.scheme_btn.clicked.connect(lambda: self.set_current_page(self.ui.schemat_page, self.ui.scheme_btn))
+            lambda: self.set_current_page(self.ui.page_outcomes, self.ui.diameters_btn))
+        self.ui.excel_btn.clicked.connect(lambda: self.set_current_page(self.ui.page_excel, self.ui.excel_btn))
+        self.ui.scheme_btn.clicked.connect(lambda: self.set_current_page(self.ui.page_scheme, self.ui.scheme_btn))
+
+        self.ui.pushButton.clicked.connect(lambda: self.open_file_dialog())
 
         #clear and calculate buttons on both pages
         self.ui.clear_btn.clicked.connect(lambda: self.clear_input_data(True))
@@ -331,6 +334,33 @@ class MyForm(QMainWindow):
         self.ui.lineEdit_upper_ratio_border.setText(str(Result.ratio_upper_border))
         self.ui.lineEdit_calculated_tooth_number.setText(str(Result.calculated_2nd_wheel_tooth_number))
 
+    def rewrite_outcome_to_line_edits(self):
+        self.ui.lineEdit_wheelbase_zero.setText(str(Result.wheelbase_zero))
+        self.ui.lineEdit_estimated_correction_factors_sum.setText(str(Result.estimated_correction_factors_sum))
+        self.ui.lineEdit_alfa_t.setText(str(Result.alfa_t))
+        self.ui.lineEdit_alfa_tw.setText(str(Result.alfa_tw))
+        self.ui.lineEdit_inv_alfa_tw.setText(str(Result.inv_alfa_tw))
+        self.ui.lineEdit_inv_alfa_t.setText(str(Result.inv_alfa_t))
+        self.ui.lineEdit_correction_factors_sum.setText(str(Result.correction_factors_sum))
+        self.ui.lineEdit_beta_b_helix_angle.setText(str(Result.beta_b_helix_angle))
+        self.ui.lineEdit_pinion_tooth_number_placeholder.setText(str(Result.pinion_tooth_number_placeholder))
+        self.ui.lineEdit_second_wheel_tooth_number_placeholder.setText(str(Result.second_wheel_tooth_number_placeholder))
+        self.ui.lineEdit_pinion_correction_factor.setText(str(Result.pinion_correction_factor))
+        self.ui.lineEdit_second_wheel_correction_factor.setText(str(Result.second_wheel_correction_factor))
+        self.ui.lineEdit_pinion_rolling_diameter.setText(str(Result.pinion_rolling_diameter))
+        self.ui.lineEdit_second_wheel_rolling_diameter.setText(str(Result.second_wheel_rolling_diameter))
+        self.ui.lineEdit_wheelbase_aparent.setText(str(Result.wheelbase_apparent))
+        self.ui.lineEdit_slip_factor.setText(str(Result.slip_factor))
+        self.ui.lineEdit_pinion_pitch_diameter.setText(str(Result.pinion_pitch_diameter))
+        self.ui.lineEdit_second_wheel_pitch_diameter.setText(str(Result.second_wheel_pitch_diameter))
+        self.ui.lineEdit_frontal_module.setText(str(Result.frontal_module))
+        self.ui.lineEdit_pinion_torque_outcome.setText(str(Result.pinion_torque))
+        self.ui.lineEdit_force_tangential.setText(str(Result.force_tangential))
+        self.ui.lineEdit_force_longitudinal.setText(str(Result.force_longitudinal))
+        self.ui.lineEdit_force_radial.setText(str(Result.force_radial))
+        self.ui.lineEdit_second_wheel_width.setText(str(Result.second_wheel_width))
+        self.ui.lineEdit_stepping_pressure_number.setText(str(Result.stepping_pressure_number))
+
     def calculate_on_input_data(self):
         Result.pinion_torque = InputData.power / InputData.rad_velocity_in
         Result.calculated_normal_module = (InputData.wheelbase * 2 * math.cos(numpy.deg2rad(InputData.helix_angle))) / (InputData.pinion_tooth_number * (1 + InputData.ratio))
@@ -362,28 +392,99 @@ class MyForm(QMainWindow):
         else:
             Result.second_wheel_tooth_number = float(Result.second_wheel_tooth_number)
             Result.real_ratio = Result.second_wheel_tooth_number / InputData.pinion_tooth_number
+            print("czy to faken działa")
             if Result.ratio_bottom_border <= Result.real_ratio <= Result.ratio_upper_border:
                 self.ui.lineEdit_real_ratio.setText(str(Result.real_ratio))
                 print("czy to działa")
-                self.prepare_values_for_further_ui_development()
+                self.further_calculations_for_outputs_page()
                 self.enable_other_pages()
-                self.generate_correction_factors_graph()
+                self.generate_basic_version_of_the_graph()
             else:
                 self.display_message_box(QMessageBox.Warning, f"Wartość przełożenia musi mieścić się w przediale {Result.ratio_bottom_border} < u < {Result.ratio_upper_border}. Obecna wartość przełożenia to {Result.real_ratio}. Zmień liczbę zębów drugiego koła.", "Błąd przełożenia", QMessageBox.Ok)
 
+    # draws each linear function on plot
+    def draw_line_function_based_on_m_and_c(self, m, c, x_lower_border, x_upper_border, linecolor):
+        x = np.linspace(x_lower_border, x_upper_border, 1000)
+        y = m * x + c
+        self.ui.MplWidget.canvas.kutas.plot(x, y, color=linecolor)
+        #, label=f'y={m.round(3)}x+{c.round(2)}1'
+
+    def generate_basic_version_of_the_graph(self):
+        self.ui.MplWidget.canvas.kutas.clear()
+        LIST_OF_POINTS = PointsForLinearFunctions.LIST_OF_POINTS
+        LIST_OF_FUNCTIONS = []
+        for point in LIST_OF_POINTS:
+            function = get_straight_linear(point)
+            LIST_OF_FUNCTIONS.append(function)
+        for i in range(0, len(LIST_OF_FUNCTIONS)):
+            self.draw_line_function_based_on_m_and_c(LIST_OF_FUNCTIONS[i][0], LIST_OF_FUNCTIONS[i][1], 10, 150, 'blue')
+        self.ui.MplWidget.canvas.kutas.set_xlim(10, 150)
+        self.ui.MplWidget.canvas.kutas.set_ylim(-0.5, 1)
+        self.ui.MplWidget.canvas.draw()
+
+
     def generate_correction_factors_graph(self):
         self.ui.MplWidget.canvas.kutas.clear()
-        for points in self.LIST_OF_POINTS:
-            self.ui.MplWidget.canvas.kutas.axline(points[0], points[1])
-            self.ui.MplWidget.canvas.kutas.set_xlim(10, 150)
-            self.ui.MplWidget.canvas.kutas.set_ylim(-0.5, 1)
-            # self.ui.MplWidget.canvas.axes.plot.xlim([10, 150])
-            # self.ui.MplWidget.canvas.axes.plot.ylim([-0.5, 1])
-            self.ui.MplWidget.canvas.draw()
+        # constant with previously defined points.
+        LIST_OF_POINTS = PointsForLinearFunctions.LIST_OF_POINTS
+        LIST_OF_FUNCTIONS = []
+
+        # creating linear functions represented by y = mx + c from the list of points each of them consist of
+        for point in LIST_OF_POINTS:
+            function = get_straight_linear(point)
+            LIST_OF_FUNCTIONS.append(function)
+        print(LIST_OF_FUNCTIONS)
+        # constants which help to indentify function we search for
+        indexes_of_functions_above_given_point = []
+        indexes_of_functions_below_given_point = []
+        function_below_given_point = []
+        function_above_given_point = []
+
+        # iterate through list of functions to check whether it is below or above the given point and draw all functions on plot
+        for i in range(0, len(LIST_OF_FUNCTIONS)):
+            self.draw_line_function_based_on_m_and_c(LIST_OF_FUNCTIONS[i][0], LIST_OF_FUNCTIONS[i][1], 10, 150, 'blue')
+            print("czy działa draw line function")
+            is_above_function = check_if_the_point_is_above_function(self.GIVEN_POINT, LIST_OF_FUNCTIONS[i][0], LIST_OF_FUNCTIONS[i][1])
+            print("czy działa is above function")
+            if is_above_function:
+                indexes_of_functions_below_given_point.append(i)
+            else:
+                indexes_of_functions_above_given_point.append(i)
+        print(indexes_of_functions_below_given_point)
+        print(indexes_of_functions_above_given_point)
+
+        # get the functions which are right above and right below the given point from lists of functions
+        function_above_given_point = indexes_of_functions_above_given_point[0]
+        function_below_given_point = indexes_of_functions_below_given_point[-1]
+
+        # overdraw functions right above and right below the given point with different color
+        self.draw_line_function_based_on_m_and_c(LIST_OF_FUNCTIONS[function_above_given_point][0], LIST_OF_FUNCTIONS[function_above_given_point][1], -50, 150, 'green')
+        self.draw_line_function_based_on_m_and_c(LIST_OF_FUNCTIONS[function_below_given_point][0], LIST_OF_FUNCTIONS[function_below_given_point][1], -50, 150, 'green')
+
+        cross_point_x, cross_point_y = find_cross_point_of_two_functions(
+            LIST_OF_FUNCTIONS[function_above_given_point][0],
+            LIST_OF_FUNCTIONS[function_above_given_point][1],
+            LIST_OF_FUNCTIONS[function_below_given_point][0],
+            LIST_OF_FUNCTIONS[function_below_given_point][1])
+        created_linear_func = get_straight_linear([(cross_point_x, cross_point_y), (self.GIVEN_POINT[0], self.GIVEN_POINT[1])])
+        searched_correction_factor = created_linear_func[0] * 20 + created_linear_func[1]
+
+        # plot settings
+        plt.xlabel('x')
+        plt.ylabel('y')
+        self.ui.MplWidget.canvas.kutas.set_xlim(-50, 150)
+        self.ui.MplWidget.canvas.kutas.set_ylim(-0.5, 1)
+        self.ui.MplWidget.canvas.kutas.plot(self.GIVEN_POINT[0], self.GIVEN_POINT[1], marker="o", markersize=5, markerfacecolor="red", markeredgecolor="red")
+        self.ui.MplWidget.canvas.kutas.plot(cross_point_x, cross_point_y, marker='o', markersize=5, markerfacecolor="red")
+        self.ui.MplWidget.canvas.kutas.plot(20, searched_correction_factor, marker='o', markersize=5, markerfacecolor="red")
+        self.ui.MplWidget.canvas.kutas.plot([20, 20], [-0.5, searched_correction_factor], linestyle='dashed')
+        self.ui.MplWidget.canvas.kutas.plot([20, -50], [searched_correction_factor, searched_correction_factor], linestyle='dashed')
+        self.ui.MplWidget.canvas.kutas.axline([cross_point_x, cross_point_y], [self.GIVEN_POINT[0], self.GIVEN_POINT[1]])
+        self.ui.MplWidget.canvas.kutas.annotate(f'x1 = {round(searched_correction_factor, 3)}', xy=(-50, searched_correction_factor),
+                     xytext=(-50, searched_correction_factor), va='center', ha='right')
+        self.ui.MplWidget.canvas.draw()
 
     def put_given_point_on_correction_factors_graph(self):
-        self.ui.MplWidget.canvas.kutas.clear()
-        self.generate_correction_factors_graph()
 
         if self.ui.factors_sum_line_edit.text() == "" or self.ui.tooth_number_sum_line_edit.text() == "":
             self.display_message_box(QMessageBox.Warning,
@@ -396,17 +497,18 @@ class MyForm(QMainWindow):
         else:
             Result.half_of_correction_factors_sum = float(self.ui.factors_sum_line_edit.text())
             Result.half_of_pinion_and_wheel_tooth_number_sum = float(self.ui.tooth_number_sum_line_edit.text())
-            self.ui.MplWidget.canvas.kutas.plot(Result.half_of_pinion_and_wheel_tooth_number_sum,
-                                                Result.half_of_correction_factors_sum, marker="o", markersize=5, markerfacecolor="red", markeredgecolor="red")
-            self.ui.MplWidget.canvas.draw()
+            self.GIVEN_POINT = [Result.half_of_pinion_and_wheel_tooth_number_sum, Result.half_of_correction_factors_sum]
+            self.ui.MplWidget.canvas.kutas.clear()
+            self.generate_correction_factors_graph()
 
     def default_values_for_correction_factors_graph(self):
         Result.half_of_correction_factors_sum = Result.correction_factors_sum / 2
         Result.half_of_pinion_and_wheel_tooth_number_sum = (InputData.pinion_tooth_number + Result.second_wheel_tooth_number) / 2
         self.ui.factors_sum_line_edit.setText(str(Result.half_of_correction_factors_sum))
         self.ui.tooth_number_sum_line_edit.setText(str(Result.half_of_pinion_and_wheel_tooth_number_sum))
+        self.generate_basic_version_of_the_graph()
 
-    def prepare_values_for_further_ui_development(self):
+    def further_calculations_for_outputs_page(self):
         Result.wheelbase_zero = ((InputData.pinion_tooth_number + Result.second_wheel_tooth_number)
                                  * Result.normal_module) / (2 * math.cos(numpy.deg2rad(InputData.helix_angle)))
         # RESULT.WHEELBASE_ZERO wyświetla poprawną wartość, mozna podpinać pod UI
@@ -439,7 +541,6 @@ class MyForm(QMainWindow):
         # POPRAWNIE OBLICZONA WARTOSC
         Result.estimated_correction_factors_sum = (InputData.wheelbase - Result.wheelbase_zero) / Result.normal_module
 
-
         Result.correction_factors_sum = ((Result.inv_alfa_tw - Result.inv_alfa_t) *
                                          (InputData.pinion_tooth_number + Result.second_wheel_tooth_number)) / \
                                         (2 * math.tan(numpy.deg2rad(InputData.pressure_angle)))
@@ -447,6 +548,7 @@ class MyForm(QMainWindow):
 
         Result.half_of_correction_factors_sum = Result.correction_factors_sum / 2
         Result.half_of_pinion_and_wheel_tooth_number_sum = (InputData.pinion_tooth_number + Result.second_wheel_tooth_number) / 2
+        self.GIVEN_POINT = [Result.half_of_pinion_and_wheel_tooth_number_sum, Result.half_of_correction_factors_sum]
         self.ui.factors_sum_line_edit.setText(str(Result.half_of_correction_factors_sum))
         self.ui.tooth_number_sum_line_edit.setText(str(Result.half_of_pinion_and_wheel_tooth_number_sum))
 
@@ -522,6 +624,7 @@ class MyForm(QMainWindow):
         Result.stepping_pressure_number = (Result.second_wheel_width *
                                            math.sin(numpy.deg2rad(InputData.helix_angle))) / (Result.normal_module * math.pi)
         print(f"Poskokowa liczba przyporu: {Result.stepping_pressure_number}")
+        self.rewrite_outcome_to_line_edits()
 
     def display_message_box(self, message_kind, text, title, buttons):
         msg_box = QMessageBox()
@@ -549,6 +652,12 @@ class MyForm(QMainWindow):
             variable *= 10
         return variable
 
+    def open_file_dialog(self):
+        options = QFileDialog.Options()
+        fileName, _ = QFileDialog.getOpenFileName(self, "QFileDialog.getOpenFileName()", "", "All Files (*)",
+                                                  options=options)
+        if fileName:
+            print(fileName)
     # input_data = InputData(power, ratio, velocity_in, velocity_out, machine_driving, machine_driven, durability)
     #
     #     if self.check_input_data(input_data):

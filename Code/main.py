@@ -12,6 +12,7 @@ from data.preconditions import *
 from data.results import *
 from PyQt5.QtWidgets import QMainWindow, QApplication, QMessageBox, QPushButton
 from PyQt5.QtCore import Qt
+import data.excel_file
 
 from matplotlib.backends.backend_qt5agg import (NavigationToolbar2QT as NavigationToolbar)
 
@@ -652,12 +653,9 @@ class MyForm(QMainWindow):
             variable *= 10
         return variable
 
+
     def open_file_dialog(self):
-        options = QFileDialog.Options()
-        fileName, _ = QFileDialog.getOpenFileName(self, "QFileDialog.getOpenFileName()", "", "All Files (*)",
-                                                  options=options)
-        if fileName:
-            print(fileName)
+        data.excel_file.create_pdf_file()
     # input_data = InputData(power, ratio, velocity_in, velocity_out, machine_driving, machine_driven, durability)
     #
     #     if self.check_input_data(input_data):

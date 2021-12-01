@@ -1,0 +1,42 @@
+\documentclass{article}%
+\usepackage[T1]{fontenc}%
+\usepackage[utf8]{inputenc}%
+\usepackage{lmodern}%
+\usepackage{textcomp}%
+\usepackage{lastpage}%
+\usepackage{longtable}%
+%
+%
+%
+\begin{document}%
+\normalsize%
+\section{Wyniki obliczeń programu KALKULATOR PRZEKŁADNI WALCOWYCH}%
+\label{sec:WynikiobliczeprogramuKALKULATORPRZEKADNIWALCOWYCH}%
+Poniższa tabela zawiera wyniki obliczeń programu, wraz z użytymi do obliczeń danymi i wzorami matematycznymi. \newline%
+ \newline%
+%
+\begin{longtable}{|p{3cm}|p{7cm}|p{3cm}|}%
+\hline%
+\textbf{Dane}&\textbf{Obliczenia}&\textbf{Wyniki}\\%
+\hline%
+&&\\%
+\textbf{Moc nominalna:} \newline N = 8000.0\newline \textbf{Przełożenie:} \newline u = 3.35 \newline \textbf{Prędkość obrotowa na wale wejściowym:} \newline $\omega = $104.72 \newline \textbf{Prędkość obrotowa na wale wyjściowym:} \newline $\omega = $104.72 \newline \textbf{Odległość osi przekładni:} \newline $a_w = $540.0&Mając na uwadze projektowe parametry przekładni, dokonano następujących założeń: \newline  \newline Materiał zębnika: St4 \newline Materiał koła: St4 \newline Klasa dokładności wykonania kół zębatych: IT1 \newline Normalny kąt przyporu $\alpha_n$: 20.0 \newline Kąt pochylenia linii śrubowej zęba $\beta$: 12.0 \newline Moment obciążający zębnik: \newline  \newline $M_1 = \frac{N}{\omega_1} = $76.394 \newline \newline Liczba zębów zębnika (15-25): $z_1 = $20.0&$ \newline \newline \newline \newline \newline \newline \newline \newline \newline \newline \newline M_1 = $76.394\\%
+\hline%
+$ \newline \newline \newline a_w = $540.0 [mm] \newline $z_1 = $20.0&Moduł normalny obliczeniowy: \newline  \newline $m_{no} = \frac{a_w * 2 * cos(\beta)}{z_1 * (1 + u)}$12.143 [mm] \newline  \newline Zgodnie z normą PN-323 przyjęto wartość modułu normalnego: \newline  \newline $m_n = $12.0 [mm] \newline  \newline Obliczeniowa liczba zębów drugiego koła: \newline  \newline $z_{2o} = z_1 * u = $67.0  \newline \newline  Mając na uwadze, że liczby zębów kół współpracujących nie powinny miec wspólnego dzielnika przyjęto:  \newline  \newline $z_2 = $67.0&$ \newline \newline  m_{no} = $12$ \newline  \newline  \newline  \newline  \newline m_n = $12.0$ \newline  \newline  \newline  \newline z_{2o} = $67.0$ \newline  \newline  \newline  \newline  \newline  \newline z_2 = $67.0\\%
+\hline%
+$ \newline \newline \newline  z_ 1 = $20.0 \newline  \newline $z_2 = $67.0 \newline  \newline $m_n = $12.0 \newline  \newline $\beta = $12.0&Dolna granica błędu przełożenia przekładni: \newline $u_{min} = 0,975 * u = $3.266  \newline \newline Górna granica błędu przełożenia przekładni: \newline $u_{max} = 1,025 * u = $3.434  \newline \newline Sprawdzenie czy przełożenie rzeczywiste mieści się w dopuszcalnym przedziale: \newline $u_{rz} = \frac{z_2}{z_1} = $3.35  \newline \newline Zerowa odległość osi: \newline $a_o = \frac{(z_1 + z_2) * m_n}{2 * cos(\beta)} = $533.662&$ \newline u_{min} = $3.266$ \newline  \newline u_{max} = $3.434$ \newline  \newline  \newline u_{rz} = $3.35$ \newline  \newline a_o = $533.662\\%
+\hline%
+$ \newline \newline \newline  a_w = $540.0 \newline  \newline $a_o = $533.662 \newline  \newline $m_n = $12.0 \newline  \newline $\beta = $12.0 \newline  \newline $\alpha_n = $20.0& [mm]  \newline \newline Przybliżona wartość sumy współczynników korekcji: \newline$X_z = \frac{a_w - a_o}{m_n} = $0.528  \newline \newline Kąt zarysu w przekroju czołowym $\alpha_t$: $ \newline \alpha_t = \arctan{\frac{\tan{\alpha_n}}{\cos{\beta}}} = $0.356  \newline \newline Kąt przyporu toczny w przekroju czołowym: \newline$\alpha_{tw} = \arccos{\frac{a_o}{a_w}*\cos{\alpha_t}} = $0.387  \newline \newline Kąt pochylenia linii zęba na walcu zasadniczym: \newline$\beta_b = \arctan{\tan{\beta} * \cos{\frac{\tan{\alpha_n}}{\cos{\beta}}}} = $0.1966&$ \newline X_z = $0.528$ \newline  \newline \alpha_t = $0.356$ \newline  \newline  \newline \alpha_{tw} = $0.387$ \newline  \newline \beta_b = $0.1966\\%
+\hline%
+ \newline  \newline $\alpha_t = $0.35623 \newline  \newline $\alpha_{tw} = $0.38654&  \newline \newline Involuta, funkcja ewolwentowa $\alpha_{tw}$: \newline $inv\alpha_{tw} = \tan{\alpha_{tw}} - \alpha{tw} = $0.0204761  \newline \newline Involuta, funkcja ewolwentowa $\alpha_{t}$: \newline $inv\alpha_t = \tan{\alpha_t} - \alpha_t = $0.0158744& \newline \newline  $inv\alpha_t = $0.0158744 \newline  \newline $inv\alpha_{tw} = $0.0204761\\%
+\hline%
+ \newline \newline  $inv\alpha_t = $0.0158744 \newline  \newline $inv\alpha_{tw} = $0.0204761&  \newline \newline Suma współczynników korekcji: \newline $X = (inv\alpha_{tw} - inv\alpha_t) * \frac{z_1 + z_2}{2 * \tan{\alpha_n}} = $0.55&$X = $0.55\\%
+\hline%
+$ \newline  \newline \beta_b = $0.1966$ \newline \newline \newline  z_ 1 = $20.0 \newline  \newline $z_2 = $67.0&Zastępcza liczba zębów zębnika: \newline$z_{z1} = \frac{z_1}{\cos{\beta} * \cos{\beta_b}^2} = $21.258  \newline \newline Zastępcza liczba zębów koła: \newline$z_{z2} = \frac{z_2}{\cos{\beta} * \cos{\beta_b}^2} = $71.215&$ \newline z_{z1} = $21.258 \newline $z_{z1} = $71.215\\%
+\hline%
+& \newline  \newline Współczynnik korekcji zębnika (odczytany z wykresu): \newline$x_1 = $0.35  \newline \newline Współczynnik korekcji koła: \newline $x_2 = X - x_1 = $0.2  \newline \newline Średnica toczna zębnika: \newline $d_{w1} = \frac{2*a_w}{1 + u_{rz}} = $248.276  \newline \newline Średnica toczna koła: \newline $d_{w2} = d_{w1} * u_{rz} = $831.724  \newline \newline Pozorna odległość osi: \newline $a_p = a_o + m_n * (x_1 + x_2) = $540.262  \newline \newline Współczynnik zsunięcia: \newline$k = \frac{a_p - a_w}{m_n} = $0.022  \newline \newline Średnica podziałowa zębnika: \newline$d_{11} = \frac{m_n * z_1}{\cos{\beta}} = $245.362  \newline \newline Średnica podziałowa koła: \newline$d_{12} = 2 * a_o - d_{11} = $821.962  \newline \newline Moduł czołowy: \newline $m_t = \frac{d_{11}}{z_1} = $12.268&\\%
+\hline%
+\end{longtable}
+
+%
+\end{document}

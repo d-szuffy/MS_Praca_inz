@@ -1,7 +1,7 @@
 from PyQt5.QtGui import QDoubleValidator, QValidator
-from data.linear_functions import PointsForLinearFunctions
+from data.linear_functions import *
 from decimal import Decimal
-from data.correctio_factors_diag import *
+from data.correction_factors_diag import *
 import Gear_UI
 import sys
 import math
@@ -12,9 +12,7 @@ from data.preconditions import *
 from data.results import *
 from PyQt5.QtWidgets import QMainWindow, QApplication, QMessageBox, QPushButton
 from PyQt5.QtCore import Qt
-import data.excel_file
-
-from matplotlib.backends.backend_qt5agg import (NavigationToolbar2QT as NavigationToolbar)
+import data.pdf_file_creator
 
 WINDOW_SIZE = 0
 
@@ -82,7 +80,7 @@ class MyForm(QMainWindow):
             lambda: self.set_current_page(self.ui.page_outcomes, self.ui.diameters_btn))
         self.ui.excel_btn.clicked.connect(lambda: self.set_current_page(self.ui.page_excel, self.ui.excel_btn))
 
-        self.ui.pushButton.clicked.connect(lambda: self.open_file_dialog())
+        self.ui.pushButton.clicked.connect(lambda: self.create_pdf_file_with_pylatex())
 
         #clear and calculate buttons on both pages
         self.ui.clear_btn.clicked.connect(lambda: self.clear_input_data(True))
@@ -126,12 +124,7 @@ class MyForm(QMainWindow):
         self.pressure_angle_validator.setRange(0, 90, 3)
         self.ui.lineEdit_pressure_angle.setValidator(self.pressure_angle_validator)
 
-        # self.ui.comboBox.setEditable(True)
-        print(self.ui.stackedWidget.currentIndex())
-
         self.currentButton = self.ui.materials_btn
-
-        #self.ui.MplWidget.canvas.axes.legend(('cosinus', 'sinus'), loc='upper right')
         self.ui.MplWidget.canvas.graph.set_title('Współczynniki korekcji')
 
         # Restore or maximize your window
@@ -175,14 +168,11 @@ class MyForm(QMainWindow):
             # Update value to show that the window has been maximized
             self.showMaximized()
         # Update button icon
-        # self.ui.restoreButton.setIcon(QtGui.QIcon(u":/icons/icons/cil-window-maximize.png"))#Show maximized icon
         else:
             # If the window is on its default size
             WINDOW_SIZE = 0  # Update value to show that the window has been minimized/set to normal size (which is 800 by 400)
             self.showNormal()
 
-    # Update button icon
-    # self.ui.restoreButton.setIcon(QtGui.QIcon(u":/icons/icons/cil-window-restore.png"))#Show minized icon
 
     def set_current_page(self, page, next_button: QPushButton):
         self.currentButton.setStyleSheet("""QPushButton{
@@ -320,8 +310,6 @@ class MyForm(QMainWindow):
         InputData.rad_velocity_out = self.units_conversion(InputData.rad_velocity_out, InputData.rad_velocity_out_unit)
         InputData.durability = self.units_conversion(InputData.durability, InputData.durability_unit)
         InputData.wheelbase = self.units_conversion(InputData.wheelbase, InputData.wheelbase_unit)
-        print(f"Moc: {InputData.power}, Przełożenie: {InputData.ratio}, Prędkość wejściowa: {InputData.rad_velocity_in},"
-              f" Prędkość wyjściowa: {InputData.rad_velocity_out}, Trwałość: {InputData.durability}, Rozstaw osi: {InputData.wheelbase}")
         self.calculate_on_input_data()
 
     def rewrite_results_data_to_line_edits(self):
@@ -386,10 +374,8 @@ class MyForm(QMainWindow):
         else:
             Result.second_wheel_tooth_number = float(Result.second_wheel_tooth_number)
             Result.real_ratio = Result.second_wheel_tooth_number / InputData.pinion_tooth_number
-            print("czy to faken działa")
             if Result.ratio_bottom_border <= Result.real_ratio <= Result.ratio_upper_border:
                 self.ui.lineEdit_real_ratio.setText(str(Result.real_ratio))
-                print("czy to działa")
                 self.further_calculations_for_outputs_page()
                 self.enable_other_pages()
                 self.generate_basic_version_of_the_graph()
@@ -398,10 +384,9 @@ class MyForm(QMainWindow):
 
     # draws each linear function on plot
     def draw_line_function_based_on_m_and_c(self, m, c, x_lower_border, x_upper_border, linecolor):
-        x = np.linspace(x_lower_border, x_upper_border, 1000)
+        x = numpy.linspace(x_lower_border, x_upper_border, 1000)
         y = m * x + c
         self.ui.MplWidget.canvas.graph.plot(x, y, color=linecolor)
-        #, label=f'y={m.round(3)}x+{c.round(2)}1'
 
     def generate_basic_version_of_the_graph(self):
         self.ui.MplWidget.canvas.graph.clear()
@@ -427,7 +412,6 @@ class MyForm(QMainWindow):
         for point in LIST_OF_POINTS:
             function = get_straight_linear(point)
             LIST_OF_FUNCTIONS.append(function)
-        print(LIST_OF_FUNCTIONS)
         # constants which help to indentify function we search for
         indexes_of_functions_above_given_point = []
         indexes_of_functions_below_given_point = []
@@ -437,15 +421,11 @@ class MyForm(QMainWindow):
         # iterate through list of functions to check whether it is below or above the given point and draw all functions on plot
         for i in range(0, len(LIST_OF_FUNCTIONS)):
             self.draw_line_function_based_on_m_and_c(LIST_OF_FUNCTIONS[i][0], LIST_OF_FUNCTIONS[i][1], 10, 150, 'blue')
-            print("czy działa draw line function")
             is_above_function = check_if_the_point_is_above_function(self.GIVEN_POINT, LIST_OF_FUNCTIONS[i][0], LIST_OF_FUNCTIONS[i][1])
-            print("czy działa is above function")
             if is_above_function:
                 indexes_of_functions_below_given_point.append(i)
             else:
                 indexes_of_functions_above_given_point.append(i)
-        print(indexes_of_functions_below_given_point)
-        print(indexes_of_functions_above_given_point)
 
         # get the functions which are right above and right below the given point from lists of functions
         function_above_given_point = indexes_of_functions_above_given_point[0]
@@ -462,9 +442,8 @@ class MyForm(QMainWindow):
             LIST_OF_FUNCTIONS[function_below_given_point][1])
         created_linear_func = get_straight_linear([(cross_point_x, cross_point_y), (self.GIVEN_POINT[0], self.GIVEN_POINT[1])])
         searched_correction_factor = created_linear_func[0] * 20 + created_linear_func[1]
+
         # plot settings
-        plt.xlabel('x')
-        plt.ylabel('y')
         self.ui.MplWidget.canvas.graph.set_xlim(-50, 150)
         self.ui.MplWidget.canvas.graph.set_ylim(-0.5, 1)
         self.ui.MplWidget.canvas.graph.plot(self.GIVEN_POINT[0], self.GIVEN_POINT[1], marker="o", markersize=5, markerfacecolor="red", markeredgecolor="red")
@@ -477,7 +456,6 @@ class MyForm(QMainWindow):
                                                 xytext=(-50, searched_correction_factor), va='center', ha='right')
         self.ui.MplWidget.canvas.draw()
 
-        #return searched_correction_factor
     def put_given_point_on_correction_factors_graph(self):
 
         if self.ui.factors_sum_line_edit.text() == "" or self.ui.tooth_number_sum_line_edit.text() == "":
@@ -510,40 +488,28 @@ class MyForm(QMainWindow):
         Result.wheelbase_zero = ((InputData.pinion_tooth_number + Result.second_wheel_tooth_number)
                                  * Result.normal_module) / (2 * math.cos(numpy.deg2rad(InputData.helix_angle)))
         # RESULT.WHEELBASE_ZERO wyświetla poprawną wartość, mozna podpinać pod UI
-        print(f"Zerowa odległośc osi: {Result.wheelbase_zero}")
-        print(
-            f"Przybliżona wartość sumy wspólczynników korekcji (przesunięcia zarysu): {Result.estimated_correction_factors_sum}")
         # POPRAWNA WARTOŚĆ PRZYBLIZONEGO WSPOLCZYNNIKA KOREKCJI ZWROCONA
 
         Result.alfa_t = math.atan(
             math.tan(numpy.deg2rad(InputData.pressure_angle)) / math.cos(numpy.deg2rad(InputData.helix_angle)))
-        print(f"Kąt zarysu w przekroju czołowym: {Result.alfa_t}")
         # POPRAWNIE OBLICZONA WARTOSC ALFA_T
 
-        # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-        # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-        # @@@@@@@@@@@@@@@@@@@@@@DOPYTAC O PROCEDURE OBLICZEN DLA WIESZKYCH PRZELOZEN@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-        # @@@@@@@@@@@@@@@@@@@@@@@PONIEWAZ W TEJ LINIJCE ARC COS DOSTAJE ARGUMENT Z POZA@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-        # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@PRZEDZIAŁU (-1,1)@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-        print(f"Argument arc cosinusa: {Result.wheelbase_zero * math.cos(Result.alfa_t) / InputData.wheelbase}")
+
         Result.alfa_tw = math.acos(Result.wheelbase_zero * math.cos(Result.alfa_t) / InputData.wheelbase)
-        print(f"Kąt przyporu toczny w przekroju czołowym: {Result.alfa_tw}")
         # POPRAWNIE OBLICZONA WARTOSC ALFA_TW
 
         Result.inv_alfa_tw = math.tan(Result.alfa_tw) - Result.alfa_tw
-        print(f"Involuta, funkcja ewolwentowa alfa_tw: {Result.inv_alfa_tw}")
         # POPRAWNIE OBLICZONA WARTOSC
 
         Result.inv_alfa_t = math.tan(Result.alfa_t) - Result.alfa_t
-        print(f"Involuta, funkcja ewolwentowa alfa_t: {Result.inv_alfa_t}")
         # POPRAWNIE OBLICZONA WARTOSC
         Result.estimated_correction_factors_sum = (InputData.wheelbase - Result.wheelbase_zero) / Result.normal_module
 
         Result.correction_factors_sum = ((Result.inv_alfa_tw - Result.inv_alfa_t) *
                                          (InputData.pinion_tooth_number + Result.second_wheel_tooth_number)) / \
                                         (2 * math.tan(numpy.deg2rad(InputData.pressure_angle)))
-        print(f"Suma współczynników korekcji: {Result.correction_factors_sum}")
 
+        # Send correct values for generating correction factors graph
         Result.half_of_correction_factors_sum = Result.correction_factors_sum / 2
         Result.half_of_pinion_and_wheel_tooth_number_sum = (InputData.pinion_tooth_number + Result.second_wheel_tooth_number) / 2
         self.GIVEN_POINT = [Result.half_of_pinion_and_wheel_tooth_number_sum, Result.half_of_correction_factors_sum]
@@ -553,79 +519,57 @@ class MyForm(QMainWindow):
         Result.beta_b_helix_angle = math.atan(math.tan(numpy.deg2rad(InputData.helix_angle)) *
                                               math.cos(math.atan(math.tan(numpy.deg2rad(InputData.pressure_angle)) /
                                                                  math.cos(numpy.deg2rad(InputData.helix_angle)))))
-        print(f"Kąt pochylenia linii zęba na walcu zasadniczym: {Result.beta_b_helix_angle}")
         # POPRAWNIE OBLICZONA WARTOSC
 
         Result.pinion_tooth_number_placeholder = InputData.pinion_tooth_number / (math.cos(
             numpy.deg2rad(InputData.helix_angle)) * math.cos(Result.beta_b_helix_angle) ** 2)
-        print(f"Zastępcza liczba zębów zębnika: {Result.pinion_tooth_number_placeholder}")
         # POPRAWNIE OBLICZONA WARTOSC
 
         Result.second_wheel_tooth_number_placeholder = Result.second_wheel_tooth_number / (math.cos(
             numpy.deg2rad(InputData.helix_angle)) * math.cos(Result.beta_b_helix_angle) ** 2)
-        print(f"Zastępcza liczba zębów koła: {Result.second_wheel_tooth_number_placeholder}")
         # POPRAWNIE OBLICZONA WARTOSC
 
         Result.both_wheels_tooth_num_placeholder_avg = (Result.pinion_tooth_number_placeholder +
                                                         Result.second_wheel_tooth_number_placeholder) / 2
-        print(f"Średnia z zastępczej liczby zębów kół: {Result.both_wheels_tooth_num_placeholder_avg}")
 
         Result.pinion_correction_factor = 0.35
-        print("czy on wychodzi z grapha")
         #self.generate_basic_version_of_the_graph()
         Result.second_wheel_correction_factor = Result.correction_factors_sum - Result.pinion_correction_factor
-        print(f"Współczynnik korekcji koła: {Result.second_wheel_correction_factor}")
 
         Result.pinion_rolling_diameter = (2 * InputData.wheelbase) / (1 + Result.real_ratio)
-        print(f"Średnica toczna zębnika: {Result.pinion_rolling_diameter}")
 
         Result.second_wheel_rolling_diameter = Result.real_ratio * Result.pinion_rolling_diameter
-        print(f"Średnica toczna koła: {Result.second_wheel_rolling_diameter}")
 
         Result.wheelbase_apparent = Result.wheelbase_zero + Result.normal_module * (Result.pinion_correction_factor +
                                                                                     Result.second_wheel_correction_factor)
-        print(f"Pozorna odległość osi: {Result.wheelbase_apparent}")
 
         Result.slip_factor = (Result.wheelbase_apparent - InputData.wheelbase) / Result.normal_module
-        print(f"Współczynnik zsunięcia: {Result.slip_factor}")
 
         Result.pinion_pitch_diameter = (Result.normal_module *
                                         InputData.pinion_tooth_number) / math.cos(numpy.deg2rad(InputData.helix_angle))
-        print(f"Średnica podziałowa zębnika: {Result.pinion_pitch_diameter}")
 
         Result.second_wheel_pitch_diameter = 2 * Result.wheelbase_zero - Result.pinion_pitch_diameter
-        print(f"Średnica podziałowa koła: {Result.second_wheel_pitch_diameter}")
         # Wszystko dotychczas z dobrymi wartościami
 
         Result.frontal_module = Result.pinion_pitch_diameter / InputData.pinion_tooth_number
-        print(f"Moduł czołowy: {Result.frontal_module}")
 
         Result.pinion_tooth_line_slope_diameter = math.atan((Result.pinion_rolling_diameter *
                                                              math.tan(numpy.deg2rad(InputData.helix_angle))) / Result.pinion_pitch_diameter)
-        print(f"Średnica pochylenia linii zęba na średnicy tocznej zębnika: {Result.pinion_tooth_line_slope_diameter}")
 
         Result.second_wheel_tooth_line_slope_diameter = math.atan((Result.second_wheel_rolling_diameter *
                                                                    math.tan(numpy.deg2rad(InputData.helix_angle))) / Result.second_wheel_pitch_diameter)
-        print(f"Średnica pochylenia linii zęba na średnicy tocznej koła: {Result.second_wheel_tooth_line_slope_diameter}")
 
-        print(f"Moment obrotowy obciążający zębnik: {Result.pinion_torque}")
 
         Result.force_tangential = 2 * Result.pinion_torque / (Result.pinion_rolling_diameter / 1000)
-        print(f"Siła styczna: {Result.force_tangential}")
 
         Result.force_longitudinal = Result.force_tangential * math.tan(Result.pinion_tooth_line_slope_diameter)
-        print(f"Siła wzdłużna: {Result.force_longitudinal}")
 
         Result.force_radial = Result.force_tangential * math.tan(Result.alfa_tw)
-        print(f"Siła promieniowa: {Result.force_radial}")
 
         Result.second_wheel_width = 60
-        print(f"Szerokość koła: {Result.second_wheel_width}")
         Result.stepping_pressure_number = (Result.second_wheel_width *
                                            math.sin(numpy.deg2rad(InputData.helix_angle))) / (Result.normal_module * math.pi)
-        print(f"Poskokowa liczba przyporu: {Result.stepping_pressure_number}")
         self.rewrite_outcome_to_line_edits()
-        print("czy on wychodzi z rewrite")
 
     def display_message_box(self, message_kind, text, title, buttons):
         msg_box = QMessageBox()
@@ -638,7 +582,6 @@ class MyForm(QMainWindow):
     def units_conversion(self, variable, unit):
         if unit == "kW":
             variable *= 10e2
-            print(f"Skonwertowane: {variable}")
         elif unit == "MW":
             variable *= 10e5
         elif unit == "obr/min":
@@ -653,23 +596,8 @@ class MyForm(QMainWindow):
             variable *= 10
         return variable
 
-
-    def open_file_dialog(self):
-        data.excel_file.create_pdf_file()
-    # input_data = InputData(power, ratio, velocity_in, velocity_out, machine_driving, machine_driven, durability)
-    #
-    #     if self.check_input_data(input_data):
-    #         pass
-    #
-    # def check_input_data(self, input_data):
-    #     if self.is_number(input_data.power) and self.power_validator
-    #
-    # def is_number(self, s):
-    #     try:
-    #         float(s)
-    #         return True
-    #     except ValueError:
-    #         return False
+    def create_pdf_file_with_pylatex(self):
+        data.pdf_file_creator.create_pdf_file()
 
 
 if __name__ == "__main__":

@@ -1,18 +1,8 @@
-# -*- coding: utf-8 -*-
-
-################################################################################
-## Form generated from reading UI file 'Gear_v3ehIdch.ui'
-##
-## Created by: Qt User Interface Compiler version 5.15.1
-##
-## WARNING! All changes made in this file will be lost when recompiling UI file!
-################################################################################
-
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 
-from data.correctio_factors_diag import MplWidget
+from data.correction_factors_diag import MplWidget
 
 import demo_rc
 

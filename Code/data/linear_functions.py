@@ -1,5 +1,6 @@
-from numpy import ones,vstack
+from numpy import ones, vstack
 from numpy.linalg import lstsq
+
 
 class PointsForLinearFunctions(object):
     R17 = [(0, 0.67), (75, 1)]
@@ -25,5 +26,4 @@ def get_straight_linear(points):
     x_coords, y_coords = zip(*points)
     a = vstack([x_coords, ones(len(x_coords))]).T
     m, c = lstsq(a, y_coords, rcond=None)[0]
-    # print("Line Solution is y = {m}x + {c}".format(m=m, c=c))
     return m, c

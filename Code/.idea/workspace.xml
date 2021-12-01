@@ -20,10 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="85f41b2f-634b-4c83-b9b0-5b8c684c203d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/data/excel_file.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/opisy.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/qp_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/input_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/input_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gear_UI.py" beforeDir="false" afterPath="$PROJECT_DIR$/Gear_UI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gear_v3.ui" beforeDir="false" afterPath="$PROJECT_DIR$/Gear_v3.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/correctio_factors_diag.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/correctio_factors_diag.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/excel_file.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/excel_file.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/opisy.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/opisy.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -139,11 +142,33 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="quantities" type="PythonConfigurationType" factoryName="Python">
+      <module name="Code" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\Mateusz.Szawczenko\Desktop\Python\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\Users\Mateusz.Szawczenko\Desktop\Praca inżynierska\MS_Praca_inz\Code\data\qp_test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
-      <item itemvalue="Python.correctio_factors_diag" />
       <item itemvalue="Python.check_test" />
+      <item itemvalue="Python.correctio_factors_diag" />
       <item itemvalue="Python.excel_file" />
       <item itemvalue="Python.main" />
+      <item itemvalue="Python.quantities" />
     </list>
     <recent_temporary>
       <list>
@@ -174,7 +199,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637080120302</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="put some work on automatic pdf report, however it's not finished yet.">
+      <created>1637258865429</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1637258865429</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -192,14 +224,15 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Worked on interactive graph for correction factors - almost finished. More coming soon." />
     <MESSAGE value="Finished correction factors graph with full analysis on generate button pushed signal. Start to work on 'save as excel file' option, which will be the last step in development of this app." />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished correction factors graph with full analysis on generate button pushed signal. Start to work on 'save as excel file' option, which will be the last step in development of this app." />
+    <MESSAGE value="put some work on automatic pdf report, however it's not finished yet." />
+    <option name="LAST_COMMIT_MESSAGE" value="put some work on automatic pdf report, however it's not finished yet." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2334" y="175" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1637140701709">
+    <state x="2334" y="175" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1637424102991">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1636655363008" />
-    <state x="2334" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1637140701709" />
+    <state x="2334" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1637424102991" />
     <state x="414" y="175" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1634973894203" />
     <state x="728" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1636653507265">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -210,29 +243,29 @@
     </state>
     <state x="2660" y="287" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1636026282700" />
     <state x="740" y="287" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1634973888181" />
-    <state width="1899" height="274" key="GridCell.Tab.0.bottom" timestamp="1637257946990">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1899" height="274" key="GridCell.Tab.0.bottom" timestamp="1638289228951">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="274" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1637248958714" />
-    <state width="1899" height="274" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1637257946990" />
+    <state width="1899" height="274" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1638289228951" />
+    <state width="1899" height="274" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1637499088032" />
     <state width="1899" height="274" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1636664123243" />
-    <state width="1899" height="274" key="GridCell.Tab.0.center" timestamp="1637257946990">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1899" height="274" key="GridCell.Tab.0.center" timestamp="1638289228951">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="274" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1637248958714" />
-    <state width="1899" height="274" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1637257946990" />
+    <state width="1899" height="274" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1638289228951" />
+    <state width="1899" height="274" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1637499088031" />
     <state width="1899" height="274" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1636664123243" />
-    <state width="1899" height="274" key="GridCell.Tab.0.left" timestamp="1637257946990">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1899" height="274" key="GridCell.Tab.0.left" timestamp="1638289228950">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="274" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1637248958714" />
-    <state width="1899" height="274" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1637257946990" />
+    <state width="1899" height="274" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1638289228950" />
+    <state width="1899" height="274" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1637499088031" />
     <state width="1899" height="274" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1636664123242" />
-    <state width="1899" height="274" key="GridCell.Tab.0.right" timestamp="1637257946990">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1899" height="274" key="GridCell.Tab.0.right" timestamp="1638289228951">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="274" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1637248958714" />
-    <state width="1899" height="274" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1637257946990" />
+    <state width="1899" height="274" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1638289228951" />
+    <state width="1899" height="274" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1637499088031" />
     <state width="1899" height="274" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1636664123243" />
     <state width="1899" height="338" key="GridCell.Tab.1.bottom" timestamp="1636812170042">
       <screen x="1920" y="0" width="1920" height="1040" />
@@ -258,10 +291,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1634970241735" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1637080133121">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2472" y="253" key="Vcs.Push.Dialog.v2" timestamp="1637258879412">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1637080133121" />
+    <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1637258879412" />
     <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1636656153801">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

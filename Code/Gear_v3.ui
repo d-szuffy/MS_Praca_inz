@@ -600,38 +600,7 @@ height: 40;</string>
              <string notr="true">background-color: rgb(180, 180, 180);</string>
             </property>
             <property name="text">
-             <string>EXCEL</string>
-            </property>
-            <property name="checkable">
-             <bool>true</bool>
-            </property>
-            <property name="flat">
-             <bool>false</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="scheme_btn">
-            <property name="enabled">
-             <bool>false</bool>
-            </property>
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="font">
-             <font>
-              <family>Calibri</family>
-              <pointsize>14</pointsize>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">background-color: rgb(180, 180, 180);</string>
-            </property>
-            <property name="text">
-             <string>SCHEMAT</string>
+             <string>RAPORT PDF</string>
             </property>
             <property name="checkable">
              <bool>true</bool>
@@ -668,7 +637,7 @@ height: 40;</string>
           <string notr="true">background-color: rgb(255, 255, 255);</string>
          </property>
          <property name="currentIndex">
-          <number>5</number>
+          <number>2</number>
          </property>
          <widget class="QWidget" name="page_input_data">
           <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -4127,12 +4096,264 @@ QListView::item {
                      </widget>
                     </item>
                     <item>
-                     <widget class="QLineEdit" name="lineEdit_normal_module">
-                      <property name="enabled">
-                       <bool>true</bool>
-                      </property>
+                     <widget class="QComboBox" name="comboBox_normal_module">
                       <property name="sizePolicy">
-                       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <pointsize>12</pointsize>
+                       </font>
+                      </property>
+                      <item>
+                       <property name="text">
+                        <string>1.00</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>1.12</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>1.25</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>1.40</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>1.60</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>1.80</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>2.00</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>2.24</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>2.50</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>2.80</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>3.15</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>3.55</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>4.00</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>4.50</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>5.00</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>5.60</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>6.30</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>7.10</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>8.00</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>9.00</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>10.00</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>11.20</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>12.00</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>12.50</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>14.00</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>16.00</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>18.00</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>20.00</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>22.40</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>25.00</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>28.00</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>31.50</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>35.50</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>40.00</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>45.00</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>50.00</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>56.00</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>63.00</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>71.00</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>80.00</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>90.00</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>100.00</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>112.00</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>125.00</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>140.00</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>160.00</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>180.00</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>200.00</string>
+                       </property>
+                      </item>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="normal_module_confirm_btn">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                         <horstretch>0</horstretch>
                         <verstretch>0</verstretch>
                        </sizepolicy>
@@ -4140,37 +4361,9 @@ QListView::item {
                       <property name="minimumSize">
                        <size>
                         <width>0</width>
-                        <height>0</height>
+                        <height>24</height>
                        </size>
                       </property>
-                      <property name="maximumSize">
-                       <size>
-                        <width>16777215</width>
-                        <height>16777215</height>
-                       </size>
-                      </property>
-                      <property name="font">
-                       <font>
-                        <family>Calibri</family>
-                        <pointsize>14</pointsize>
-                       </font>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">margin: 10px;</string>
-                      </property>
-                      <property name="dragEnabled">
-                       <bool>false</bool>
-                      </property>
-                      <property name="placeholderText">
-                       <string/>
-                      </property>
-                      <property name="clearButtonEnabled">
-                       <bool>true</bool>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QPushButton" name="normal_module_confirm_btn">
                       <property name="styleSheet">
                        <string notr="true">QPushButton{
 color: rgb(242, 242, 246);
@@ -4178,6 +4371,7 @@ background-color: rgb(76, 118, 232);
 border: none;
 height: 20;
 margin-right: 10px;
+margin-left: 5px;
 padding: 0 5 0 5;
 }
 QPushButton:hover{
@@ -8565,7 +8759,7 @@ background-color: rgb(51, 82, 148);
              </property>
              <property name="text">
               <string>ZAPISZ WYNIKI 
-DO PLIKU EXCEL</string>
+DO PLIKU PDF</string>
              </property>
             </widget>
            </item>

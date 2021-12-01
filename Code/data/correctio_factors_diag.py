@@ -20,7 +20,7 @@ class MplWidget(QWidget):
         vertical_layout = QVBoxLayout()
         vertical_layout.addWidget(self.toolbar)
         vertical_layout.addWidget(self.canvas)
-        self.canvas.kutas = self.canvas.figure.add_subplot(111, xlim=(0, 150))
+        self.canvas.graph = self.canvas.figure.add_subplot(111, xlim=(0, 150))
         # self.canvas.axes = self.canvas.figure.add_axes(xlim=(0, 150))
         self.setLayout(vertical_layout)
 

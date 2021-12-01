@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'Gear_v3nHJabH.ui'
+## Form generated from reading UI file 'Gear_v3ehIdch.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.1
 ##
@@ -13,6 +13,7 @@ from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 
 from data.correctio_factors_diag import MplWidget
+
 import demo_rc
 
 class Ui_MainWindow(object):
@@ -250,18 +251,6 @@ class Ui_MainWindow(object):
         self.excel_btn.setFlat(False)
 
         self.horizontalLayout.addWidget(self.excel_btn)
-
-        self.scheme_btn = QPushButton(self.buttons_frame)
-        self.scheme_btn.setObjectName(u"scheme_btn")
-        self.scheme_btn.setEnabled(False)
-        sizePolicy1.setHeightForWidth(self.scheme_btn.sizePolicy().hasHeightForWidth())
-        self.scheme_btn.setSizePolicy(sizePolicy1)
-        self.scheme_btn.setFont(font)
-        self.scheme_btn.setStyleSheet(u"background-color: rgb(180, 180, 180);")
-        self.scheme_btn.setCheckable(True)
-        self.scheme_btn.setFlat(False)
-
-        self.horizontalLayout.addWidget(self.scheme_btn)
 
 
         self.verticalLayout_2.addWidget(self.buttons_frame)
@@ -1544,31 +1533,77 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_26.addWidget(self.label_normal_module)
 
-        self.lineEdit_normal_module = QLineEdit(self.frame_normal_module)
-        self.lineEdit_normal_module.setObjectName(u"lineEdit_normal_module")
-        self.lineEdit_normal_module.setEnabled(True)
-        sizePolicy5 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
-        sizePolicy5.setHorizontalStretch(0)
-        sizePolicy5.setVerticalStretch(0)
-        sizePolicy5.setHeightForWidth(self.lineEdit_normal_module.sizePolicy().hasHeightForWidth())
-        self.lineEdit_normal_module.setSizePolicy(sizePolicy5)
-        self.lineEdit_normal_module.setMinimumSize(QSize(0, 0))
-        self.lineEdit_normal_module.setMaximumSize(QSize(16777215, 16777215))
-        self.lineEdit_normal_module.setFont(font)
-        self.lineEdit_normal_module.setStyleSheet(u"margin: 10px;")
-        self.lineEdit_normal_module.setDragEnabled(False)
-        self.lineEdit_normal_module.setClearButtonEnabled(True)
+        self.comboBox_normal_module = QComboBox(self.frame_normal_module)
+        self.comboBox_normal_module.addItem("")
+        self.comboBox_normal_module.addItem("")
+        self.comboBox_normal_module.addItem("")
+        self.comboBox_normal_module.addItem("")
+        self.comboBox_normal_module.addItem("")
+        self.comboBox_normal_module.addItem("")
+        self.comboBox_normal_module.addItem("")
+        self.comboBox_normal_module.addItem("")
+        self.comboBox_normal_module.addItem("")
+        self.comboBox_normal_module.addItem("")
+        self.comboBox_normal_module.addItem("")
+        self.comboBox_normal_module.addItem("")
+        self.comboBox_normal_module.addItem("")
+        self.comboBox_normal_module.addItem("")
+        self.comboBox_normal_module.addItem("")
+        self.comboBox_normal_module.addItem("")
+        self.comboBox_normal_module.addItem("")
+        self.comboBox_normal_module.addItem("")
+        self.comboBox_normal_module.addItem("")
+        self.comboBox_normal_module.addItem("")
+        self.comboBox_normal_module.addItem("")
+        self.comboBox_normal_module.addItem("")
+        self.comboBox_normal_module.addItem("")
+        self.comboBox_normal_module.addItem("")
+        self.comboBox_normal_module.addItem("")
+        self.comboBox_normal_module.addItem("")
+        self.comboBox_normal_module.addItem("")
+        self.comboBox_normal_module.addItem("")
+        self.comboBox_normal_module.addItem("")
+        self.comboBox_normal_module.addItem("")
+        self.comboBox_normal_module.addItem("")
+        self.comboBox_normal_module.addItem("")
+        self.comboBox_normal_module.addItem("")
+        self.comboBox_normal_module.addItem("")
+        self.comboBox_normal_module.addItem("")
+        self.comboBox_normal_module.addItem("")
+        self.comboBox_normal_module.addItem("")
+        self.comboBox_normal_module.addItem("")
+        self.comboBox_normal_module.addItem("")
+        self.comboBox_normal_module.addItem("")
+        self.comboBox_normal_module.addItem("")
+        self.comboBox_normal_module.addItem("")
+        self.comboBox_normal_module.addItem("")
+        self.comboBox_normal_module.addItem("")
+        self.comboBox_normal_module.addItem("")
+        self.comboBox_normal_module.addItem("")
+        self.comboBox_normal_module.addItem("")
+        self.comboBox_normal_module.addItem("")
+        self.comboBox_normal_module.setObjectName(u"comboBox_normal_module")
+        sizePolicy1.setHeightForWidth(self.comboBox_normal_module.sizePolicy().hasHeightForWidth())
+        self.comboBox_normal_module.setSizePolicy(sizePolicy1)
+        self.comboBox_normal_module.setFont(font2)
 
-        self.horizontalLayout_26.addWidget(self.lineEdit_normal_module)
+        self.horizontalLayout_26.addWidget(self.comboBox_normal_module)
 
         self.normal_module_confirm_btn = QPushButton(self.frame_normal_module)
         self.normal_module_confirm_btn.setObjectName(u"normal_module_confirm_btn")
+        sizePolicy5 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Fixed)
+        sizePolicy5.setHorizontalStretch(0)
+        sizePolicy5.setVerticalStretch(0)
+        sizePolicy5.setHeightForWidth(self.normal_module_confirm_btn.sizePolicy().hasHeightForWidth())
+        self.normal_module_confirm_btn.setSizePolicy(sizePolicy5)
+        self.normal_module_confirm_btn.setMinimumSize(QSize(0, 24))
         self.normal_module_confirm_btn.setStyleSheet(u"QPushButton{\n"
 "color: rgb(242, 242, 246);\n"
 "background-color: rgb(76, 118, 232);\n"
 "border: none;\n"
 "height: 20;\n"
 "margin-right: 10px;\n"
+"margin-left: 5px;\n"
 "padding: 0 5 0 5;\n"
 "}\n"
 "QPushButton:hover{\n"
@@ -1719,8 +1754,11 @@ class Ui_MainWindow(object):
         self.lineEdit_2nd_wheel_tooth_number = QLineEdit(self.frame_2md_wheel_tooth_number)
         self.lineEdit_2nd_wheel_tooth_number.setObjectName(u"lineEdit_2nd_wheel_tooth_number")
         self.lineEdit_2nd_wheel_tooth_number.setEnabled(False)
-        sizePolicy5.setHeightForWidth(self.lineEdit_2nd_wheel_tooth_number.sizePolicy().hasHeightForWidth())
-        self.lineEdit_2nd_wheel_tooth_number.setSizePolicy(sizePolicy5)
+        sizePolicy6 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        sizePolicy6.setHorizontalStretch(0)
+        sizePolicy6.setVerticalStretch(0)
+        sizePolicy6.setHeightForWidth(self.lineEdit_2nd_wheel_tooth_number.sizePolicy().hasHeightForWidth())
+        self.lineEdit_2nd_wheel_tooth_number.setSizePolicy(sizePolicy6)
         self.lineEdit_2nd_wheel_tooth_number.setMinimumSize(QSize(0, 40))
         self.lineEdit_2nd_wheel_tooth_number.setMaximumSize(QSize(16777215, 40))
         self.lineEdit_2nd_wheel_tooth_number.setFont(font)
@@ -1815,11 +1853,11 @@ class Ui_MainWindow(object):
         self.horizontalLayout_12.setContentsMargins(0, 0, 0, 0)
         self.correction_factors_header_label = QLabel(self.correction_factors_header_frame)
         self.correction_factors_header_label.setObjectName(u"correction_factors_header_label")
-        sizePolicy6 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Expanding)
-        sizePolicy6.setHorizontalStretch(0)
-        sizePolicy6.setVerticalStretch(0)
-        sizePolicy6.setHeightForWidth(self.correction_factors_header_label.sizePolicy().hasHeightForWidth())
-        self.correction_factors_header_label.setSizePolicy(sizePolicy6)
+        sizePolicy7 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Expanding)
+        sizePolicy7.setHorizontalStretch(0)
+        sizePolicy7.setVerticalStretch(0)
+        sizePolicy7.setHeightForWidth(self.correction_factors_header_label.sizePolicy().hasHeightForWidth())
+        self.correction_factors_header_label.setSizePolicy(sizePolicy7)
         self.correction_factors_header_label.setMinimumSize(QSize(260, 30))
         self.correction_factors_header_label.setMaximumSize(QSize(260, 30))
         self.correction_factors_header_label.setFont(font1)
@@ -1940,8 +1978,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_13.setContentsMargins(0, 0, 0, 0)
         self.graph_generate_button = QPushButton(self.graph_frame)
         self.graph_generate_button.setObjectName(u"graph_generate_button")
-        sizePolicy6.setHeightForWidth(self.graph_generate_button.sizePolicy().hasHeightForWidth())
-        self.graph_generate_button.setSizePolicy(sizePolicy6)
+        sizePolicy7.setHeightForWidth(self.graph_generate_button.sizePolicy().hasHeightForWidth())
+        self.graph_generate_button.setSizePolicy(sizePolicy7)
         self.graph_generate_button.setMinimumSize(QSize(100, 0))
         font3 = QFont()
         font3.setFamily(u"Calibri")
@@ -1975,8 +2013,8 @@ class Ui_MainWindow(object):
         font4.setBold(False)
         font4.setWeight(50)
         self.MplWidget.setFont(font4)
-        # self.MplWidget.setFrameShape(QFrame.StyledPanel)
-        # self.MplWidget.setFrameShadow(QFrame.Raised)
+        #self.MplWidget.setFrameShape(QFrame.StyledPanel)
+        #self.MplWidget.setFrameShadow(QFrame.Raised)
 
         self.horizontalLayout_13.addWidget(self.MplWidget)
 
@@ -3151,7 +3189,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(5)
+        self.stackedWidget.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -3168,8 +3206,7 @@ class Ui_MainWindow(object):
         self.base_outcome_btn.setText(QCoreApplication.translate("MainWindow", u"WYNIKI WST\u0118PNE", None))
         self.factors_btn.setText(QCoreApplication.translate("MainWindow", u"WSP. KOREKCJI", None))
         self.diameters_btn.setText(QCoreApplication.translate("MainWindow", u"WYNIKI", None))
-        self.excel_btn.setText(QCoreApplication.translate("MainWindow", u"EXCEL", None))
-        self.scheme_btn.setText(QCoreApplication.translate("MainWindow", u"SCHEMAT", None))
+        self.excel_btn.setText(QCoreApplication.translate("MainWindow", u"RAPORT PDF", None))
         self.label_input_data.setText(QCoreApplication.translate("MainWindow", u"DANE WEJ\u015aCIOWE", None))
         self.label_power.setText(QCoreApplication.translate("MainWindow", u"MOC NOMINALNA", None))
         self.lineEdit_power.setPlaceholderText("")
@@ -3313,7 +3350,55 @@ class Ui_MainWindow(object):
         self.label_calculated_normal_module.setText(QCoreApplication.translate("MainWindow", u"OBLICZENIOWY MODU\u0141 NORMALNY", None))
         self.lineEdit_calculated_normal_module.setPlaceholderText("")
         self.label_normal_module.setText(QCoreApplication.translate("MainWindow", u"MODU\u0141 NORMALNY", None))
-        self.lineEdit_normal_module.setPlaceholderText("")
+        self.comboBox_normal_module.setItemText(0, QCoreApplication.translate("MainWindow", u"1.00", None))
+        self.comboBox_normal_module.setItemText(1, QCoreApplication.translate("MainWindow", u"1.12", None))
+        self.comboBox_normal_module.setItemText(2, QCoreApplication.translate("MainWindow", u"1.25", None))
+        self.comboBox_normal_module.setItemText(3, QCoreApplication.translate("MainWindow", u"1.40", None))
+        self.comboBox_normal_module.setItemText(4, QCoreApplication.translate("MainWindow", u"1.60", None))
+        self.comboBox_normal_module.setItemText(5, QCoreApplication.translate("MainWindow", u"1.80", None))
+        self.comboBox_normal_module.setItemText(6, QCoreApplication.translate("MainWindow", u"2.00", None))
+        self.comboBox_normal_module.setItemText(7, QCoreApplication.translate("MainWindow", u"2.24", None))
+        self.comboBox_normal_module.setItemText(8, QCoreApplication.translate("MainWindow", u"2.50", None))
+        self.comboBox_normal_module.setItemText(9, QCoreApplication.translate("MainWindow", u"2.80", None))
+        self.comboBox_normal_module.setItemText(10, QCoreApplication.translate("MainWindow", u"3.15", None))
+        self.comboBox_normal_module.setItemText(11, QCoreApplication.translate("MainWindow", u"3.55", None))
+        self.comboBox_normal_module.setItemText(12, QCoreApplication.translate("MainWindow", u"4.00", None))
+        self.comboBox_normal_module.setItemText(13, QCoreApplication.translate("MainWindow", u"4.50", None))
+        self.comboBox_normal_module.setItemText(14, QCoreApplication.translate("MainWindow", u"5.00", None))
+        self.comboBox_normal_module.setItemText(15, QCoreApplication.translate("MainWindow", u"5.60", None))
+        self.comboBox_normal_module.setItemText(16, QCoreApplication.translate("MainWindow", u"6.30", None))
+        self.comboBox_normal_module.setItemText(17, QCoreApplication.translate("MainWindow", u"7.10", None))
+        self.comboBox_normal_module.setItemText(18, QCoreApplication.translate("MainWindow", u"8.00", None))
+        self.comboBox_normal_module.setItemText(19, QCoreApplication.translate("MainWindow", u"9.00", None))
+        self.comboBox_normal_module.setItemText(20, QCoreApplication.translate("MainWindow", u"10.00", None))
+        self.comboBox_normal_module.setItemText(21, QCoreApplication.translate("MainWindow", u"11.20", None))
+        self.comboBox_normal_module.setItemText(22, QCoreApplication.translate("MainWindow", u"12.00", None))
+        self.comboBox_normal_module.setItemText(23, QCoreApplication.translate("MainWindow", u"12.50", None))
+        self.comboBox_normal_module.setItemText(24, QCoreApplication.translate("MainWindow", u"14.00", None))
+        self.comboBox_normal_module.setItemText(25, QCoreApplication.translate("MainWindow", u"16.00", None))
+        self.comboBox_normal_module.setItemText(26, QCoreApplication.translate("MainWindow", u"18.00", None))
+        self.comboBox_normal_module.setItemText(27, QCoreApplication.translate("MainWindow", u"20.00", None))
+        self.comboBox_normal_module.setItemText(28, QCoreApplication.translate("MainWindow", u"22.40", None))
+        self.comboBox_normal_module.setItemText(29, QCoreApplication.translate("MainWindow", u"25.00", None))
+        self.comboBox_normal_module.setItemText(30, QCoreApplication.translate("MainWindow", u"28.00", None))
+        self.comboBox_normal_module.setItemText(31, QCoreApplication.translate("MainWindow", u"31.50", None))
+        self.comboBox_normal_module.setItemText(32, QCoreApplication.translate("MainWindow", u"35.50", None))
+        self.comboBox_normal_module.setItemText(33, QCoreApplication.translate("MainWindow", u"40.00", None))
+        self.comboBox_normal_module.setItemText(34, QCoreApplication.translate("MainWindow", u"45.00", None))
+        self.comboBox_normal_module.setItemText(35, QCoreApplication.translate("MainWindow", u"50.00", None))
+        self.comboBox_normal_module.setItemText(36, QCoreApplication.translate("MainWindow", u"56.00", None))
+        self.comboBox_normal_module.setItemText(37, QCoreApplication.translate("MainWindow", u"63.00", None))
+        self.comboBox_normal_module.setItemText(38, QCoreApplication.translate("MainWindow", u"71.00", None))
+        self.comboBox_normal_module.setItemText(39, QCoreApplication.translate("MainWindow", u"80.00", None))
+        self.comboBox_normal_module.setItemText(40, QCoreApplication.translate("MainWindow", u"90.00", None))
+        self.comboBox_normal_module.setItemText(41, QCoreApplication.translate("MainWindow", u"100.00", None))
+        self.comboBox_normal_module.setItemText(42, QCoreApplication.translate("MainWindow", u"112.00", None))
+        self.comboBox_normal_module.setItemText(43, QCoreApplication.translate("MainWindow", u"125.00", None))
+        self.comboBox_normal_module.setItemText(44, QCoreApplication.translate("MainWindow", u"140.00", None))
+        self.comboBox_normal_module.setItemText(45, QCoreApplication.translate("MainWindow", u"160.00", None))
+        self.comboBox_normal_module.setItemText(46, QCoreApplication.translate("MainWindow", u"180.00", None))
+        self.comboBox_normal_module.setItemText(47, QCoreApplication.translate("MainWindow", u"200.00", None))
+
         self.normal_module_confirm_btn.setText(QCoreApplication.translate("MainWindow", u"ZATWIERD\u0179", None))
         self.label_bottome_ratio_border.setText(QCoreApplication.translate("MainWindow", u"DOLNA GRANICA B\u0141\u0118DU PRZE\u0141O\u017bENIA", None))
         self.lineEdit_bottom_ratio_border.setPlaceholderText("")
@@ -3392,6 +3477,6 @@ class Ui_MainWindow(object):
         self.label_stepping_pressure_number.setText(QCoreApplication.translate("MainWindow", u"POSKOKOWA LICZBA PRZYPORU", None))
         self.lineEdit_stepping_pressure_number.setPlaceholderText("")
         self.pushButton.setText(QCoreApplication.translate("MainWindow", u"ZAPISZ WYNIKI \n"
-"DO PLIKU EXCEL", None))
+"DO PLIKU PDF", None))
     # retranslateUi
 

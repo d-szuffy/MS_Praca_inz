@@ -81,7 +81,6 @@ class MyForm(QMainWindow):
         self.ui.diameters_btn.clicked.connect(
             lambda: self.set_current_page(self.ui.page_outcomes, self.ui.diameters_btn))
         self.ui.excel_btn.clicked.connect(lambda: self.set_current_page(self.ui.page_excel, self.ui.excel_btn))
-        self.ui.scheme_btn.clicked.connect(lambda: self.set_current_page(self.ui.page_scheme, self.ui.scheme_btn))
 
         self.ui.pushButton.clicked.connect(lambda: self.open_file_dialog())
 
@@ -133,7 +132,7 @@ class MyForm(QMainWindow):
         self.currentButton = self.ui.materials_btn
 
         #self.ui.MplWidget.canvas.axes.legend(('cosinus', 'sinus'), loc='upper right')
-        self.ui.MplWidget.canvas.kutas.set_title('Współczynniki korekcji')
+        self.ui.MplWidget.canvas.graph.set_title('Współczynniki korekcji')
 
         # Restore or maximize your window
 
@@ -261,9 +260,6 @@ class MyForm(QMainWindow):
         self.ui.diameters_btn.setEnabled(True)
         self.ui.excel_btn.setStyleSheet(MyForm.ENABLED_BTN_STYLE_SHEET)
         self.ui.excel_btn.setEnabled(True)
-        self.ui.scheme_btn.setStyleSheet(MyForm.ENABLED_BTN_STYLE_SHEET)
-        self.ui.scheme_btn.setEnabled(True)
-
         # else:
 
     def toggle_material_combo_box(self, is_soft):
@@ -379,12 +375,9 @@ class MyForm(QMainWindow):
         self.rewrite_results_data_to_line_edits()
 
     def enable_next_geometric_parameters_after_confirming_normal_module(self):
-        Result.normal_module = self.ui.lineEdit_normal_module.text()
-        if Result.normal_module == "":
-            self.display_message_box(QMessageBox.Warning, "Nie została podana wartość modułu normalnego", "Moduł normalny", QMessageBox.Ok | QMessageBox.Cancel)
-        else:
-            self.ui.lineEdit_2nd_wheel_tooth_number.setEnabled(True)
-            Result.normal_module = float(Result.normal_module)
+        Result.normal_module = float(self.ui.comboBox_normal_module.currentText())
+        self.ui.lineEdit_2nd_wheel_tooth_number.setEnabled(True)
+
 
     def calculate_real_ratio_after_setting_2nd_wheel_tooth_number(self):
         Result.second_wheel_tooth_number = self.ui.lineEdit_2nd_wheel_tooth_number.text()
@@ -407,11 +400,11 @@ class MyForm(QMainWindow):
     def draw_line_function_based_on_m_and_c(self, m, c, x_lower_border, x_upper_border, linecolor):
         x = np.linspace(x_lower_border, x_upper_border, 1000)
         y = m * x + c
-        self.ui.MplWidget.canvas.kutas.plot(x, y, color=linecolor)
+        self.ui.MplWidget.canvas.graph.plot(x, y, color=linecolor)
         #, label=f'y={m.round(3)}x+{c.round(2)}1'
 
     def generate_basic_version_of_the_graph(self):
-        self.ui.MplWidget.canvas.kutas.clear()
+        self.ui.MplWidget.canvas.graph.clear()
         LIST_OF_POINTS = PointsForLinearFunctions.LIST_OF_POINTS
         LIST_OF_FUNCTIONS = []
         for point in LIST_OF_POINTS:
@@ -419,13 +412,13 @@ class MyForm(QMainWindow):
             LIST_OF_FUNCTIONS.append(function)
         for i in range(0, len(LIST_OF_FUNCTIONS)):
             self.draw_line_function_based_on_m_and_c(LIST_OF_FUNCTIONS[i][0], LIST_OF_FUNCTIONS[i][1], 10, 150, 'blue')
-        self.ui.MplWidget.canvas.kutas.set_xlim(10, 150)
-        self.ui.MplWidget.canvas.kutas.set_ylim(-0.5, 1)
+        self.ui.MplWidget.canvas.graph.set_xlim(10, 150)
+        self.ui.MplWidget.canvas.graph.set_ylim(-0.5, 1)
         self.ui.MplWidget.canvas.draw()
 
 
     def generate_correction_factors_graph(self):
-        self.ui.MplWidget.canvas.kutas.clear()
+        self.ui.MplWidget.canvas.graph.clear()
         # constant with previously defined points.
         LIST_OF_POINTS = PointsForLinearFunctions.LIST_OF_POINTS
         LIST_OF_FUNCTIONS = []
@@ -459,8 +452,8 @@ class MyForm(QMainWindow):
         function_below_given_point = indexes_of_functions_below_given_point[-1]
 
         # overdraw functions right above and right below the given point with different color
-        self.draw_line_function_based_on_m_and_c(LIST_OF_FUNCTIONS[function_above_given_point][0], LIST_OF_FUNCTIONS[function_above_given_point][1], -50, 150, 'green')
-        self.draw_line_function_based_on_m_and_c(LIST_OF_FUNCTIONS[function_below_given_point][0], LIST_OF_FUNCTIONS[function_below_given_point][1], -50, 150, 'green')
+        self.draw_line_function_based_on_m_and_c(LIST_OF_FUNCTIONS[function_above_given_point][0], LIST_OF_FUNCTIONS[function_above_given_point][1], -50, 150, 'orange')
+        self.draw_line_function_based_on_m_and_c(LIST_OF_FUNCTIONS[function_below_given_point][0], LIST_OF_FUNCTIONS[function_below_given_point][1], -50, 150, 'orange')
 
         cross_point_x, cross_point_y = find_cross_point_of_two_functions(
             LIST_OF_FUNCTIONS[function_above_given_point][0],
@@ -469,22 +462,22 @@ class MyForm(QMainWindow):
             LIST_OF_FUNCTIONS[function_below_given_point][1])
         created_linear_func = get_straight_linear([(cross_point_x, cross_point_y), (self.GIVEN_POINT[0], self.GIVEN_POINT[1])])
         searched_correction_factor = created_linear_func[0] * 20 + created_linear_func[1]
-
         # plot settings
         plt.xlabel('x')
         plt.ylabel('y')
-        self.ui.MplWidget.canvas.kutas.set_xlim(-50, 150)
-        self.ui.MplWidget.canvas.kutas.set_ylim(-0.5, 1)
-        self.ui.MplWidget.canvas.kutas.plot(self.GIVEN_POINT[0], self.GIVEN_POINT[1], marker="o", markersize=5, markerfacecolor="red", markeredgecolor="red")
-        self.ui.MplWidget.canvas.kutas.plot(cross_point_x, cross_point_y, marker='o', markersize=5, markerfacecolor="red")
-        self.ui.MplWidget.canvas.kutas.plot(20, searched_correction_factor, marker='o', markersize=5, markerfacecolor="red")
-        self.ui.MplWidget.canvas.kutas.plot([20, 20], [-0.5, searched_correction_factor], linestyle='dashed')
-        self.ui.MplWidget.canvas.kutas.plot([20, -50], [searched_correction_factor, searched_correction_factor], linestyle='dashed')
-        self.ui.MplWidget.canvas.kutas.axline([cross_point_x, cross_point_y], [self.GIVEN_POINT[0], self.GIVEN_POINT[1]])
-        self.ui.MplWidget.canvas.kutas.annotate(f'x1 = {round(searched_correction_factor, 3)}', xy=(-50, searched_correction_factor),
-                     xytext=(-50, searched_correction_factor), va='center', ha='right')
+        self.ui.MplWidget.canvas.graph.set_xlim(-50, 150)
+        self.ui.MplWidget.canvas.graph.set_ylim(-0.5, 1)
+        self.ui.MplWidget.canvas.graph.plot(self.GIVEN_POINT[0], self.GIVEN_POINT[1], marker="o", markersize=5, markerfacecolor="red", markeredgecolor="red")
+        self.ui.MplWidget.canvas.graph.plot(cross_point_x, cross_point_y, marker='o', markersize=5, markerfacecolor="red")
+        self.ui.MplWidget.canvas.graph.plot(20, searched_correction_factor, marker='o', markersize=5, markerfacecolor="red")
+        self.ui.MplWidget.canvas.graph.plot([20, 20], [-0.5, searched_correction_factor], linestyle='dashed')
+        self.ui.MplWidget.canvas.graph.plot([20, -50], [searched_correction_factor, searched_correction_factor], linestyle='dashed')
+        self.ui.MplWidget.canvas.graph.axline([cross_point_x, cross_point_y], [self.GIVEN_POINT[0], self.GIVEN_POINT[1]])
+        self.ui.MplWidget.canvas.graph.annotate(f'x1 = {round(searched_correction_factor, 3)}', xy=(-50, searched_correction_factor),
+                                                xytext=(-50, searched_correction_factor), va='center', ha='right')
         self.ui.MplWidget.canvas.draw()
 
+        #return searched_correction_factor
     def put_given_point_on_correction_factors_graph(self):
 
         if self.ui.factors_sum_line_edit.text() == "" or self.ui.tooth_number_sum_line_edit.text() == "":
@@ -499,8 +492,12 @@ class MyForm(QMainWindow):
             Result.half_of_correction_factors_sum = float(self.ui.factors_sum_line_edit.text())
             Result.half_of_pinion_and_wheel_tooth_number_sum = float(self.ui.tooth_number_sum_line_edit.text())
             self.GIVEN_POINT = [Result.half_of_pinion_and_wheel_tooth_number_sum, Result.half_of_correction_factors_sum]
-            self.ui.MplWidget.canvas.kutas.clear()
+            self.ui.MplWidget.canvas.graph.clear()
             self.generate_correction_factors_graph()
+
+    def pinion_correction_factor_return(self, pinion_correction_factor):
+        return pinion_correction_factor
+
 
     def default_values_for_correction_factors_graph(self):
         Result.half_of_correction_factors_sum = Result.correction_factors_sum / 2
@@ -574,6 +571,8 @@ class MyForm(QMainWindow):
         print(f"Średnia z zastępczej liczby zębów kół: {Result.both_wheels_tooth_num_placeholder_avg}")
 
         Result.pinion_correction_factor = 0.35
+        print("czy on wychodzi z grapha")
+        #self.generate_basic_version_of_the_graph()
         Result.second_wheel_correction_factor = Result.correction_factors_sum - Result.pinion_correction_factor
         print(f"Współczynnik korekcji koła: {Result.second_wheel_correction_factor}")
 
@@ -626,6 +625,7 @@ class MyForm(QMainWindow):
                                            math.sin(numpy.deg2rad(InputData.helix_angle))) / (Result.normal_module * math.pi)
         print(f"Poskokowa liczba przyporu: {Result.stepping_pressure_number}")
         self.rewrite_outcome_to_line_edits()
+        print("czy on wychodzi z rewrite")
 
     def display_message_box(self, message_kind, text, title, buttons):
         msg_box = QMessageBox()

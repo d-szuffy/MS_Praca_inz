@@ -21,10 +21,8 @@ class MplWidget(QWidget):
 # returns True if the point is above functions and returns False when opposite
 def check_if_the_point_is_above_function(point, m, c):
     if point[1] > m * point[0] + c:
-        # draw_line_function_based_on_m_and_c(m, c, 'green')
         return True
     else:
-        # draw_line_function_based_on_m_and_c(m, c, 'red')
         return False
 
 

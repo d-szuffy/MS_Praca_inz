@@ -7,14 +7,18 @@ import sys
 import math
 import numpy
 
+import OpenGL.GL as gl
+import OpenGL.arrays.vbo as glvbo
+
 from data.input_data import *
-from data.preconditions import *
+from data.materials import *
 from data.results import *
 from PyQt5.QtWidgets import QMainWindow, QApplication, QMessageBox, QPushButton
 from PyQt5.QtCore import Qt
 import data.pdf_file_creator
 
 WINDOW_SIZE = 0
+
 
 class RangeDoubleValidator(QDoubleValidator):
     def __init__(self, *__args):
@@ -79,6 +83,7 @@ class MyForm(QMainWindow):
         self.ui.diameters_btn.clicked.connect(
             lambda: self.set_current_page(self.ui.page_outcomes, self.ui.diameters_btn))
         self.ui.excel_btn.clicked.connect(lambda: self.set_current_page(self.ui.page_excel, self.ui.excel_btn))
+        self.ui.scheme_btn.clicked.connect(lambda: self.set_current_page(self.ui.page_scheme, self.ui.scheme_btn))
 
         self.ui.pushButton.clicked.connect(lambda: self.create_pdf_file_with_pylatex())
 
@@ -106,7 +111,7 @@ class MyForm(QMainWindow):
         self.power_validator.setRange(0.0, 1000, 6)
         self.ui.lineEdit_power.setValidator(self.power_validator)
         self.ratio_validator = RangeDoubleValidator()
-        self.ratio_validator.setRange(1, 950, 3)
+        self.ratio_validator.setRange(0.0, 950, 3)
         self.ui.lineEdit_ratio.setValidator(self.ratio_validator)
         self.velocity_in_validator = RangeDoubleValidator()
         self.velocity_in_validator.setRange(0.0, 30000, 3)
@@ -235,7 +240,7 @@ class MyForm(QMainWindow):
                                      "Złe dane wejściowe", QMessageBox.Ok)
         if is_data_filled:
             self.enable_base_outcome_page()
-            self.rewriting_input_data_to_variables()
+            self.rewrite_input_data_to_variables()
 
     def enable_base_outcome_page(self):
 
@@ -250,7 +255,9 @@ class MyForm(QMainWindow):
         self.ui.diameters_btn.setEnabled(True)
         self.ui.excel_btn.setStyleSheet(MyForm.ENABLED_BTN_STYLE_SHEET)
         self.ui.excel_btn.setEnabled(True)
-        # else:
+        self.ui.scheme_btn.setStyleSheet(MyForm.ENABLED_BTN_STYLE_SHEET)
+        self.ui.scheme_btn.setEnabled(True)
+
 
     def toggle_material_combo_box(self, is_soft):
         if is_soft:
@@ -284,8 +291,7 @@ class MyForm(QMainWindow):
                  WheelMaterial._45.value, WheelMaterial._18H2N2.value, WheelMaterial._17HNM.value,
                  WheelMaterial._40HM.value])
 
-
-    def rewriting_input_data_to_variables(self):
+    def rewrite_input_data_to_variables(self):
         InputData.power = float(self.ui.lineEdit_power.text())
         InputData.power_unit = self.ui.comboBox_power.currentText()
         InputData.ratio = float(self.ui.lineEdit_ratio.text())
@@ -374,11 +380,13 @@ class MyForm(QMainWindow):
         else:
             Result.second_wheel_tooth_number = float(Result.second_wheel_tooth_number)
             Result.real_ratio = Result.second_wheel_tooth_number / InputData.pinion_tooth_number
-            if Result.ratio_bottom_border <= Result.real_ratio <= Result.ratio_upper_border:
+            if Result.ratio_bottom_border <= Result.real_ratio \
+                    <= Result.ratio_upper_border:
                 self.ui.lineEdit_real_ratio.setText(str(Result.real_ratio))
                 self.further_calculations_for_outputs_page()
                 self.enable_other_pages()
                 self.generate_basic_version_of_the_graph()
+                self.draw_scheme()
             else:
                 self.display_message_box(QMessageBox.Warning, f"Wartość przełożenia musi mieścić się w przediale {Result.ratio_bottom_border} < u < {Result.ratio_upper_border}. Obecna wartość przełożenia to {Result.real_ratio}. Zmień liczbę zębów drugiego koła.", "Błąd przełożenia", QMessageBox.Ok)
 
@@ -415,8 +423,6 @@ class MyForm(QMainWindow):
         # constants which help to indentify function we search for
         indexes_of_functions_above_given_point = []
         indexes_of_functions_below_given_point = []
-        function_below_given_point = []
-        function_above_given_point = []
 
         # iterate through list of functions to check whether it is below or above the given point and draw all functions on plot
         for i in range(0, len(LIST_OF_FUNCTIONS)):
@@ -441,16 +447,16 @@ class MyForm(QMainWindow):
             LIST_OF_FUNCTIONS[function_below_given_point][0],
             LIST_OF_FUNCTIONS[function_below_given_point][1])
         created_linear_func = get_straight_linear([(cross_point_x, cross_point_y), (self.GIVEN_POINT[0], self.GIVEN_POINT[1])])
-        searched_correction_factor = created_linear_func[0] * 20 + created_linear_func[1]
+        searched_correction_factor = created_linear_func[0] * InputData.pinion_tooth_number + created_linear_func[1]
 
         # plot settings
         self.ui.MplWidget.canvas.graph.set_xlim(-50, 150)
         self.ui.MplWidget.canvas.graph.set_ylim(-0.5, 1)
         self.ui.MplWidget.canvas.graph.plot(self.GIVEN_POINT[0], self.GIVEN_POINT[1], marker="o", markersize=5, markerfacecolor="red", markeredgecolor="red")
         self.ui.MplWidget.canvas.graph.plot(cross_point_x, cross_point_y, marker='o', markersize=5, markerfacecolor="red")
-        self.ui.MplWidget.canvas.graph.plot(20, searched_correction_factor, marker='o', markersize=5, markerfacecolor="red")
-        self.ui.MplWidget.canvas.graph.plot([20, 20], [-0.5, searched_correction_factor], linestyle='dashed')
-        self.ui.MplWidget.canvas.graph.plot([20, -50], [searched_correction_factor, searched_correction_factor], linestyle='dashed')
+        self.ui.MplWidget.canvas.graph.plot(InputData.pinion_tooth_number, searched_correction_factor, marker='o', markersize=5, markerfacecolor="red")
+        self.ui.MplWidget.canvas.graph.plot([InputData.pinion_tooth_number, InputData.pinion_tooth_number], [-0.5, searched_correction_factor], linestyle='dashed')
+        self.ui.MplWidget.canvas.graph.plot([InputData.pinion_tooth_number, -50], [searched_correction_factor, searched_correction_factor], linestyle='dashed')
         self.ui.MplWidget.canvas.graph.axline([cross_point_x, cross_point_y], [self.GIVEN_POINT[0], self.GIVEN_POINT[1]])
         self.ui.MplWidget.canvas.graph.annotate(f'x1 = {round(searched_correction_factor, 3)}', xy=(-50, searched_correction_factor),
                                                 xytext=(-50, searched_correction_factor), va='center', ha='right')
@@ -473,10 +479,6 @@ class MyForm(QMainWindow):
             self.ui.MplWidget.canvas.graph.clear()
             self.generate_correction_factors_graph()
 
-    def pinion_correction_factor_return(self, pinion_correction_factor):
-        return pinion_correction_factor
-
-
     def default_values_for_correction_factors_graph(self):
         Result.half_of_correction_factors_sum = Result.correction_factors_sum / 2
         Result.half_of_pinion_and_wheel_tooth_number_sum = (InputData.pinion_tooth_number + Result.second_wheel_tooth_number) / 2
@@ -490,8 +492,7 @@ class MyForm(QMainWindow):
         # RESULT.WHEELBASE_ZERO wyświetla poprawną wartość, mozna podpinać pod UI
         # POPRAWNA WARTOŚĆ PRZYBLIZONEGO WSPOLCZYNNIKA KOREKCJI ZWROCONA
 
-        Result.alfa_t = math.atan(
-            math.tan(numpy.deg2rad(InputData.pressure_angle)) / math.cos(numpy.deg2rad(InputData.helix_angle)))
+        Result.alfa_t = math.atan(math.tan(numpy.deg2rad(InputData.pressure_angle)) / math.cos(numpy.deg2rad(InputData.helix_angle)))
         # POPRAWNIE OBLICZONA WARTOSC ALFA_T
 
 
@@ -578,6 +579,28 @@ class MyForm(QMainWindow):
         msg_box.setWindowTitle(title)
         msg_box.setStandardButtons(buttons)
         msg_box.exec()
+
+    def draw_scheme(self):
+        self.ui.driving_machine_label.setText(InputData.driving_machine)
+        self.ui.driven_machine_label.setText(InputData.driven_machine)
+        self.ui.openGLWidget_scheme.updateGL()
+
+    def convert_string_for_label(self, string):
+        string_divided = ''
+        if len(string) > 10:
+            i = 0
+
+            for c in string:
+                if c != ' ':
+                    string_divided += c
+                else:
+                    i += 1
+                    if i % 2 == 0:
+                        string_divided += '\n'
+                    else:
+                        string_divided += ' '
+
+        return string_divided
 
     def units_conversion(self, variable, unit):
         if unit == "kW":
